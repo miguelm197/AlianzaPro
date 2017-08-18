@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Sitio 1
+    </title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .papa {
+            width: 100%;
+            height: 1000px;
+            background: url("img/tesla2.jpg") center no-repeat;
+            background-position-y: -1100px;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .hijo {
+            width: 50%;
+            height: 100%;
+            background: url("img/humo1.png") center repeat-y;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
+
+        .papa2 {
+            width: 100%;
+            height: 1000px;
+            background-image: url(img/humo1.png), url(img/tesla1.jpg);
+            background-size: cover, cover;
+            background-repeat: no-repeat, no-repeat, no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="papa">
+        <div class="hijo">
+        </div>
+    </div>
+    <div class="papa2">
+    </div>
+</body>
+
+</html>
