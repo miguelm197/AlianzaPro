@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+p{
+    color: white;
+    padding-top:5px;
+}
+.col1{background-color: #2A7A12}
+.col2{background-color: #29850E}
+.col3{background-color: #1B530A}
+.col4{background-color: #279307}
+.col5{background-color: #3BA919}
+.col6{background-color: #2B5F1B}
+.col7{background-color: #184A09}
+
+.col2, .col3, .col4{
+    height: 100px;
+}
+
+.col5, .col6{
+    height: 50px;
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 320px) {
+    /* Mobile */
+    p {
+        color: white;
+        transition: all 1s;
+    }
+    body {
+        background-color: black;
+        transition: all 1s;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 720px) {
+    /* Tablet */
+    p {
+        color: black;
+        transition: all 1s;
+    }
+    body {
+        background-color: white;
+        transition: all 1s;
+    }
+}
+
+@media only screen and (min-width: 721px) {
+    /* Desktop */
+    p {
+        color: white;
+        transition: all 1s;
+    }
+    body {
+        background-color: black;
+        transition: all 1s;
+    }
+}
