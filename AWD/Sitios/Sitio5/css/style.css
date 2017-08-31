@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
+/*ESTILOS GENERALES*/
+span{
+    font-family: "Open Sans";
+}
+.titulo{
+    font-family: "Open Sans";
+    color: white;
+    font-weight: 300;
+    font-size: 4em;
+}
+.desactivado{
+    display:  none !important;
+}
+
+
+
+/*NAVBAR*/
+.header{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+.header .container{
+    background-color: #323232;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    /* alineacion vertical */
+    align-items: center;
+   
+}
+.header .container .correo{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 0px;
+    background-color: #148BB4;
+}
+.header .container .logo{
+    width: auto;
+    height: auto;
+    color: white;
+   
+    font-size: 2em;
+}
+
+
+
+
+
+/*SLIDER'S*/
+.main{
+    position: absolute;
+    height:100%;
+    width: 100%;
+}
+.slider{
+    height: 1000px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.slider1{
+    background-color: #1B667F;
+
+}
+.slider1 .contenedor{
+    width: 30%;
+    position: absolute;
+    right: 3%;
+}
+.slider1 .parrafo{
+    color: white;
+    font-size: 1em;
+    text-align: justify;
+}
+
+
+.slider2{
+    background-color: #103545;
+}
+.slider2 .contenedor{
+    width: 40%;
+    position: absolute;
+    right: 3%;
+}
+.slider2 .sector { width: 70%; }
+.slider2 .contenedor .sector .habilidades { margin-bottom: 60px; } 
+.slider2 .contenedor .sector .habilidades > .arriba{ margin-bottom: 30px; }
+.slider2 .contenedor .sector .habilidades > .arriba  span{font-size: 3em; color: white; font-weight: 300; } 
+.slider2 .contenedor .sector .habilidades > .abajo .habilidad { margin-bottom: 20px; } 
+.slider2 .contenedor .sector .habilidades > .abajo .abajo { background-color: rgba(0, 0, 0, 0.31); height: 25px; padding:3px; } 
+.slider2 .contenedor .sector .habilidades > .abajo .abajo .barra .numero{ color: white; position: absolute; right: 5px; font-size: 12px; } 
+.slider2 .contenedor .sector .habilidades > .abajo .arriba span { font-size: 15px; color: white; font-weight: 300; } 
+
+.slider2 .contenedor .sector .habilidades > .abajo .front-end > .abajo .barra{  background-color: rgba(0, 0, 0, 0.60); height: 100%; width: 45%; position: relative } 
+.slider2 .contenedor .sector .habilidades > .abajo .back-end > .abajo .barra{  background-color: rgba(0, 0, 0, 0.60); height: 100%; width: 45%; position: relative } 
+.slider2 .contenedor .sector .habilidades > .abajo .disenio > .abajo .barra{  background-color: rgba(0, 0, 0, 0.60); height: 100%; width: 40%; position: relative } 
+.slider2 .contenedor .sector .habilidades > .abajo .ideas > .abajo .barra{  background-color: rgba(0, 0, 0, 0.60); height: 100%; width: 5%; position: relative } 
+
+
+.slider2 .contenedor .sector .leng-tec { margin-bottom: 60px; } 
+.slider2 .contenedor .sector .leng-tec > .arriba{ margin-bottom: 0px; }
+.slider2 .contenedor .sector .leng-tec > .arriba  span{ font-size: 3em; color: white; font-weight: 300; } 
+.slider2 .contenedor .sector .leng-tec > .abajo .columna { display: flex; justify-content:space-between; margin-bottom: 10px; } 
+.slider2 .contenedor .sector .leng-tec > .abajo .columna span { color: white; text-align: center; font-weight: 700; height: 25px; padding-top: 3px; font-size: 12px;} 
+
+.slider2 .contenedor .sector .leng-tec > .abajo .columna1  span { background-color: rgba(0, 0, 0, 0.60); width: 23%; } 
+.slider2 .contenedor .sector .leng-tec > .abajo .columna2  span { background-color: rgba(0, 0, 0, 0.60); width: 31%; } 
+
+
+
+
+.slider3{
+    background-color: #282828;
+    position: relative
+}
+.slider3 .contenedor .sector{
+    width: 30%;
+    position: absolute;
+    right: 3%;
+}
+.slider3 .titulo{
+    font-family: "Open Sans";
+    color: white;
+    font-weight: 300;
+    font-size: 4em;
+}
+.slider3 .parrafo{
+    color: white;
+    font-size: 1em;
+    text-align: justify;
+}
+
+/* 
+.slider3 .trabajos { 
+    position: relative;
+    top: 0px;
+    width: 50%;
+    height: 100%; 
+    background-color: black; 
+}
+.slider .trabajos .columna{
+    position: absolute;
+    height: 100%;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: flex-start;
+}
+
+.slider3 .trabajos .trabajo{
+    width: 100px;
+    background-color: blue;
+    order: 0;
+    flex: 1 1 auto;
+    align-self: auto;
+
+} */
+
+
+.slider3 .trabajos{
+    width: 1000px;
+    height: 100%;
+    background-color: black;
+}
+
+
+.slider3 .trabajos .fila{
+    width: 100%;
+    height: 40%;
+    display: table;
+    background-color: blue;
+}
+
+
+.slider3 trabajos .fila .columna{
+    display: table-cell;
+}
+
+.slider3 .trabajos .fila .trabajo1{ background-color: #544E4E; height: 100%; }
+.slider3 .trabajos .fila .trabajo2{ background-color: #989898; height: 100%; }
+.slider3 .trabajos .fila .trabajo3{ background-color: #631C1C; height: 100%; }
+.slider3 .trabajos .fila .trabajo4{ background-color: #832222; height: 100%; }
+.slider3 .trabajos .fila .trabajo5{ background-color: #5BD538; height: 100%; }
+.slider3 .trabajos .fila .trabajo6{ background-color: #491111; height: 100%; }
+.slider3 .trabajos .fila .trabajo7{ background-color: #544E4E; height: 100%; }
+.slider3 .trabajos .fila .trabajo8{ background-color: #5B1D1D; height: 100%; }
+.slider3 .trabajos .fila .trabajo9{ background-color: #D31F1F; height: 100%; }
+
+
+
+
+
+
+.slider4{
+    background-color: #2A2A2A;
+}
+.slider4 .contenedor{
+    width: 30%;
+    position: absolute;
+    right: 3%;
+}
+.slider4 .titulo{
+    font-family: "Open Sans";
+    color: white;
+    font-weight: 300;
+    font-size: 4em;
+}
+.slider4 .parrafo{
+    color: white;
+    font-size: 1em;
+    text-align: justify;
+}
+
+
+
+
+
+.slider5{
+    background-color: #414141;
+}
+.slider5 .contenedor{
+    width: 30%;
+    position: absolute;
+    right: 3%;
+}
+.slider5 .titulo{
+    font-family: "Open Sans";
+    color: white;
+    font-weight: 300;
+    font-size: 4em;
+}
+.slider5 .parrafo{
+    color: white;
+    font-size: 1em;
+    text-align: justify;
+}

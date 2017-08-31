@@ -1,0 +1,19 @@
+﻿Utilizando lo aprendido en las clases anteriores crear una página que permita mostrar la información que una persona incluye en su Curriculmn Vitae. Con no menos de dos secciones.  
+Capaz de visualizar su contenido correctamnete en diferentes dispositivos móviles.
+
+Tecnólogias a utilizar:
+
+*HTML5
+*CSS
+*Bootstrap(xs,md,lg) y/o CSS3(mobile:0px-992px,tablet:993px-1200px,desktop:mayores de 1200px)
+
+Efectos que aplicar:
+Hover
+Transition
+Tranform
+Parallax 
+Full screen
+fondos con multiples imagenes
+
+
+ejemplo:http://yobithemes.com/demo/html/whoiam/black/
