@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" ng-app ng-init="persona={nombre:'Tomas',apellido:'Lorenzo'};autos=[{marca:'Fiat',color: 'Verde'},{marca: 'Porsche', color: 'Violeta'},{marca: 'bmw',color:'Amarillo'},{marca: 'Ferrari',color: 'Rojo'}, {marca:'Porsche', color:'Azul'}]">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="core/angular.min.js"></script>
+    <title>Ejercicio2</title>
+
+    <style>
+
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+
+    <div>Nombre: {{persona.nombre + " " + persona.apellido}}</div>
+
+    <div>"Cruzando el semáforo con mi auto Ferrari de color {{autos[3].color}}."</div>
+
+    <div>{{persona.nombre === 'Tomas' ? autos[0].color : autos[2].color}}</div>
+
+    <div ng-repeat="a in autos">
+        <div>{{a.color | uppercase}}</div>
+    </div>
+
+    <input type="checkbox" ng-model="checksito">Tócame <br>
+
+    <img ng-show="checksito" src="http://www.car-revs-daily.com/wp-content/uploads/2014/03/TESLA-MODEL-S-ANIMATION2-HEADER.gif">
+
+    <ul>
+        <div ng-repeat="a in autos">
+            <div ng-switch on="{{ a.marca == 'Porsche'}}">
+
+                    <li ng-switch-when="true">
+                            {{a.color}}
+                    </li>
+            </div>
+        </div>
+    </ul>
+
+</body>
+
+</html>
