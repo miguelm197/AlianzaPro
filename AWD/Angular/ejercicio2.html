@@ -9,39 +9,102 @@
     <title>Ejercicio2</title>
 
     <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            font-size: 0.8em;
+        }
 
+        select {
+            padding: 2px 15px;
+        }
+
+
+
+        .cuadrado {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+
+        .rectangulo {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .circulo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
     </style>
     <script>
 
     </script>
 </head>
 
-<body>
+<body ng-style="estilazo">
+    <h1>Angular.js</h1>
 
+    <h3>Mostrar nombre y apellido del objeto persona</h3>
     <div>Nombre: {{persona.nombre + " " + persona.apellido}}</div>
 
+    <h3>Concatenar texto con expresión deangular</h3>
     <div>"Cruzando el semáforo con mi auto Ferrari de color {{autos[3].color}}."</div>
 
+    <h3>aka-if</h3>
     <div>{{persona.nombre === 'Tomas' ? autos[0].color : autos[2].color}}</div>
 
+    <h3>Bucle de un objeto</h3>
     <div ng-repeat="a in autos">
         <div>{{a.color | uppercase}}</div>
     </div>
 
+    <h3>ng-show</h3>
     <input type="checkbox" ng-model="checksito">Tócame <br>
 
     <img ng-show="checksito" src="http://www.car-revs-daily.com/wp-content/uploads/2014/03/TESLA-MODEL-S-ANIMATION2-HEADER.gif">
 
+    <h3>Bucle de un objeto / filtrar por marca de coche</h3>
     <ul>
         <div ng-repeat="a in autos">
             <div ng-switch on="{{ a.marca == 'Porsche'}}">
-
-                    <li ng-switch-when="true">
-                            {{a.color}}
-                    </li>
+                <li ng-switch-when="true">
+                    {{a.color}}
+                </li>
             </div>
         </div>
     </ul>
+
+    <h3>Select</h3>
+    Color de fondo:
+    <select ng-model="fondo">
+        <option value=""></option>
+        <option value="blue" ng-click="estilazo={'background-color':fondo}">Azul</option>
+        <option value="red" ng-click="estilazo={'background-color':fondo}">Rojo</option>
+        <option value="green" ng-click="estilazo={'background-color':fondo}">Verde</option>
+        <option value="gray" ng-click="estilazo={'background-color':fondo}">Gris</option>
+    </select>
+
+
+    <h3>Input</h3>
+    <input type="text" placeholder="Figura" ng-model="figurita">
+    <br><br>
+    <div ng-switch on="figurita">
+        <div ng-switch-when="cuadrado">
+            <div ng-class="figurita"></div>
+        </div>
+        <div ng-switch-when="rectangulo">
+            <div ng-class="figurita"></div>
+        </div>
+        <div ng-switch-when="circulo">
+            <div ng-class="figurita"></div>
+        </div>
+        <div ng-switch-default>Valor incorrecto</div>
+    </div>
+
+
 
 </body>
 
