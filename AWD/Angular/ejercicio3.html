@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="miapp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="core/angular.min.js"></script>
+    <title>Ejercicio3</title>
+
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            font-size: 0.8em;
+        }
+
+        select {
+            padding: 2px 25px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        h1,
+        h3,
+        h4 {
+            margin-left: 20px;
+        }
+
+        h4 {
+            font-weight: inherit;
+            margin-top: -12px;
+            margin-bottom: 30px;
+        }
+
+        span {
+            /* margin-left: 20px; */
+        }
+
+        .linea {
+            width: 80%;
+            height: 1px;
+            background-color: gray;
+            margin-top: 80px;
+            margin-bottom: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .contenedor {
+            width: 100%;
+            height: auto;
+            padding: 50px;
+        }
+
+
+        .figura {
+            width: 400px;
+            height: 400px;
+        }
+
+        .cuadrado {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+
+        .rectangulo {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .circulo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        var app = angular.module("miapp", []);
+
+
+
+        app.controller("contrl_1", function ($scope) {
+            $scope.hola = "HolaMundo";
+        });
+
+
+        app.controller("contrl_2", function ($scope) {
+            $scope.hola = "";
+        });
+
+
+        app.controller("contrl_3", function ($scope) {
+            $scope.autos = [{
+                marca: 'Fiat',
+                color: 'Verde'
+            }, {
+                marca: 'Porsche',
+                color: 'Violeta'
+            }, {
+                marca: 'bmw',
+                color: 'Amarillo'
+            }, {
+                marca: 'Ferrari',
+                color: 'Rojo'
+            }, {
+                marca: 'Porsche',
+                color: 'Azul'
+            }];
+
+            app.filter('f', function () {
+                return function (input) {
+                    var salida = [];
+                    angular.forEach(input, function (auto) {
+                     salida.push(auto.marca.toUpperCase())
+                    })
+                    return salida;
+                }
+
+            })
+
+
+        });
+    </script>
+</head>
+
+<body ng-style="estilazo">
+    <h1>Angular.js</h1>
+
+
+    <div class="linea"></div>
+
+
+
+
+
+
+    <h3>Mostrar variable del scope</h3>
+    <h4>"Crear una estructura basica de angular con modulos y mostrando una variable del scope ,(llamada hola), del controlador
+        con el valor "Hola Mundo""</h4>
+
+    <div class="contenedor" ng-controller="contrl_1">
+        <div>{{hola}}</div>
+    </div>
+
+
+
+    <div class="linea"></div>
+
+
+
+
+
+
+    <h3>Mostrar variable del scope ingresado por un input</h3>
+    <h4>"Hacer que el valor de la variable (hola) tome el valor de un input."</h4>
+
+    <div class="contenedor" ng-controller="contrl_2">
+        <input type="text" placeholder="Escribe algo" ng-model="hola"><br><br>
+        <div>{{hola}}</div>
+    </div>
+
+
+
+
+    <div class="linea"></div>
+
+
+
+
+    <h3>Crear filtro</h3>
+    <h4>"Crear un filtro personalizado en el que la primer y ultima letra de la marca de los autos sean mayuscula y a la vez
+        se podra filtrar el arreglo de autos por el valor de la marca ingresada en un input."</h4>
+
+    <div class="contenedor" ng-controller="contrl_3">
+        <input type="text" placeholder="Filtro" ng-model="hola"><br><br>
+        <br>
+        <div ng-repeat="autito in autos | orderBy:'marca' | f">
+            {{autito.marca}}
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="linea"></div>
+    <div class="linea"></div>
+    <div class="linea"></div>
+
+
+
+
+
+
+    <h3>Concatenar texto con expresión deangular</h3>
+    <h4>"Completar la frase visualizando la propiedad del objeto del arreglo autos: ..."cruzando el semaforo con mi auto Ferrari
+        de color__________".</h4>
+
+    <div class="contenedor ">
+        <span>Cruzando el semáforo con mi auto Ferrari de color {{autos[3].color}}.</span>
+    </div>
+
+
+
+
+    <div class="linea"></div>
+
+
+
+
+
+
+    <h3>aka-if</h3>
+    <h4>Mostrar el color del auto Fiat solo si el nombre de la person es Tomas sino mostrar el color del auto bmw.</h4>
+
+    <div class="contenedor ">
+        <span>{{persona.nombre === 'Tomas' ? autos[0].color : autos[2].color}}</span>
+    </div>
+
+
+
+
+
+    <div class="linea"></div>
+
+
+
+
+
+
+    <h3>Bucle de un objeto</h3>
+    <h4>"Hacer que la marca de los autos se vean en mayuscula"</h4>
+
+    <div class="contenedor ">
+        <div ng-repeat="a in autos">
+            <div>{{a.color | uppercase}}</div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="linea"></div>
+
+
+
+
+
+
+
+    <h3>ng-show</h3>
+    <h4>"Crear una seccion que contenga un input del tipo checkbox. Debajo un div cuyo fondo varia entre dos imagenes al seleccionar
+        y des-seleccionar el checkbox."</h4>
+
+    <div class="contenedor ">
+        <input type="checkbox" ng-model="checksito">Tócame <br>
+
+        <img ng-show="checksito" src="http://www.car-revs-daily.com/wp-content/uploads/2014/03/TESLA-MODEL-S-ANIMATION2-HEADER.gif">
+    </div>
+
+
+
+
+
+
+    <div class="linea"></div>
+
+
+
+
+
+
+
+    <h3>Bucle de un objeto / filtrar por marca de coche</h3>
+    <h4>"Mostrar una lista(ul,li) con los colores de los autos con marca Porche."</h4>
+
+    <div class="contenedor ">
+        <ul>
+            <div ng-repeat="a in autos">
+                <div ng-switch on="{{ a.marca == 'Porsche'}}">
+                    <li ng-switch-when="true">
+                        {{a.color}}
+                    </li>
+                </div>
+            </div>
+        </ul>
+    </div>
+
+
+
+
+
+    <div class="linea"></div>
+
+
+
+
+
+
+
+    <h3>Select</h3>
+    <h4>"Al seleccionar un color del combo, se cambie el fondo con el color seleccionado."</h4>
+
+
+    <div class="contenedor">
+        Color de fondo:
+        <select ng-model="fondo">
+            <option value="white" ng-click="estilazo={'background-color':fondo}"></option>
+            <option value="#3e67b9" ng-click="estilazo={'background-color':fondo}">Azul</option>
+            <option value="red" ng-click="estilazo={'background-color':fondo}">Rojo</option>
+            <option value="green" ng-click="estilazo={'background-color':fondo}">Verde</option>
+            <option value="gray" ng-click="estilazo={'background-color':fondo}">Gris</option>
+        </select>
+    </div>
+
+
+
+
+
+    <div class="linea"></div>
+
+
+
+
+
+
+    .
+    <h3>Input</h3>
+    <h4>"Al escribir una figura geométrica si dibuje debajo"</h4>
+
+    <div class="contenedor ">
+        <input type="text" placeholder="Figura" ng-model="figurita">
+        <br><br>
+
+
+
+
+
+        <div class="figura">
+
+
+
+
+
+
+            <div ng-switch on="figurita">
+                <div ng-switch-when="cuadrado">
+                    <div ng-class="figurita"></div>
+                </div>
+                <div ng-switch-when="rectangulo">
+                    <div ng-class="figurita"></div>
+                </div>
+                <div ng-switch-when="circulo">
+                    <div ng-class="figurita"></div>
+                </div>
+                <div ng-switch-default>Valor incorrecto</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="linea"></div>
+
+</body>
+
+</html>
