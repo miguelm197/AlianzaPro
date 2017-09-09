@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="core/angular.min.js"></script>
+    <title>Ejercicio4</title>
+
+    <style>
+
+    </style>
+
+</head>
+
+<body ng-style="estilazo" ng-controller="tareasCtrl">
+
+    <input type="text" ng-model="tarea.usuario" placeholder="Tu nombre">
+    <input type="text" ng-model="tarea.contenido" placeholder="Tarea">
+
+    <button ng-click="agregarTarea()">Agregar</button>
+    <br>
+    <span>{{tarea.contenido}} - Creada por: {{tarea.usuario}}</span>
+    <br><br>
+    <ul>
+
+        <li ng-repeat="tare in tareas">
+
+
+
+            <span ng-hide="tare.editar">{{tare.usuario}} -  {{tare.contenido}}</span>
+
+            <input ng-show="tare.editar" type="text" ng-model="ediTarea.contenido" value="{{tare.contenido}}">
+            <input ng-show="tare.editar" type="text" ng-model="ediTarea.usuario" value="{{tare.usuario}}">
+            <button ng-show="tare.editar" ng-click="guardarTarea(tare)">Guardar</button>
+            <button ng-show="tare.editar" ng-click="cancelarGuardar(tare)">Cancelar</button>
+
+
+
+
+            <button ng-hide="tare.editar"ng-click="modificarTarea(tare)">Editar</button>
+            <button ng-hide="tare.editar"ng-click="eliminarTarea(tare)">X</button>
+        </li>
+
+    </ul>
+
+
+
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller("tareasCtrl", ["$scope", function ($scope) {
+            $scope.tarea = {};
+            $scope.ediTarea = {};
+            $scope.tareas = [
+                {
+                    usuario: "Miguelo",
+                    contenido: "asdadasdasda",
+                    editar: false
+                }
+            ];
+
+            $scope.agregarTarea = function () {
+                $scope.tarea.editar = false;
+                $scope.tareas.push($scope.tarea);
+                $scope.tarea = {};
+            }
+            $scope.eliminarTarea = function (tar) {
+                var indice = $scope.tareas.indexOf(tar);
+                $scope.tareas.splice(indice, 1);
+            }
+            $scope.modificarTarea = function (tar) {
+                tar.editar = true;
+            }
+            $scope.guardarTarea = function (tar){
+                //PARA ARREGLAR
+                 $scope.tarea.editar = false;
+                $scope.tareas.push($scope.tarea);
+                $scope.tarea = {};
+            }
+            $scope.cancelarGuardar = function (tar){
+                tar.editar = false;
+                $scope.ediTarea = {};       
+            }
+
+
+        }]);
+    </script>
+</body>
+
+</html>

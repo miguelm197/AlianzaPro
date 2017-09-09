@@ -109,19 +109,23 @@
                 marca: 'Porsche',
                 color: 'Azul'
             }];
+        });
+        
+        app.filter('f', function () {
 
-            app.filter('f', function () {
-                return function (input) {
-                    var salida = [];
-                    angular.forEach(input, function (auto) {
-                     salida.push(auto.marca.toUpperCase())
-                    })
-                    return salida;
+            return function (input) {
+                var salida = "";
+                var letra = "";
+                for (var i = 0; i < input.length; i++) {
+                    letra = input[i];
+
+                    if (i == 0 || i == input.length -1) {
+                        letra = input[i].toUpperCase();
+                    }
+                    salida += letra;
                 }
-
-            })
-
-
+                return salida;
+            }
         });
     </script>
 </head>
@@ -177,8 +181,8 @@
     <div class="contenedor" ng-controller="contrl_3">
         <input type="text" placeholder="Filtro" ng-model="hola"><br><br>
         <br>
-        <div ng-repeat="autito in autos | orderBy:'marca' | f">
-            {{autito.marca}}
+        <div ng-repeat="autito in autos | filter:hola |orderBy:'color'">
+            {{autito.marca | f}}
         </div>
 
     </div>
@@ -200,189 +204,9 @@
 
 
 
-    <div class="linea"></div>
-    <div class="linea"></div>
-    <div class="linea"></div>
 
 
 
-
-
-
-    <h3>Concatenar texto con expresión deangular</h3>
-    <h4>"Completar la frase visualizando la propiedad del objeto del arreglo autos: ..."cruzando el semaforo con mi auto Ferrari
-        de color__________".</h4>
-
-    <div class="contenedor ">
-        <span>Cruzando el semáforo con mi auto Ferrari de color {{autos[3].color}}.</span>
-    </div>
-
-
-
-
-    <div class="linea"></div>
-
-
-
-
-
-
-    <h3>aka-if</h3>
-    <h4>Mostrar el color del auto Fiat solo si el nombre de la person es Tomas sino mostrar el color del auto bmw.</h4>
-
-    <div class="contenedor ">
-        <span>{{persona.nombre === 'Tomas' ? autos[0].color : autos[2].color}}</span>
-    </div>
-
-
-
-
-
-    <div class="linea"></div>
-
-
-
-
-
-
-    <h3>Bucle de un objeto</h3>
-    <h4>"Hacer que la marca de los autos se vean en mayuscula"</h4>
-
-    <div class="contenedor ">
-        <div ng-repeat="a in autos">
-            <div>{{a.color | uppercase}}</div>
-        </div>
-    </div>
-
-
-
-
-
-    <div class="linea"></div>
-
-
-
-
-
-
-
-    <h3>ng-show</h3>
-    <h4>"Crear una seccion que contenga un input del tipo checkbox. Debajo un div cuyo fondo varia entre dos imagenes al seleccionar
-        y des-seleccionar el checkbox."</h4>
-
-    <div class="contenedor ">
-        <input type="checkbox" ng-model="checksito">Tócame <br>
-
-        <img ng-show="checksito" src="http://www.car-revs-daily.com/wp-content/uploads/2014/03/TESLA-MODEL-S-ANIMATION2-HEADER.gif">
-    </div>
-
-
-
-
-
-
-    <div class="linea"></div>
-
-
-
-
-
-
-
-    <h3>Bucle de un objeto / filtrar por marca de coche</h3>
-    <h4>"Mostrar una lista(ul,li) con los colores de los autos con marca Porche."</h4>
-
-    <div class="contenedor ">
-        <ul>
-            <div ng-repeat="a in autos">
-                <div ng-switch on="{{ a.marca == 'Porsche'}}">
-                    <li ng-switch-when="true">
-                        {{a.color}}
-                    </li>
-                </div>
-            </div>
-        </ul>
-    </div>
-
-
-
-
-
-    <div class="linea"></div>
-
-
-
-
-
-
-
-    <h3>Select</h3>
-    <h4>"Al seleccionar un color del combo, se cambie el fondo con el color seleccionado."</h4>
-
-
-    <div class="contenedor">
-        Color de fondo:
-        <select ng-model="fondo">
-            <option value="white" ng-click="estilazo={'background-color':fondo}"></option>
-            <option value="#3e67b9" ng-click="estilazo={'background-color':fondo}">Azul</option>
-            <option value="red" ng-click="estilazo={'background-color':fondo}">Rojo</option>
-            <option value="green" ng-click="estilazo={'background-color':fondo}">Verde</option>
-            <option value="gray" ng-click="estilazo={'background-color':fondo}">Gris</option>
-        </select>
-    </div>
-
-
-
-
-
-    <div class="linea"></div>
-
-
-
-
-
-
-    .
-    <h3>Input</h3>
-    <h4>"Al escribir una figura geométrica si dibuje debajo"</h4>
-
-    <div class="contenedor ">
-        <input type="text" placeholder="Figura" ng-model="figurita">
-        <br><br>
-
-
-
-
-
-        <div class="figura">
-
-
-
-
-
-
-            <div ng-switch on="figurita">
-                <div ng-switch-when="cuadrado">
-                    <div ng-class="figurita"></div>
-                </div>
-                <div ng-switch-when="rectangulo">
-                    <div ng-class="figurita"></div>
-                </div>
-                <div ng-switch-when="circulo">
-                    <div ng-class="figurita"></div>
-                </div>
-                <div ng-switch-default>Valor incorrecto</div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-    <div class="linea"></div>
 
 </body>
 

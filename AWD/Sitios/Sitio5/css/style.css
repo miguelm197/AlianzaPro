@@ -6,14 +6,27 @@
 /*ANIMACIONES*/
 @keyframes corazon {
     0%   {background-size: 900px, 400px; background-position-x: 0px, 250px;  background-position-y: 150px, 400px; }
-    10%  {background-size: 900px, 450px; background-position-x: 0px, 225px;  background-position-y: 150px, 395px; }
+    10%  {background-size: 900px, 450px; background-position-x: 0px, 225px;  background-position-y: 150px, 390px; }
     20%  {background-size: 900px, 400px; background-position-x: 0px, 250px;  background-position-y: 150px, 400px; }
-    30%  {background-size: 900px, 450px; background-position-x: 0px, 225px;  background-position-y: 150px, 395px; }
+    30%  {background-size: 900px, 450px; background-position-x: 0px, 225px;  background-position-y: 150px, 390px; }
     100% {background-size: 900px, 400px; background-position-x: 0px, 250px;  background-position-y: 150px, 400px; }
 }
 
+@keyframes corazonMobile {
+    0%   {background-size: 700px, 350px; background-position-x: 10px, 185px;  background-position-y: 100px, 285px; }
+    10%  {background-size: 700px, 400px; background-position-x: 10px, 155px;  background-position-y: 100px, 275px; }
+    20%  {background-size: 700px, 350px; background-position-x: 10px, 185px;  background-position-y: 100px, 285px; }
+    30%  {background-size: 700px, 400px; background-position-x: 10px, 155px;  background-position-y: 100px, 275px; }
+    100% {background-size: 700px, 350px; background-position-x: 10px, 185px;  background-position-y: 100px, 285px; }
+}
 
-
+@keyframes corazonTablet {
+    0%   {background-size: 700px, 350px; background-position-x: -50px, 125px;  background-position-y: 200px, 385px; }
+    10%  {background-size: 700px, 400px; background-position-x: -50px, 105px;  background-position-y: 200px, 375px; }
+    20%  {background-size: 700px, 350px; background-position-x: -50px, 125px;  background-position-y: 200px, 385px; }
+    30%  {background-size: 700px, 400px; background-position-x: -50px, 105px;  background-position-y: 200px, 375px; }
+    100% {background-size: 700px, 350px; background-position-x: -50px, 125px;  background-position-y: 200px, 385px; }
+}
 
 
 
@@ -124,30 +137,11 @@ span{
     text-align: justify;
 }
 
-.slider1 .imagen {
-    position: relative;
-    width: 60%;
-    height: 100%;
-}
-.slider1 .imagen {
-    top: 50%;
-    left: 0%;
-    transform: translate(0%, -50%);
-}
 
-.slider1 .imagen .auricular{
-    position: relative;
-    width: 100%;
-    height: 100%;
 
-}
-.slider1 .imagen .corazon img{
-    width: 30%;
-     margin-top: 3%;
-      animation-name: corazon;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
+
+
+
 
 
 
@@ -176,7 +170,6 @@ span{
     width: 40%;
     position: absolute;
     right: 3%;
-    
 }
 .slider2 .sector { width: 70%; }
 .slider2 .contenedor .sector .habilidades { margin-bottom: 60px; } 
@@ -202,48 +195,6 @@ span{
 .slider2 .contenedor .sector .leng-tec > .abajo .columna1  span { background-color: rgba(0, 0, 0, 0.60); width: 23%; } 
 .slider2 .contenedor .sector .leng-tec > .abajo .columna2  span { background-color: rgba(0, 0, 0, 0.60); width: 31%; } 
 
-
-
-.slider2 .imagen {
-    height: 100%;
-    width: 60%;
-    position: relative;
-}
-.slider2 .imagen img{
-    position: absolute;
-} 
-
-
-@keyframes despegue {
-    
- }
-.slider2 .imagen .cohete img{
-    width: 500px;
-    left: 300px;
-    bottom: 100px;
-    z-index: 10;
-    animation-name: despegue;
-    animation-duration: 1s;
-}
-
-.slider2 .imagen .fuego img{
-    width: 897px;
-    left:100px;
-    bottom: -200px;
-}
-
-.slider2 .imagen .humo img{
-    width: 1500px;
-    left: -200px;
-    bottom: -615px;
-}
-
-.slider2 .imagen .humo1     { z-index: 1; }
-.slider2 .imagen .fuego1    { z-index: 2; }
-.slider2 .imagen .humo2     { z-index: 3; }
-.slider2 .imagen .fuego2    { z-index: 4; }
-.slider2 .imagen .humo3     { z-index: 5; }
-.slider2 .imagen .fuego3    { z-index: 6; }
 
 
 
@@ -334,6 +285,73 @@ span{
     text-align: justify;
 }
 
+
+
+
+@media only screen and (max-width: 992px) {
+    .slider1 .contenedor{
+        width: 100%;
+        bottom: 3%;
+        left: 3%;
+    }
+    
+    .slider1{   
+        animation-name: corazonMobile;
+    }
+    
+
+
+    .slider2 .contenedor{
+        width: 60%;
+        position: absolute;
+        right: 3%;
+    }
+    .slider2 .sector { width: 100%; }
+
+        .slider2{
+            
+                background-size:    300px,   1000px, 1000px, 1000px, 600px,  780px,  1000px    ;
+            background-position-y:  200px,   480px,  5580px,  510px,  5650px,  510px,   5580px     ;
+            background-position-x:  0px,    -350px,   50px, -350px,   230px,  -242px,    0px       ;   
+        }
+    .slider2 .contenedor .sector .habilidades > .arriba  span{font-size: 2.5em; color: white; font-weight: 300; } 
+    .slider2 .contenedor .sector .leng-tec > .arriba  span{ font-size: 2.5em; color: white; font-weight: 300; } 
+    
+        
+}
+
+
+@media only screen and (min-width: 992px) and  (max-width: 1200px){
+
+    .titulo{
+        font-size: 3em;
+    }
+    .slider1{
+        animation-name: corazonTablet;
+    }
+    .slider1 .contenedor{
+        width: 40%;
+    }
+
+
+
+    .slider2 .contenedor{
+        width: 60%;
+        position: absolute;
+        right: 3%;
+    }
+    .slider2 .sector { width: 100%; }
+
+        .slider2{
+            
+                background-size:    300px,   1000px, 1000px, 1000px, 600px,  780px,  1000px    ;
+            background-position-y:  200px,   480px,  5580px,  510px,  5650px,  510px,   5580px     ;
+            background-position-x:  0px,    -350px,   50px, -350px,   230px,  -242px,    0px       ;   
+        }
+    
+
+    
+}
 
 
 
