@@ -9,48 +9,172 @@
     <title>Ejercicio4</title>
 
     <style>
+        .contenedor {
+            background-color: #f3f3f3;
+            padding: 1% 5%;
+            margin: 0px auto;
+            border-radius: 7px;
+        }
 
+        .gral {
+            width: 50%;
+        }
+
+        input {
+            width: 200px;
+            border: 1px solid #2e97a8;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            margin-bottom: -2px;
+            padding: 15px 7px;
+        }
+
+        textarea {
+            width: 200px;
+            border: 1px solid #2e97a8;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            margin-bottom: 7px;
+            padding: 7px;
+        }
+
+        button {
+            width: auto;
+            padding: 15px 35px;
+            
+            border: 1px solid gray;
+            border-radius: 5px;
+            background-color: transparent;
+        }
+
+        span,
+        input,
+        textarea,
+        button,
+        h1,
+        h3 {
+            font-family: Helvetica, sans-serif;
+        }
+
+        input,
+        textarea {
+            font-size: 13px;
+        }
+
+        ul {}
+
+        li {
+            margin: 20px 0px;
+            list-style: none;
+            background-color: #ececec;
+            padding: 17px;
+            border-radius: 5px;
+        }
+
+        .grupo {
+            margin: 10px 0px;
+            background-color: #d5d5d5;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .medio {
+            width: 50%;
+        }
+
+        .largo {
+            width: 100%;
+        }
+
+        .azul {
+            background-color: #2f97c8;
+            color: white;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        h7 {
+            color: #636363;
+        }
+
+        .negrita {
+            font-weight: bold;
+        }
+
+        .subrayado {
+            text-decoration-line: underline;
+        }
+
+        .enlace {
+            color: #2f97c8;
+            padding: 0px;
+            margin: 0px;
+            height: auto;
+            border: none;
+            border-radius: 0px;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .enlace:hover {
+            color: #8fc3f0;
+            transition: all .3s;
+        }
     </style>
 
 </head>
 
 <body ng-style="estilazo" ng-controller="tareasCtrl">
+    <div class="contenedor gral">
+        <div class="contenedor">
+            <h1>Lista de tareas</h1>
 
-    <input type="text" ng-model="tarea.usuario" placeholder="Tu nombre">
-    <input type="text" ng-model="tarea.contenido" placeholder="Tarea">
+            <input class="medio" type="text" ng-model="tarea.usuario" placeholder="Tu nombre">
+            <textarea class="largo" type="text" ng-model="tarea.contenido" placeholder="Tarea"></textarea>
 
-    <button ng-click="agregarTarea()">Agregar</button>
-    <br>
-    <span>{{tarea.contenido}} - Creada por: {{tarea.usuario}}</span>
-    <br><br>
-    <ul>
+            <button class="medio azul" ng-click="agregarTarea()">Agregar</button>
+            <button class="enlace" ng-click="limpiarScope()">Limpiar lista</button>
 
-        <li ng-repeat="tare in tareas">
+            <br>
+            <div class="grupo">
+                <span>{{tarea.contenido}} - Creada por: {{tarea.usuario}}</span>
+            </div>
+            <br><br>
+            <ul>
 
+                <h3 ng-show="listaVacia">Lista de tareas vacía. </h3>
 
+                <li ng-repeat="tare in tareas">
 
-            <span ng-hide="tare.editar">{{tare.usuario}} -  {{tare.contenido}}</span>
+                    <span ng-hide="tare.editar">{{tare.contenido}} - {{tare.usuario}} </span>
 
-            <input ng-show="tare.editar" type="text" ng-model="ediTarea.contenido" value="{{tare.contenido}}">
-            <input ng-show="tare.editar" type="text" ng-model="ediTarea.usuario" value="{{tare.usuario}}">
-            <button ng-show="tare.editar" ng-click="guardarTarea(tare)">Guardar</button>
-            <button ng-show="tare.editar" ng-click="cancelarGuardar(tare)">Cancelar</button>
-
-
-
-
-            <button ng-hide="tare.editar"ng-click="modificarTarea(tare)">Editar</button>
-            <button ng-hide="tare.editar"ng-click="eliminarTarea(tare)">X</button>
-        </li>
-
-    </ul>
+                    <input class="medio" ng-show="tare.editar" type="text" ng-model="ediTarea.usuario" value="{{tare.usuario}}" placeholder="Usuario">
+                    <button class="enlace subrayado" ng-show="tare.editar" ng-click="guardarTarea(tare, ediTarea)">Guardar</button>
+                    <button class="enlace" ng-show="tare.editar" ng-click="cancelarGuardar(tare)">Cancelar</button>
+                    <textarea class="largo" ng-show="tare.editar" type="text" ng-model="ediTarea.contenido" value="{{tare.contenido}}" placeholder="Contenido"></textarea>
 
 
+
+
+                    <button class="enlace" ng-hide="tare.editar" ng-click="modificarTarea(tare)">Editar</button>
+                    <button class="enlace" ng-hide="tare.editar" ng-click="eliminarTarea(tare)">Eliminar</button>
+                </li>
+
+            </ul>
+
+
+        </div>
+    </div>
 
     <script>
         var app = angular.module('myApp', []);
 
         app.controller("tareasCtrl", ["$scope", function ($scope) {
+            $scope.listaVacia = false;
             $scope.tarea = {};
             $scope.ediTarea = {};
             $scope.tareas = [
@@ -64,24 +188,38 @@
             $scope.agregarTarea = function () {
                 $scope.tarea.editar = false;
                 $scope.tareas.push($scope.tarea);
+                $scope.listaVacia = false;
                 $scope.tarea = {};
             }
             $scope.eliminarTarea = function (tar) {
                 var indice = $scope.tareas.indexOf(tar);
                 $scope.tareas.splice(indice, 1);
+                var cantTareas = $scope.tareas.length;
+
+                if (cantTareas == 0) {
+                    $scope.listaVacia = true;
+                }
             }
             $scope.modificarTarea = function (tar) {
                 tar.editar = true;
+                $scope.ediTarea.usuario = tar.usuario;
+                $scope.ediTarea.contenido = tar.contenido;
             }
-            $scope.guardarTarea = function (tar){
+            $scope.guardarTarea = function (tar, ediTarea) {
                 //PARA ARREGLAR
-                 $scope.tarea.editar = false;
-                $scope.tareas.push($scope.tarea);
-                $scope.tarea = {};
-            }
-            $scope.cancelarGuardar = function (tar){
                 tar.editar = false;
-                $scope.ediTarea = {};       
+                tar.usuario = ediTarea.usuario;
+                tar.contenido = ediTarea.contenido;
+                $scope.ediTarea = {};
+            }
+            $scope.cancelarGuardar = function (tar) {
+                tar.editar = false;
+                $scope.ediTarea = {};
+            }
+            $scope.limpiarScope = function () {
+                delete $scope.tareas;
+                $scope.tareas = [];
+                $scope.listaVacia = true;
             }
 
 
