@@ -43,7 +43,7 @@
         }
 
         input[type="checkbox"]:checked {
-            background: #a2a2a2;
+            background: #d5d5d5;
             transition: all .2s;
         }
 
@@ -207,7 +207,7 @@
 
                 <li ng-repeat="tare in tareas">
 
-                    <input type="checkbox" ng-model="tare.hecho" ng-click="tacharTarea(tare)">
+                    <input ng-hide="tare.editar" type="checkbox" ng-model="tare.hecho" ng-click="tacharTarea(tare)">
 
                     <span ng-hide="tare.editar" ng-class="tare.tachado">{{tare.contenido}} - {{tare.usuario}} </span>
 
@@ -249,7 +249,7 @@
 
             $scope.agregarTarea = function () {
 
-                if ($scope.tarea.contenido == undefined) {
+                if ($scope.tarea.contenido == undefined || $scope.tarea.contenido == "") {
                     $scope.validacion = false;
                 } else {
                     $scope.validacion = true;
