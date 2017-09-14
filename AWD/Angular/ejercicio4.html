@@ -28,9 +28,10 @@
             margin-bottom: -2px;
             padding: 15px 7px;
         }
-
         textarea {
             width: 200px;
+            height: 200px;
+            resize: vertical;
             border: 1px solid #2e97a8;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
@@ -41,10 +42,16 @@
         button {
             width: auto;
             padding: 15px 35px;
-            
+
             border: 1px solid gray;
             border-radius: 5px;
             background-color: transparent;
+            transition: all .3s;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: .7;
         }
 
         span,
@@ -83,12 +90,18 @@
         }
 
         .largo {
-            width: 100%;
+            width: calc(100% - 14px);
         }
 
         .azul {
             background-color: #2f97c8;
+            border: none;
             color: white;
+        }
+
+        .mal {
+            border: 1px solid red;
+            background-color: red;
         }
 
         h1,
@@ -107,6 +120,10 @@
 
         .subrayado {
             text-decoration-line: underline;
+        }
+
+        .tachado {
+            text-decoration-line: line-through;
         }
 
         .enlace {
@@ -134,7 +151,19 @@
             <h1>Lista de tareas</h1>
 
             <input class="medio" type="text" ng-model="tarea.usuario" placeholder="Tu nombre">
-            <textarea class="largo" type="text" ng-model="tarea.contenido" placeholder="Tarea"></textarea>
+
+
+            <div ng-switch on="validacion">
+                <div ng-switch-when="false">
+                    <textarea ng-class="mal" class="largo" type="text" ng-model="tarea.contenido" placeholder="Tasassarea"></textarea>
+                </div>
+                <div ng-switch-when="true">
+                    <textarea class="largo" type="text" ng-model="tarea.contenido" placeholder="Tarea"></textarea>
+                </div>
+            </div>
+
+
+
 
             <button class="medio azul" ng-click="agregarTarea()">Agregar</button>
             <button class="enlace" ng-click="limpiarScope()">Limpiar lista</button>
@@ -150,7 +179,9 @@
 
                 <li ng-repeat="tare in tareas">
 
-                    <span ng-hide="tare.editar">{{tare.contenido}} - {{tare.usuario}} </span>
+                    <input type="checkbox" ng-model="tare.hecho" ng-click="tacharTarea(tare)">
+
+                    <span ng-hide="tare.editar" ng-class="tare.tachado">{{tare.contenido}} - {{tare.usuario}} </span>
 
                     <input class="medio" ng-show="tare.editar" type="text" ng-model="ediTarea.usuario" value="{{tare.usuario}}" placeholder="Usuario">
                     <button class="enlace subrayado" ng-show="tare.editar" ng-click="guardarTarea(tare, ediTarea)">Guardar</button>
@@ -174,22 +205,38 @@
         var app = angular.module('myApp', []);
 
         app.controller("tareasCtrl", ["$scope", function ($scope) {
-            $scope.listaVacia = false;
+            $scope.validacion = false;
             $scope.tarea = {};
             $scope.ediTarea = {};
             $scope.tareas = [
                 {
                     usuario: "Miguelo",
                     contenido: "asdadasdasda",
+                    hecho: false,
+                    tachado: "sinTachar",
+                    correcto: true,
                     editar: false
                 }
             ];
 
             $scope.agregarTarea = function () {
-                $scope.tarea.editar = false;
-                $scope.tareas.push($scope.tarea);
-                $scope.listaVacia = false;
-                $scope.tarea = {};
+
+                if ($scope.tarea.contenido == undefined) {
+                    $scope.validacion = false;
+                } else {
+                    $scope.validacion = true;
+                }
+
+                if ($scope.validacion) {
+                    if ($scope.tarea.usuario == undefined) {
+                        $scope.tarea.usuario = "Sin usuario"
+                    }
+                    $scope.tarea.editar = false;
+                    $scope.tarea.hecho = false;
+                    $scope.tareas.push($scope.tarea);
+                    $scope.tarea = {};
+                }
+
             }
             $scope.eliminarTarea = function (tar) {
                 var indice = $scope.tareas.indexOf(tar);
@@ -206,7 +253,12 @@
                 $scope.ediTarea.contenido = tar.contenido;
             }
             $scope.guardarTarea = function (tar, ediTarea) {
-                //PARA ARREGLAR
+                if ($scope.ediTarea.contenido == "") {
+                    $scope.ediTarea.correcto = false;
+                } else {
+                    $scope.ediTarea.correcto = true;
+                }
+
                 tar.editar = false;
                 tar.usuario = ediTarea.usuario;
                 tar.contenido = ediTarea.contenido;
@@ -219,7 +271,13 @@
             $scope.limpiarScope = function () {
                 delete $scope.tareas;
                 $scope.tareas = [];
-                $scope.listaVacia = true;
+            }
+            $scope.tacharTarea = function (tar) {
+                if (tar.hecho) {
+                    tar.tachado = "tachado";
+                } else {
+                    tar.tachado = "sinTachar";
+                }
             }
 
 

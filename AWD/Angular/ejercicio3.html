@@ -168,44 +168,22 @@
 
 
 
-
     <div class="linea"></div>
 
 
-
-
+    
     <h3>Crear filtro</h3>
     <h4>"Crear un filtro personalizado en el que la primer y ultima letra de la marca de los autos sean mayuscula y a la vez
         se podra filtrar el arreglo de autos por el valor de la marca ingresada en un input."</h4>
 
     <div class="contenedor" ng-controller="contrl_3">
-        <input type="text" placeholder="Filtro" ng-model="hola"><br><br>
+        <input type="text" placeholder="Filtro" ng-model="hola.marca"><br><br>
         <br>
-        <div ng-repeat="autito in autos | filter:hola |orderBy:'color'">
+        <div ng-repeat="autito in autos | filter:hola | orderBy:'color'">
             {{autito.marca | f}}
         </div>
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </body>
