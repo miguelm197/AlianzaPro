@@ -1,0 +1,24 @@
+
+
+
+
+
+/**** MENU LATERAL *****/
+.menu-lateral{
+    position: absolute;
+    width: 220px;
+    height: 100%;
+    background-color: #2f829b;
+}
+.menu-lateral{
+    color: white;
+}
+.menu-lateral .s1 .logo{
+    font-weight: bold;
+    margin: 0px auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+/* .menu-lateral .s2 li{
+    text-decoration: none;
+} */
