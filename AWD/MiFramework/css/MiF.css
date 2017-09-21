@@ -134,6 +134,8 @@ textarea{
 }
 
 
+
+
 @media only screen and (min-width: 1200px){
 /* LARGO */
 
@@ -164,6 +166,10 @@ textarea{
     .f-ofs-lg-11{float: left; margin-left: calc(((100% / 12) * 11 ))}
     .f-ofs-lg-12{float: left; margin-left: calc(((100% / 12) * 12 ))}
 }
+
+
+
+
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     /* MEDIO */
@@ -197,6 +203,10 @@ textarea{
     .f-ofs-md-12{float: left; margin-left: calc(((100% / 12) * 12 ))}
 }
 
+
+
+
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
    /* CHICO */
     .f-sm-1 {float: left; width: calc(((100% / 12) * 1  ) - 20px)}
@@ -226,6 +236,10 @@ textarea{
     .f-ofs-sm-11{float: left; margin-left: calc(((100% / 12) * 11 ))}
     .f-ofs-sm-12{float: left; margin-left: calc(((100% / 12) * 12 ))}
 }
+
+
+
+
 @media only screen and (min-width: 561px) and (max-width: 767px) {
     /* EXTRA CHICO */
 
@@ -312,10 +326,4 @@ textarea{
     .f-xs-10{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
     .f-xs-11{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
     .f-xs-12{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
-
-
-
-
-
-
 }

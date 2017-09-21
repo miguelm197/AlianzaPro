@@ -18,10 +18,12 @@
 </head>
 
 <body ng-style="estilazo" ng-controller="tareasCtrl">
-    <div class="contenedor gral" >
+    <div class="contenedor gral">
         <div class="contenedor">
             <h1>Lista de tareas</h1>
-
+            <button class="enlace" ng-click="consulta()">Consulta</button>
+            <button class="enlace" ng-click="alta()">Alta</button><br>
+            
             <input class="medio" type="text" ng-model="tarea.usuario" placeholder="Tu nombre">
 
 
@@ -42,7 +44,7 @@
 
             <br>
             <div class="grupo">
-                <span>{{tarea.contenido}} - Creada por: {{tarea.usuario | f}}</span>
+                <span>{{tarea.contenido}} - Creada por: {{tarea.usuario}}</span>
             </div>
             <br><br>
             <ul>

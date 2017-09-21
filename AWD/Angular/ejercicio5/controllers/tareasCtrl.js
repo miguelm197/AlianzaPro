@@ -1,4 +1,5 @@
-app.controller("tareasCtrl", ["$scope", function ($scope) {
+
+app.controller("tareasCtrl", ['$scope', '$http', function ($scope, $http) {
     $scope.validacion = false;
     $scope.tarea = {};
     $scope.ediTarea = {};
@@ -73,6 +74,30 @@ app.controller("tareasCtrl", ["$scope", function ($scope) {
             tar.tachado = "sinTachar";
         }
     }
+    $scope.consulta = function () {
+        $http({
+            method: 'GET',
+            url: 'http://localhost:3000/tvshows'
+        }).then(function successCallback(response) {
+            console.log("Success",response);
+        }, function errorCallback(response) {
+            console.log("Error Countries",response);
+        });
+    }
 
-
+    $scope.alta = function (){
+        var objeto = {
+            "title": "SAPEEEEEE",
+            "year": "2031",
+            "country": "USA",
+            "poster": "asfasfasgasidgjnsdgi",
+            "seasons": "4",
+            "genre": "Drama",
+            "summary": "asoifjaosifjasoifjaoisfjaoijsfojasf"
+        }
+        $http.post("http://localhost:3000/tvshows/", objeto)
+        .then(function(respuesta){
+             console.log(respuesta);
+        });
+    }
 }]);
