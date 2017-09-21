@@ -1,17 +1,9 @@
 
-app.controller("tareasCtrl", ['$scope', '$http', function ($scope, $http) {
+app.controller("tareasCtrl", ['$scope', '$http', 'FacTareas', function ($scope, $http, FacTareas) {
     $scope.validacion = false;
     $scope.tarea = {};
     $scope.ediTarea = {};
     $scope.tareas = [
-        {
-            usuario: "Miguelo",
-            contenido: "asdadasdasda",
-            hecho: false,
-            tachado: "sinTachar",
-            correcto: true,
-            editar: false
-        }
     ];
 
     $scope.agregarTarea = function () {
@@ -28,19 +20,20 @@ app.controller("tareasCtrl", ['$scope', '$http', function ($scope, $http) {
             }
             $scope.tarea.editar = false;
             $scope.tarea.hecho = false;
-            $scope.tareas.push($scope.tarea);
+            FacTareas.agregarTarea($scope.tarea.usuario, $scope.tarea.contenido);
             $scope.tarea = {};
         }
-
     }
     $scope.eliminarTarea = function (tar) {
-        var indice = $scope.tareas.indexOf(tar);
-        $scope.tareas.splice(indice, 1);
-        var cantTareas = $scope.tareas.length;
+        FacTareas.eliminarTarea(tar.id);
 
-        if (cantTareas == 0) {
-            $scope.listaVacia = true;
-        }
+        // var indice = $scope.tareas.indexOf(tar);
+        // $scope.tareas.splice(indice, 1);
+        // var cantTareas = $scope.tareas.length;
+
+        // if (cantTareas == 0) {
+        //     $scope.listaVacia = true;
+        // }
     }
     $scope.modificarTarea = function (tar) {
         tar.editar = true;
@@ -64,8 +57,7 @@ app.controller("tareasCtrl", ['$scope', '$http', function ($scope, $http) {
         $scope.ediTarea = {};
     }
     $scope.limpiarScope = function () {
-        delete $scope.tareas;
-        $scope.tareas = [];
+        $scope.tareas.length = 0;
     }
     $scope.tacharTarea = function (tar) {
         if (tar.hecho) {
@@ -75,29 +67,25 @@ app.controller("tareasCtrl", ['$scope', '$http', function ($scope, $http) {
         }
     }
     $scope.consulta = function () {
-        $http({
-            method: 'GET',
-            url: 'http://localhost:3000/tvshows'
-        }).then(function successCallback(response) {
-            console.log("Success",response);
-        }, function errorCallback(response) {
-            console.log("Error Countries",response);
+        $scope.tareas.length = 0;
+        FacTareas.traerTareas().then(function (data) {
+            for (var t = 0; t < data.length; t++) {
+
+                var tarea = {
+                    id: data[t]._id,
+                    usuario: data[t].usuario,
+                    contenido: data[t].contenido,
+                    hecho: data[t].hecho,
+                    tachado: "sinTachar",
+                    correcto: true,
+                    editar: false
+                }
+                $scope.tareas.push(tarea);
+            }
         });
     }
 
-    $scope.alta = function (){
-        var objeto = {
-            "title": "SAPEEEEEE",
-            "year": "2031",
-            "country": "USA",
-            "poster": "asfasfasgasidgjnsdgi",
-            "seasons": "4",
-            "genre": "Drama",
-            "summary": "asoifjaosifjasoifjaoisfjaoijsfojasf"
-        }
-        $http.post("http://localhost:3000/tvshows/", objeto)
-        .then(function(respuesta){
-             console.log(respuesta);
-        });
+    $scope.alta = function () {
+
     }
 }]);

@@ -10,6 +10,7 @@
     <script src="app.js"></script>
 
     <script src="controllers/tareasCtrl.js"></script>
+    <script src="services/servicios.js"></script>
     <script src="filters/f.js"></script>
     
     
@@ -17,7 +18,7 @@
 
 </head>
 
-<body ng-style="estilazo" ng-controller="tareasCtrl">
+<body ng-style="estilazo" ng-controller="tareasCtrl" ng-init="consulta()">
     <div class="contenedor gral">
         <div class="contenedor">
             <h1>Lista de tareas</h1>
