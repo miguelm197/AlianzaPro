@@ -22,15 +22,13 @@
     <div class="contenedor gral">
         <div class="contenedor">
             <h1>Lista de tareas</h1>
-            <button class="enlace" ng-click="consulta()">Consulta</button>
-            <button class="enlace" ng-click="alta()">Alta</button><br>
             
             <input class="medio" type="text" ng-model="tarea.usuario" placeholder="Tu nombre">
 
 
             <div ng-switch on="validacion">
                 <div ng-switch-when="false">
-                    <textarea ng-class="mal" class="largo" type="text" ng-model="tarea.contenido" placeholder="Tasassarea"></textarea>
+                    <textarea ng-class="mal" class="largo" type="text" ng-model="tarea.contenido" placeholder="Tarea"></textarea>
                 </div>
                 <div ng-switch-when="true">
                     <textarea class="largo" type="text" ng-model="tarea.contenido" placeholder="Tarea"></textarea>
@@ -39,9 +37,11 @@
 
 
 
-
+ 
             <button class="medio azul" ng-click="agregarTarea()">Agregar</button>
-            <button class="enlace" ng-click="limpiarScope()">Limpiar lista</button>
+            <button class="enlace" ng-click="consulta()"> Refrescar Lista | </button>
+            <button class="enlace" ng-click="limpiarScope()"> Limpiar lista </button>
+            
 
             <br>
             <div class="grupo">

@@ -27,13 +27,13 @@ app.controller("tareasCtrl", ['$scope', '$http', 'FacTareas', function ($scope, 
     $scope.eliminarTarea = function (tar) {
         FacTareas.eliminarTarea(tar.id);
 
-        // var indice = $scope.tareas.indexOf(tar);
-        // $scope.tareas.splice(indice, 1);
-        // var cantTareas = $scope.tareas.length;
+        var indice = $scope.tareas.indexOf(tar);
+        $scope.tareas.splice(indice, 1);
+        var cantTareas = $scope.tareas.length;
 
-        // if (cantTareas == 0) {
-        //     $scope.listaVacia = true;
-        // }
+        if (cantTareas == 0) {
+            $scope.listaVacia = true;
+        }
     }
     $scope.modificarTarea = function (tar) {
         tar.editar = true;
@@ -50,6 +50,7 @@ app.controller("tareasCtrl", ['$scope', '$http', 'FacTareas', function ($scope, 
         tar.editar = false;
         tar.usuario = ediTarea.usuario;
         tar.contenido = ediTarea.contenido;
+        FacTareas.actualizarTarea(tar.id, tar.usuario, tar.contenido, tar.hecho);
         $scope.ediTarea = {};
     }
     $scope.cancelarGuardar = function (tar) {
@@ -65,6 +66,8 @@ app.controller("tareasCtrl", ['$scope', '$http', 'FacTareas', function ($scope, 
         } else {
             tar.tachado = "sinTachar";
         }
+
+        FacTareas.actualizarTarea(tar.id, tar.usuario, tar.contenido, tar.hecho);
     }
     $scope.consulta = function () {
         $scope.tareas.length = 0;
@@ -76,10 +79,12 @@ app.controller("tareasCtrl", ['$scope', '$http', 'FacTareas', function ($scope, 
                     usuario: data[t].usuario,
                     contenido: data[t].contenido,
                     hecho: data[t].hecho,
-                    tachado: "sinTachar",
                     correcto: true,
                     editar: false
                 }
+                if (tarea.hecho) tarea.tachado = "tachado"
+                else tarea.tachado = "sinTachar"
+                console.log(tarea)
                 $scope.tareas.push(tarea);
             }
         });
