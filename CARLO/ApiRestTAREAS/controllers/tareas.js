@@ -29,15 +29,40 @@ exports.agregarTarea = function (req, res) {
 
     tarea.save(function (err, tarea) {
         if (err) return res.send(500, err.message);
+        console.log('POST Se agregó una tarea nueva');
+
         res.status(200).jsonp(tarea);
     });
 };
+
+
+
+//PUT - Actualizar una tarea en la Base de Datos
+exports.actualizarTarea = function (req, res) {
+    SCH_Tarea.findById(req.params.id, function (err, tarea) {
+        tarea.usuario = req.body.usuario,
+        tarea.contenido = req.body.contenido,
+        tarea.hecho = req.body.hecho,
+
+            tarea.save(function (err) {
+                if (err) return res.send(500, err.message);
+                console.log('PUT Se modificó una tarea');
+
+                res.status(200).jsonp(tarea);
+            });
+    });
+};
+
+
 
 //DELETE - Eliminar una tarea de la Base de Datos
 exports.eliminarTarea = function (req, res) {
     SCH_Tarea.findById(req.params.id, function (err, tarea) {
         tarea.remove(function (err) {
             if (err) return res.send(500, err.message);
+
+            console.log('DELETE Se eliminó una tarea');
+
             res.status(200);
         })
     });

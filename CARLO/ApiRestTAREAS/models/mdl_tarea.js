@@ -3,7 +3,7 @@ exports = module.exports = function (app, mongoose) {
     var esquemaTarea = new mongoose.Schema({
         usuario:   { type: String },
         contenido: { type: String },
-        hecho:     { type: String },
+        hecho:     { type: Boolean },
     });
 
     mongoose.model('mdl_Tarea', esquemaTarea, 'tareas');

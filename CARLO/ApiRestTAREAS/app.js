@@ -49,7 +49,7 @@ router.route('/tareas')
 
 router.route('/tareas/:id')
     // .get(CtrlTarea.findById)
-    // .put(CtrlTarea.updateTVShow)
+    .put(CtrlTarea.actualizarTarea)
     .delete(CtrlTarea.eliminarTarea);
 
 app.use(router);
