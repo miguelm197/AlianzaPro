@@ -41,7 +41,7 @@ router.get('/', function (req, res) {
     res.send("Que tal sabandijas!");
     // next();
 });
- 
+
 router.route('/tareas')
     .get(CtrlTarea.consultaTareas)
     .post(CtrlTarea.agregarTarea);
