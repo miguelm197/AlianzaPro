@@ -1,24 +1,50 @@
-
-
-
-
-
-/**** MENU LATERAL *****/
-.menu-lateral{
-    position: absolute;
-    width: 220px;
-    height: 100%;
-    background-color: #2f829b;
-}
-.menu-lateral{
+/* GENERAL */
+h2{
     color: white;
 }
-.menu-lateral .s1 .logo{
-    font-weight: bold;
-    margin: 0px auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
+
+.panelIzquierdo{
+    position: absolute;
+    height: 100%;
+    width: 250px; 
 }
-/* .menu-lateral .s2 li{
-    text-decoration: none;
-} */
+.contenedor{
+    background-color: #166A91;
+    width: 100%;
+    height: 100%;    
+}
+.panelIzquierdo .logo{
+    margin-top: 9px;
+    text-align: center;
+}
+.panelIzquierdo .logo h2{
+    font-weight: 600;
+}
+.panelIzquierdo .menu{
+    color: white;
+    font-weight: 200;
+}
+.panelIzquierdo .menu{
+    list-style-type: none;
+    padding: 0px;
+}
+.panelIzquierdo .menu li{
+    padding: 8px 0px;
+    margin-top: 1px;
+    padding-left: 40px;
+    cursor: pointer;
+    opacity: .7;
+    transition:all .2s;
+}    
+.panelIzquierdo .menu li:hover{
+    background-color: #347D9F;
+    transition:all .2s;
+}
+.panelIzquierdo .menu li:active{
+    background-color: #104861;
+    transition:all .2s;
+}
+.panelIzquierdo .menu li i{
+    width: 35px;
+    text-align: center;
+}

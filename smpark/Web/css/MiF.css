@@ -1,0 +1,329 @@
+/*** FUENTES ***/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+
+
+/* GENERALES */
+body{
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6{ 
+    margin: 0px;
+    margin-bottom: 5px;
+    font-weight: 400;     
+}
+label, input, textarea, select{
+    display: block;
+}
+label{
+    font-size: 14px;
+}
+
+
+/* BASICOS */
+.f-contenedor{
+    margin: 10px;
+    padding: 10px 20px;
+}
+.f-linea{
+    height: 1px;
+    margin: 30px 0px;
+    background-color: black;
+}
+
+
+
+/* BOTONES */
+button{
+    height: 30px;
+    padding: 0px 30px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    border:none;
+    /* border: 1px solid gray; */
+    border-radius: 4px;
+    margin:5px 0px;
+}
+button:hover{
+    cursor: pointer;
+}
+.f-btn-largo{
+    width: 100%;
+}
+.f-btn-corto{
+    padding: 0px 10px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.f-btn-func{
+    padding: 0px 12px;
+    padding-bottom: 3px;
+    font-weight: 600; 
+}
+.f-btn-enlace{
+    background-color: inherit;
+    padding: 0px 20px;
+    height: auto;
+    color: #356fba;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+
+/* INPUTS */
+input{
+    width: calc(100% - 30px);
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 0px 15px;
+}
+select{
+    width: calc(100%);
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 0px 15px;
+}
+select option{
+   height: 25px;
+   padding-top: 10px;
+}
+textarea{
+    width: 100%;
+    resize: vertical;
+    height: 100px;
+
+    width: calc(100% - 20px);
+    border: 1px solid gray;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;    
+}
+
+.f-input-largo{
+    width: 100%;
+}
+.f-input-medio{
+    width: 500px;
+}
+.f-input-corto{
+    width: 200px;
+}
+
+
+
+
+/* GRID */
+.cuadradito{
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+}
+.f-row {
+    display: table;
+    width: 100%;
+}
+.f-row > div {
+    padding: 0px 10px;
+}
+
+
+
+
+@media only screen and (min-width: 1200px){
+/* LARGO */
+
+    .f-lg-1 {float: left; width: calc(((100% / 12) * 1  ) - 20px)}
+    .f-lg-2 {float: left; width: calc(((100% / 12) * 2  ) - 20px)}
+    .f-lg-3 {float: left; width: calc(((100% / 12) * 3  ) - 20px)}
+    .f-lg-4 {float: left; width: calc(((100% / 12) * 4  ) - 20px)}
+    .f-lg-5 {float: left; width: calc(((100% / 12) * 5  ) - 20px)}
+    .f-lg-6 {float: left; width: calc(((100% / 12) * 6  ) - 20px)}
+    .f-lg-7 {float: left; width: calc(((100% / 12) * 7  ) - 20px)}
+    .f-lg-8 {float: left; width: calc(((100% / 12) * 8  ) - 20px)}
+    .f-lg-9 {float: left; width: calc(((100% / 12) * 9  ) - 20px)}
+    .f-lg-10{float: left; width: calc(((100% / 12) * 10 ) - 20px)}
+    .f-lg-11{float: left; width: calc(((100% / 12) * 11 ) - 20px)}
+    .f-lg-12{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+
+
+    .f-ofs-lg-1 {float: left; margin-left: calc(((100% / 12) * 1  ))}
+    .f-ofs-lg-2 {float: left; margin-left: calc(((100% / 12) * 2  ))}
+    .f-ofs-lg-3 {float: left; margin-left: calc(((100% / 12) * 3  ))}
+    .f-ofs-lg-4 {float: left; margin-left: calc(((100% / 12) * 4  ))}
+    .f-ofs-lg-5 {float: left; margin-left: calc(((100% / 12) * 5  ))}
+    .f-ofs-lg-6 {float: left; margin-left: calc(((100% / 12) * 6  ))}
+    .f-ofs-lg-7 {float: left; margin-left: calc(((100% / 12) * 7  ))}
+    .f-ofs-lg-8 {float: left; margin-left: calc(((100% / 12) * 8  ))}
+    .f-ofs-lg-9 {float: left; margin-left: calc(((100% / 12) * 9  ))}
+    .f-ofs-lg-10{float: left; margin-left: calc(((100% / 12) * 10 ))}
+    .f-ofs-lg-11{float: left; margin-left: calc(((100% / 12) * 11 ))}
+    .f-ofs-lg-12{float: left; margin-left: calc(((100% / 12) * 12 ))}
+}
+
+
+
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    /* MEDIO */
+   
+    .f-md-1 {float: left; width: calc(((100% / 12) * 1  ) - 20px)}
+    .f-md-2 {float: left; width: calc(((100% / 12) * 2  ) - 20px)}
+    .f-md-3 {float: left; width: calc(((100% / 12) * 3  ) - 20px)}
+    .f-md-4 {float: left; width: calc(((100% / 12) * 4  ) - 20px)}
+    .f-md-5 {float: left; width: calc(((100% / 12) * 5  ) - 20px)}
+    .f-md-6 {float: left; width: calc(((100% / 12) * 6  ) - 20px)}
+    .f-md-7 {float: left; width: calc(((100% / 12) * 7  ) - 20px)}
+    .f-md-8 {float: left; width: calc(((100% / 12) * 8  ) - 20px)}
+    .f-md-9 {float: left; width: calc(((100% / 12) * 9  ) - 20px)}
+    .f-md-10{float: left; width: calc(((100% / 12) * 10 ) - 20px)}
+    .f-md-11{float: left; width: calc(((100% / 12) * 11 ) - 20px)}
+    .f-md-12{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+
+    
+    
+    .f-ofs-md-1 {float: left; margin-left: calc(((100% / 12) * 1  ))}
+    .f-ofs-md-2 {float: left; margin-left: calc(((100% / 12) * 2  ))}
+    .f-ofs-md-3 {float: left; margin-left: calc(((100% / 12) * 3  ))}
+    .f-ofs-md-4 {float: left; margin-left: calc(((100% / 12) * 4  ))}
+    .f-ofs-md-5 {float: left; margin-left: calc(((100% / 12) * 5  ))}
+    .f-ofs-md-6 {float: left; margin-left: calc(((100% / 12) * 6  ))}
+    .f-ofs-md-7 {float: left; margin-left: calc(((100% / 12) * 7  ))}
+    .f-ofs-md-8 {float: left; margin-left: calc(((100% / 12) * 8  ))}
+    .f-ofs-md-9 {float: left; margin-left: calc(((100% / 12) * 9  ))}
+    .f-ofs-md-10{float: left; margin-left: calc(((100% / 12) * 10 ))}
+    .f-ofs-md-11{float: left; margin-left: calc(((100% / 12) * 11 ))}
+    .f-ofs-md-12{float: left; margin-left: calc(((100% / 12) * 12 ))}
+}
+
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+   /* CHICO */
+    .f-sm-1 {float: left; width: calc(((100% / 12) * 1  ) - 20px)}
+    .f-sm-2 {float: left; width: calc(((100% / 12) * 2  ) - 20px)}
+    .f-sm-3 {float: left; width: calc(((100% / 12) * 3  ) - 20px)}
+    .f-sm-4 {float: left; width: calc(((100% / 12) * 4  ) - 20px)}
+    .f-sm-5 {float: left; width: calc(((100% / 12) * 5  ) - 20px)}
+    .f-sm-6 {float: left; width: calc(((100% / 12) * 6  ) - 20px)}
+    .f-sm-7 {float: left; width: calc(((100% / 12) * 7  ) - 20px)}
+    .f-sm-8 {float: left; width: calc(((100% / 12) * 8  ) - 20px)}
+    .f-sm-9 {float: left; width: calc(((100% / 12) * 9  ) - 20px)}
+    .f-sm-10{float: left; width: calc(((100% / 12) * 10 ) - 20px)}
+    .f-sm-11{float: left; width: calc(((100% / 12) * 11 ) - 20px)}
+    .f-sm-12{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+
+    
+    .f-ofs-sm-1 {float: left; margin-left: calc(((100% / 12) * 1  ))}
+    .f-ofs-sm-2 {float: left; margin-left: calc(((100% / 12) * 2  ))}
+    .f-ofs-sm-3 {float: left; margin-left: calc(((100% / 12) * 3  ))}
+    .f-ofs-sm-4 {float: left; margin-left: calc(((100% / 12) * 4  ))}
+    .f-ofs-sm-5 {float: left; margin-left: calc(((100% / 12) * 5  ))}
+    .f-ofs-sm-6 {float: left; margin-left: calc(((100% / 12) * 6  ))}
+    .f-ofs-sm-7 {float: left; margin-left: calc(((100% / 12) * 7  ))}
+    .f-ofs-sm-8 {float: left; margin-left: calc(((100% / 12) * 8  ))}
+    .f-ofs-sm-9 {float: left; margin-left: calc(((100% / 12) * 9  ))}
+    .f-ofs-sm-10{float: left; margin-left: calc(((100% / 12) * 10 ))}
+    .f-ofs-sm-11{float: left; margin-left: calc(((100% / 12) * 11 ))}
+    .f-ofs-sm-12{float: left; margin-left: calc(((100% / 12) * 12 ))}
+}
+
+
+
+
+@media only screen and (min-width: 561px) and (max-width: 767px) {
+    /* EXTRA CHICO */
+
+    .f-xs-1 {float: left; width: calc(((100% / 12) * 1  ) - 20px)}
+    .f-xs-2 {float: left; width: calc(((100% / 12) * 2  ) - 20px)}
+    .f-xs-3 {float: left; width: calc(((100% / 12) * 3  ) - 20px)}
+    .f-xs-4 {float: left; width: calc(((100% / 12) * 4  ) - 20px)}
+    .f-xs-5 {float: left; width: calc(((100% / 12) * 5  ) - 20px)}
+    .f-xs-6 {float: left; width: calc(((100% / 12) * 6  ) - 20px)}
+    .f-xs-7 {float: left; width: calc(((100% / 12) * 7  ) - 20px)}
+    .f-xs-8 {float: left; width: calc(((100% / 12) * 8  ) - 20px)}
+    .f-xs-9 {float: left; width: calc(((100% / 12) * 9  ) - 20px)}
+    .f-xs-10{float: left; width: calc(((100% / 12) * 10 ) - 20px)}
+    .f-xs-11{float: left; width: calc(((100% / 12) * 11 ) - 20px)}
+    .f-xs-12{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+
+    
+    .f-ofs-xs-1 {float: left; margin-left: calc(((100% / 12) * 1  ))}
+    .f-ofs-xs-2 {float: left; margin-left: calc(((100% / 12) * 2  ))}
+    .f-ofs-xs-3 {float: left; margin-left: calc(((100% / 12) * 3  ))}
+    .f-ofs-xs-4 {float: left; margin-left: calc(((100% / 12) * 4  ))}
+    .f-ofs-xs-5 {float: left; margin-left: calc(((100% / 12) * 5  ))}
+    .f-ofs-xs-6 {float: left; margin-left: calc(((100% / 12) * 6  ))}
+    .f-ofs-xs-7 {float: left; margin-left: calc(((100% / 12) * 7  ))}
+    .f-ofs-xs-8 {float: left; margin-left: calc(((100% / 12) * 8  ))}
+    .f-ofs-xs-9 {float: left; margin-left: calc(((100% / 12) * 9  ))}
+    .f-ofs-xs-10{float: left; margin-left: calc(((100% / 12) * 10 ))}
+    .f-ofs-xs-11{float: left; margin-left: calc(((100% / 12) * 11 ))}
+    .f-ofs-xs-12{float: left; margin-left: calc(((100% / 12) * 12 ))}
+}
+
+
+@media only screen and (max-width: 560px) {
+    /* AUN MÁS CHICO */   
+    
+    .f-col-lg-1 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-lg-2 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-lg-3 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-lg-4 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-lg-5 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-lg-6 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-lg-7 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-lg-8 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-lg-9 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-lg-10{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-lg-11{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-lg-12{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+
+    .f-col-md-1 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-md-2 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-md-3 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-md-4 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-md-5 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-md-6 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-md-7 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-md-8 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-md-9 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-md-10{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-md-11{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-md-12{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+
+    .f-col-sm-1 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-sm-2 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-sm-3 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-sm-4 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-sm-5 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-sm-6 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-sm-7 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-sm-8 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-sm-9 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-sm-10{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-sm-11{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-col-sm-12{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+
+    .f-xs-1 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-xs-2 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-xs-3 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-xs-4 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-xs-5 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-xs-6 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-xs-7 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-xs-8 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-xs-9 {float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-xs-10{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-xs-11{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+    .f-xs-12{float: left; width: calc(((100% / 12) * 12 ) - 20px)}
+}
