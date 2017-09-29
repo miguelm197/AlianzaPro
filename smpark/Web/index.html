@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/MiF.css">
+
 </head>
 
 <body>
@@ -35,6 +36,84 @@
             </div>
         </div>
     </div>
+
+    <div class="panelSuperior">
+        <div class="contenedor">
+            <div class="selecParking">
+                <Select>  
+                        <i class="fa fa-bell-o notificacion" aria-hidden="true"></i>              
+                    <option value="">Parking Flor de Maroñas</option>
+                    <option value="">Parking Nuevo Centro</option>
+                    <option value="">Parking Montevideo Shopping</option>
+                </Select>
+            </div>
+
+            <div class="usuarios">
+                <i class="fa fa-bell-o notificacion" aria-hidden="true"></i>
+                <span>Hola </span>
+                <span class="usuario">Miguel</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="panelCentral" ng-controller="homeCtrl">
+        <div class="controlAccesos" ng-init="consultarAccesos()">
+            <div class="f-row">
+                <div class="f-lg-1">
+                    <button ng-click="consultarAccesos()">Refrescar</button>
+                </div>
+                <div class="f-lg-4 f-ofs-lg-7">
+
+                    <div class="entradaMatricula">
+                        <input type="text" class="f-input-corto inpMatricula" placeholder="Matrícula" ng-model="inpMatricula">
+                        <button ng-click="ingresoVehiculo()">Entrada</button>
+                        <button ng-click="salidaVehiculo()">Salida</button>
+                    </div>
+                </div>
+            </div>
+            <div class="f-row">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>MATRÍCULA</th>
+                            <th>CLIENTE</th>
+                            <th>ENTRADA</th>
+                            <th>PAIS</th>
+                            <th>TIPO VEHÍCULO</th>
+                            <th>TIPO CLIENTE</th>
+                            <th>COMENTARIO</th>
+                            <th>PARK</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="acceso in listaMatriculas">
+                            <td>{{acceso.matricula}}</td>
+                            <td>{{acceso.cliente}}</td>
+                            <td>{{acceso.entrada}}</td>
+                            <td>{{acceso.pais}}</td>
+                            <td>{{acceso.tipoVehiculo}}</td>
+                            <td>{{acceso.tipoCliente}}</td>
+                            <td>{{acceso.comentario}}</td>
+                            <td>{{acceso.park}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/angular.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./servicios/servicios.js"></script>
+    <script src="./controladores/home.js"></script>
+    <script src="./directivas/directivas.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
