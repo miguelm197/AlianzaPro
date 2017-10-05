@@ -142,6 +142,14 @@ select, option, span{
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.anchoColumn {
+    width: 40px;
+}
 
+
+.gridStyles{
+    width: 940px;
+    height: 300px;
+}
 
 

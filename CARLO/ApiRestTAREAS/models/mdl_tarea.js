@@ -12,4 +12,10 @@ exports = module.exports = function (app, mongoose) {
     //      Nombre de referencia      |              |
     //                      esquema exportado        |
     //                                       documento de la bd
+
+
+    
+
+
+
 };

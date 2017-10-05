@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="angular/angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <script src="controllers/tareasCtrl.js"></script>
+    <script src="services/servicios.js"></script>
+    <script src="filters/f.js"></script>
+    
+    
+    <title>Ejercicio5</title>
+
+</head>
+
+<body ng-style="estilazo" ng-controller="tareasCtrl">
+    <div class="contenedor gral">
+        <div class="contenedor">
+            <h1>Tarea</h1>
+            
+            <input class="medio" type="text" ng-model="tarea.usuario" placeholder="Tu nombre">
+
+
+            <div ng-switch on="validacion">
+                <div ng-switch-when="false">
+                    <textarea ng-class="mal" class="largo" type="text" ng-model="tarea.contenido" placeholder="Tarea"></textarea>
+                </div>
+                <div ng-switch-when="true">
+                    <textarea class="largo" type="text" ng-model="tarea.contenido" placeholder="Tarea"></textarea>
+                </div>
+            </div>
+
+
+
+ 
+            <button class="medio azul" ng-click="">Agregar</button>
+            <button class="enlace" ng-click=""> Cancelar </button>
+    
+            
+
+        </div>
+    </div>
+
+   
+</body>
+
+</html>

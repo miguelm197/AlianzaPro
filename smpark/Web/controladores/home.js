@@ -4,9 +4,9 @@ app.controller("homeCtrl", ['$scope', '$http', 'FacMatriculas', function ($scope
 
     $scope.consultarAccesos = function () {
         $scope.listaMatriculas.length = 0;
+
         FacMatriculas.consultaMatriculas().then(function (data) {
             for (var i = 0; i < data.length; i++) {
-                // console.log(data[i])
                 var acceso = {
                     matricula: data[i].matricula,
                     cliente: data[i].cliente.nombre + " " + data[i].cliente.apellido,
@@ -22,7 +22,9 @@ app.controller("homeCtrl", ['$scope', '$http', 'FacMatriculas', function ($scope
                         acceso.entrada = formatDate(ingreso.fechaEntrada);
                         acceso.salida = formatDate(ingreso.fechaSalida);
                         acceso.comentario = ingreso.comentario;
+                        acceso.menuActivo = false;
                         acceso.park = ingreso.lugar;
+
                     }
                 }
                 function formatDate(value) {
@@ -36,12 +38,9 @@ app.controller("homeCtrl", ['$scope', '$http', 'FacMatriculas', function ($scope
                     if (min < 10) min = "0" + min;
                     var retorno = "" +
                         dia + "/" + mes + "/" + ani
-                        + " - " + 
+                        + " - " +
                         hor + ":" + min;
                     return retorno;
-
-
-
                 }
 
                 $scope.listaMatriculas.push(acceso);
@@ -69,4 +68,12 @@ app.controller("homeCtrl", ['$scope', '$http', 'FacMatriculas', function ($scope
     }
 
 
+}]);
+app.controller("pruebaCtrl", ['$scope', '$http', 'FacMatriculas', function ($scope, $http, FacMatriculas) {
+    FacMatriculas.consultaMatriculas().then(function (data) {
+        $scope.miembros = data;
+        $scope.gridOptions = {
+            data: data
+        }
+    });
 }]);

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular App</title>   
+    <!--<script src="./core/angular.min.js"></script>-->
+    <script src="./node_modules/angular/angular.js"></script> 
+
+
+	<script src="./src/app.js"></script> 
+	<script src="./src/filters.js"></script> 
+	<script src="./src/controllers/TodoController.js"></script>
+    <script src="./src/controllers/GastosController.js"></script> 
+    <script src="./src/controllers/ProductosController.js"></script> 
+    <script src="./src/services/GastosService.js"></script> 
+    <script src="./src/services/ProductosFactory.js"></script>
+    ProductosFactory 
+</head>
+<body>
+	<div ng-controller="todoController"><!--9-->
+        <label>Nuevos Comentarios</label>
+        <input type="text" ng-model="nuevaMemoria.texto" placeholder="Su Memoria...">
+        <input type="text" ng-model="nuevaMemoria.autor" placeholder="Su Autor...">
+        <hr>
+        <span>Hola la memoria es de</span><span> <b>{{nuevaMemoria.autor}}!</b></span><button ng-click="agregarMemoria()">Agregar</button></span>
+        <ul>
+          <li ng-repeat="memoria in memorias">
+           
+            <span ng-hide="memoria.isEditing">
+                <label>{{memoria.texto}}</label>  creado por :  <label>{{memoria.autor | myFormat}}</label>
+            </span>
+            <span ng-show="memoria.isEditing">
+                <input type="text" ng-model="memoria.texto"><button ng-click="editarMemoria(memoria)">Guardar</button>
+            </span>
+            <button ng-click="showEdit(memoria)">Editar</button>
+            <button ng-click="borrarMemoria(memoria)">Borrar</button>
+           
+          </li>
+        </ul>
+       <hr>
+       <button ng-click="sendToServer()">Enviar al Servidor</button>
+       <label ng-show="isSendit">Valor: {{memorias}}</label>
+    </div>
+    <div ng-controller="gastosController">
+		<hr>
+		<h1>Services</h1>
+		<label>Gastos</label>
+		<select name="gastoOptionSelect" id="gastoOptionSelect" ng-model="gastoModelS.option">
+			<option ng-repeat="option in gastosSOptions" value="{{option.id}}">{{option.name | myFormat}}</option>
+		</select>
+		<input type="text" ng-model="gastoModelS.titulo" placeholder="Titulo...">
+		<button ng-click="agregarGasto()">Agregar</button>
+        <ul>
+            <li ng-repeat="gasto in gastosS">
+                <span ng-hide="gasto.selected">
+                    <label>{{gasto.titulo}}</label>
+                </span>
+                <span ng-show="gasto.selected">
+                    <input type="text" ng-model="gasto.titulo"><button ng-click="editarGasto(gasto)">Guardar</button>
+                </span>
+                <button ng-click="oneSelected(gasto)">Editar</button>
+                <button ng-click="borrarGasto($index,gasto)">Borrar</button>
+                
+            </li>
+        </ul>
+    </div>
+    <div ng-controller="productosController">
+		<hr>
+		<h1>Factory</h1>
+		<label>Productos</label>
+		<input type="text" ng-model="productoModelS.titulo" placeholder="Titulo...">
+		<button ng-click="agregarProducto()">Agregar</button>
+        <ul>
+            <li ng-repeat="producto in productoS">
+                <span ng-hide="producto.selected">
+                    <label>{{producto.titulo}}</label>
+                </span>
+                <span ng-show="producto.selected">
+                    <input type="text" ng-model="producto.titulo"><button ng-click="editarProducto(producto)">Guardar</button>
+                </span>
+                <button ng-click="oneSelected(producto)">Editar</button>
+                <button ng-click="borrarProducto($index,producto)">Borrar</button>
+                
+            </li>
+        </ul>
+	</div>
+</body>
+</html>
+

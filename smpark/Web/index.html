@@ -84,24 +84,32 @@
                             <th>PAIS</th>
                             <th>TIPO VEHÍCULO</th>
                             <th>TIPO CLIENTE</th>
+                            <th class="anchoColumn"></th>
                             <th>COMENTARIO</th>
                             <th>PARK</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="acceso in listaMatriculas">
+                        <tr ng-repeat="acceso in listaMatriculas" ng-mouseover="acceso.menuActivo = true" ng-mouseleave="acceso.menuActivo = false">
                             <td>{{acceso.matricula}}</td>
                             <td>{{acceso.cliente}}</td>
                             <td>{{acceso.entrada}}</td>
                             <td>{{acceso.pais}}</td>
                             <td>{{acceso.tipoVehiculo}}</td>
                             <td>{{acceso.tipoCliente}}</td>
+                            <td><span ng-show="acceso.menuActivo">...</span></td>
                             <td>{{acceso.comentario}}</td>
                             <td>{{acceso.park}}</td>
                         </tr>
 
                     </tbody>
                 </table>
+                <br>
+                <div ng-controller="pruebaCtrl">
+
+                    <div class="gridStyles" ui-grid="gridOptions"></div>
+                </div>
+
 
             </div>
         </div>

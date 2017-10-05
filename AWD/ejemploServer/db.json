@@ -1,0 +1,20 @@
+{
+  "gastos": [
+    {
+      "option": "1",
+      "titulo": "vvvv",
+      "id": 1
+    }
+  ],
+  "productos": [
+    {
+      "titulo": "cvcc",
+      "id": 1
+    }
+  ],
+  "usuario": {
+    "id": 1,
+    "Nombre": "Jaime",
+    "email": "federico.alianza@alianza.edu.com"
+  }
+}
