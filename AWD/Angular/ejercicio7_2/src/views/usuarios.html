@@ -1,0 +1,20 @@
+<div class="backgroundLightGreen" ng-controller="usuariosController">
+        <hr>
+        <h1>Factory Asyncronica</h1>
+        <label>Usuarios</label>
+        <input type="text" ng-model="usuarioModelS.nombre" placeholder="Nombre...">
+        <button ng-click="agregarUsuario()">Agregar</button>
+        <ul>
+            <li ng-repeat="usuario in usuarioS">
+                <span ng-hide="usuario.selected">
+                    <label>{{usuario.nombre}}</label>
+                </span>
+                <span ng-show="usuario.selected">
+                    <input type="text" ng-model="usuario.nombre"><button ng-click="editarUsuario(usuario)">Guardar</button>
+                </span>
+                <button ng-click="oneSelected(usuario)">Editar</button>
+                <button ng-click="borrarUsuario($index,usuario)">Borrar</button>
+                
+            </li>
+        </ul>
+    </div>

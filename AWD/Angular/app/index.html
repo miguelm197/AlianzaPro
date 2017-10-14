@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <base href="/">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+    <link rel="stylesheet" type="text/css" href="./src/styles/style.css">
+    <!--<script src="./core/angular.min.js"></script>-->
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular-route/angular-route.js"></script>
+
+
+
+    <script src="./src/app.js"></script>
+    <script src="./src/filters.js"></script>
+    <script src="./src/controllers/usuariosCtrl.js"></script>
+    <script src="./src/controllers/tareasCtrl.js"></script>
+    <script src="./src/controllers/EnrutamientoController.js"></script>
+    <script src="./src/services/TareasFactory.js"></script>
+    <script src="./src/services/UsuariosFactory.js"></script>
+</head>
+
+<body>
+
+
+    <div class="contenedor gral">
+    <div ng-controller="EnrutamientoController">
+        <div ng-include src="urlNav"></div>
+    </div>
+
+        <!-- VISTAS PARCIALES-->
+        <div ng-view></div>
+    </div>
+</body>
+
+</html>

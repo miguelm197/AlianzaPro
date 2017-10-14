@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+   <base href="/">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular App</title>  
+    <link rel="stylesheet" type="text/css" href="./src/styles/custom.css"> 
+    <!--<script src="./core/angular.min.js"></script>-->
+    <script src="./node_modules/angular/angular.js"></script> 
+    <script src="./node_modules/angular-route/angular-route.js"></script> 
+
+
+
+	<script src="./src/app.js"></script> 
+	<script src="./src/filters.js"></script> 
+	<script src="./src/controllers/TodoController.js"></script>
+    <script src="./src/controllers/GastosController.js"></script> 
+    <script src="./src/controllers/ProductosController.js"></script> 
+    <script src="./src/controllers/EnrutamientoController.js"></script> 
+    <script src="./src/controllers/UsuariosController.js"></script> 
+    <script src="./src/services/GastosService.js"></script> 
+    <script src="./src/services/ProductosFactory.js"></script>
+    <script src="./src/services/UsuariosFactory.js"></script>
+</head>
+<body>
+	
+    
+    <hr>
+    <h1>Entrutamineto</h1>
+    <div ng-controller="EnrutamientoController">   
+        <pre>$location.path() = {{$location.path()}}</pre>
+        <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+        <pre>$route.current.params = {{$route.current.params}}</pre>
+        <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+        <pre>$routeParams = {{$routeParams}}</pre>
+        <div ng-include src="urlNav"></div>
+    </div>
+    <hr />
+   
+    <!-- VISTAS PARCIALES-->
+    <div ng-view></div>
+    
+</body>
+</html>
+

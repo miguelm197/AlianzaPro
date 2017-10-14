@@ -1,0 +1,24 @@
+{
+  "tareas": [
+    {
+      "usuario": "afas",
+      "contenido": "afasfasf",
+      "hecho": "true",
+      "id": 1
+    }
+  ],
+  "usuarios": [
+    {
+      "usuario": "asd",
+      "clave": "asd",
+      "activo": "true",
+      "id": 1
+    },
+    {
+      "usuario": "migue",
+      "clave": "migue",
+      "activo": "true",
+      "id": 2
+    }
+  ]
+}

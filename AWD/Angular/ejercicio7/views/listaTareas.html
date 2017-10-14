@@ -1,0 +1,55 @@
+<div class="contenedor">
+    <h1>Lista de tareas</h1>
+
+    <input class="medio" type="text" ng-model="tarea.usuario" placeholder="Tu nombre">
+
+
+    <div ng-switch on="validacion">
+        <div ng-switch-when="false">
+            <textarea ng-class="mal" class="largo" type="text" ng-model="tarea.contenido" placeholder="Tarea"></textarea>
+        </div>
+        <div ng-switch-when="true">
+            <textarea class="largo" type="text" ng-model="tarea.contenido" placeholder="Tarea"></textarea>
+        </div>
+    </div>
+
+
+
+
+    <button class="medio azul" ng-click="agregarTarea()">Agregar</button>
+    <button class="enlace" ng-click="consulta()"> Refrescar Lista | </button>
+    <button class="enlace" ng-click="limpiarScope()"> Limpiar lista </button>
+
+
+    <br>
+    <div class="grupo">
+        <span>{{tarea.contenido}} - Creada por: {{tarea.usuario}}</span>
+    </div>
+    <br>
+    <br>
+    <ul>
+
+        <h3 ng-show="listaVacia">Lista de tareas vacía. </h3>
+
+        <li ng-repeat="tare in tareas">
+
+            <input ng-hide="tare.editar" type="checkbox" ng-model="tare.hecho" ng-click="tacharTarea(tare)">
+
+            <span ng-hide="tare.editar" ng-class="tare.tachado">{{tare.contenido}} - {{tare.usuario}} </span>
+
+            <input class="medio" ng-show="tare.editar" type="text" ng-model="ediTarea.usuario" value="{{tare.usuario}}" placeholder="Usuario">
+            <button class="enlace subrayado" ng-show="tare.editar" ng-click="guardarTarea(tare, ediTarea)">Guardar</button>
+            <button class="enlace" ng-show="tare.editar" ng-click="cancelarGuardar(tare)">Cancelar</button>
+            <textarea class="largo" ng-show="tare.editar" type="text" ng-model="ediTarea.contenido" value="{{tare.contenido}}" placeholder="Contenido"></textarea>
+
+
+
+
+            <button class="enlace" ng-hide="tare.editar" ng-click="modificarTarea(tare)">Editar</button>
+            <button class="enlace" ng-hide="tare.editar" ng-click="eliminarTarea(tare)">Eliminar</button>
+        </li>
+
+    </ul>
+
+
+</div>

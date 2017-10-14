@@ -127,3 +127,11 @@ app.controller("tareasCtrl", ['$scope', '$http', 'FacTareas', function ($scope, 
 
     }
 }]);
+
+
+
+tar.controller("tareaCtrl", ['$scope', '$http', 'FacTareas', function ($scope, $http, FacTareas) {
+    
+    
+}]);
+

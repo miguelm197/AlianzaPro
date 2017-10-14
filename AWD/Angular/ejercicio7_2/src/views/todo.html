@@ -1,0 +1,24 @@
+<div class="backgroundLight" ng-controller="todoController"><!--9-->
+    <label>Nuevos Comentarios</label>
+    <input type="text" ng-model="nuevaMemoria.texto" placeholder="Su Memoria...">
+    <input type="text" ng-model="nuevaMemoria.autor" placeholder="Su Autor...">
+    <hr>
+    <span>Hola la memoria es de</span><span> <b>{{nuevaMemoria.autor}}!</b></span><button ng-click="agregarMemoria()">Agregar</button></span>
+    <ul>
+      <li ng-repeat="memoria in memorias">
+       
+        <span ng-hide="memoria.isEditing">
+            <label>{{memoria.texto}}</label>  creado por :  <label>{{memoria.autor | myFormat}}</label>
+        </span>
+        <span ng-show="memoria.isEditing">
+            <input type="text" ng-model="memoria.texto"><button ng-click="editarMemoria(memoria)">Guardar</button>
+        </span>
+        <button ng-click="showEdit(memoria)">Editar</button>
+        <button ng-click="borrarMemoria(memoria)">Borrar</button>
+       
+      </li>
+    </ul>
+   <hr>
+   <button ng-click="sendToServer()">Enviar al Servidor</button>
+   <label ng-show="isSendit">Valor: {{memorias}}</label>
+</div>

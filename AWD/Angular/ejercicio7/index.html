@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio7</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular-route/angular-route.js"></script>
+
+    <!-- aplicacion -->
+    <script src="./app.js"></script>
+
+    <!-- controladores -->
+    <script src="./controllers/tareasCtrl.js"></script>
+
+</head>
+
+<body ng-style="estilazo">
+
+    <div ng-controller="menuCtrl">
+        <div ng-include src="urlNav"></div>
+    </div>
+
+    <!-- VISTAS PARCIALES-->
+    <div ng-view></div>
+
+</body>
+
+</html>

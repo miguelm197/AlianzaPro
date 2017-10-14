@@ -1,0 +1,22 @@
+<div class="backgroundLightPurple" ng-controller="gastosController">
+    <hr>
+    <h1>Services</h1>
+    <label>Gastos</label>
+    <select name="gastoOptionSelect" id="gastoOptionSelect" ng-model="gastoModelS.option">
+        <option ng-repeat="option in gastosSOptions" value="{{option.id}}">{{option.name | myFormat}}</option>
+    </select>
+    <input type="text" ng-model="gastoModelS.titulo" placeholder="Titulo...">
+    <button ng-click="agregarGasto()">Agregar</button>
+    <ul>
+        <li ng-repeat="gasto in gastosS">
+            <span ng-hide="gasto.selected">
+                <label>{{gasto.titulo}}</label>
+            </span>
+            <span ng-show="gasto.selected">
+                <input type="text" ng-model="gasto.titulo"><button ng-click="editarGasto(gasto)">Guardar</button>
+            </span>
+            <button ng-click="oneSelected(gasto)">Editar</button>
+            <button ng-click="borrarGasto($index,gasto)">Borrar</button>
+        </li>
+    </ul>
+</div>

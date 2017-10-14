@@ -1,0 +1,13 @@
+<div class="contenedor">
+    <h1>Registro</h1>
+
+    <form name="form">
+        <input class="largo" name="usuario" type="text" placeholder="Usuario" ng-model="usuario" required>
+        <br><br>
+        <input class="largo" name="claveU" type="password" placeholder="Contraseña"  ng-model="claveUno" required>
+        <br><br>
+        <input class="largo" name="claveD" type="password" placeholder="Confirmar contraseña" ng-model="claveDos" required>
+        <br><br>
+        <button ng-disabled="form.usuario.$error.required || form.claveU.$error.required || form.claveD.$error.required" type="submit" class="largo azul centrado" ng-click="registrarse()">Registrarse</button>
+    </form>
+</div>

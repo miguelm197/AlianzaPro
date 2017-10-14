@@ -1,0 +1,20 @@
+<div class="backgroundLightBlue" ng-controller="productosController">
+    <hr>
+    <h1>Factory</h1>
+    <label>Productos</label>
+    <input type="text" ng-model="productoModelS.titulo" placeholder="Titulo...">
+    <button ng-click="agregarProducto()">Agregar</button>
+    <ul>
+        <li ng-repeat="producto in productoS">
+            <span ng-hide="producto.selected">
+                <label>{{producto.titulo}}</label>
+            </span>
+            <span ng-show="producto.selected">
+                <input type="text" ng-model="producto.titulo"><button ng-click="editarProducto(producto)">Guardar</button>
+            </span>
+            <button ng-click="oneSelected(producto)">Editar</button>
+            <button ng-click="borrarProducto($index,producto)">Borrar</button>
+            
+        </li>
+    </ul>
+</div>
