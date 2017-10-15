@@ -20,9 +20,7 @@
     "immutable-angular": "^0.1.1",
     "jquery": "^3.2.1",
     "js-data": "^2.9.0",
-    "js-data-angular": "^3.2.1",
-    "popper.js": "^1.12.5",
-    "tooltip.js": "^1.1.5"
+    "js-data-angular": "^3.2.1"
   },
   "devDependencies": {},
   "engines": {

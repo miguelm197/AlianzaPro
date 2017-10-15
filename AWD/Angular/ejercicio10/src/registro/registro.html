@@ -1,0 +1,59 @@
+<div class="container registro">
+    <div class="fondo"></div>
+    <div class="registro-panel">
+
+        <h2>Nuevo usuario</h2>
+
+        <div class="jumbotron">
+            <div class="container">
+
+
+                <form class="form">
+                    <div class="form-group">
+                        <label for="nom" class="control-label">Nombre</label>
+                        <input type="text" class="form-control" id="nom" placeholder="Nombre" ng-model="usuario.nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ape" class="control-label">Apellido</label>
+                        <input type="text" class="form-control" id="ape" placeholder="Apellido" ng-model="usuario.apellido" required>
+                    </div>
+
+                    <div class=" divisor">--- o ---</div>
+
+                    <div class="form-group">
+                        <label for="cor" class="control-label">Correo</label>
+                        <input type="email" class="form-control" id="cor" placeholder="Correo" ng-model="usuario.correo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clU" class="control-label">Clave</label>
+                        <input type="password" class="form-control" id="clU" placeholder="Clave" ng-model="usuario.claveUno" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clD" class="control-label">Confirmar clave</label>
+                        <input type="password" class="form-control" id="clD" placeholder="Confirmar clave" ng-model="usuario.claveDos" required>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Recuérdame
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default form-control" ng-click="registrarse()">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <a href="#">¿Ya tienes una cuenta?</a>
+    </div>
+
+</div>

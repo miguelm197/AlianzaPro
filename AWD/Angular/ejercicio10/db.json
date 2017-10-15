@@ -1,0 +1,13 @@
+{
+  "tareas": [],
+  "usuarios": [
+    {
+      "nombre": "miguel",
+      "apellido": "merelli",
+      "correo": "miguelmerelli.ll@gmail.com",
+      "clave": "asd",
+      "activo": "true",
+      "id": 1
+    }
+  ]
+}
