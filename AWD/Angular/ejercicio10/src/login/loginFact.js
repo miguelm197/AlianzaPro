@@ -1,32 +1,4 @@
-app.service('AuthenticationService', ['$http', '$cookies', '$rootScope', 'FacLogin', function ($http, $cookies, $rootScope, FacLogin) {
-    
-    this.SetCredentials = function (username, password) {
-        var authdata = Base64.encode(username + ':' + password);
-        var sape = "SAPEE";
-        $rootScope.globals = {
-            currentUser: {
-                username: username,
-                authdata: authdata,
-                sape: sape
-            }
-        };
-
-        // Seteamos los headers del http requests
-        $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
-
-        // Guardamos datos del usuario  logueado en las cookies globales Manteniendose activas por una semana(o hasta que el usuario se deslogue)
-        var cookieExp = new Date();
-        cookieExp.setDate(cookieExp.getDate() + 7);
-        $cookies.putObject('globals', $rootScope.globals, { expires: cookieExp });
-    }
-
-    //Metodo para limpiar las cookis y borrar los datos del usuario
-    this.ClearCredentials = function () {
-        $rootScope.globals = {};
-        $cookies.remove('globals');
-        $http.defaults.headers.common.Authorization = 'Basic';
-    }
-
+app.factory("FacLogin", ["$http", '$cookies', '$rootScope', function ($http, $cookies, $rootScope) {
     // Base64 encoding servicio usado por el AuthenticationService// ensucia los datos del usuario
     var Base64 = {
 
@@ -109,5 +81,35 @@ app.service('AuthenticationService', ['$http', '$cookies', '$rootScope', 'FacLog
             return output;
         }
     };
+
+    
+    return {
+
+        // Método para ingresar las credenciales en una cookie
+        setCredentials: function (correo, clave) {
+            var authdata = Base64.encode(correo + ':' + clave);
+            $rootScope.globals = {
+                currentUser: {
+                    correo: correo,
+                    authdata: authdata,
+                }
+            };
+
+            // Seteamos los headers del http requests
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
+
+            // Guardamos datos del usuario  logueado en las cookies globales Manteniendose activas por una semana(o hasta que el usuario se deslogue)
+            var cookieExp = new Date();
+            cookieExp.setDate(cookieExp.getDate() + 7);
+            $cookies.putObject('Tareas', $rootScope.globals, { expires: cookieExp });
+        },
+
+        //Metodo para limpiar las cookies y borrar los datos del usuario
+        ClearCredentials: function () {
+            $rootScope.globals = {};
+            $cookies.remove('Tareas');
+            $http.defaults.headers.common.Authorization = 'Basic';
+        }
+    }
 
 }]);

@@ -1,11 +1,11 @@
-<div class="conteiner menu-lateral">
+<div class="conteiner menu-lateral" ng-controller="navCtrl">
 
     <!-- BOTONES DE ARRIBA 
          *********************************  -->
     <div class="arriba">
-        <button class="itemUno menu-btn">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-        </button>
+            <a href="/#!/nuevaTarea" class="itemUno sape menu-btn">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span>
+            </a>
     </div>
 
     <!-- BOTONES DE ABAJO 
@@ -23,7 +23,7 @@
                     <div class="separador"></div>
                 </li>
                 <li>
-                    <a href="#">Nueva Tarea</a>
+                    <a href="/#!/nuevaTarea">Nueva Tarea</a>
                 </li>
                 <li>
                     <a href="#">Lista de Tareas</a>
@@ -73,7 +73,7 @@
                     <a href="#">Preferencias</a>
                 </li>
                 <li>
-                    <a href="#">Salir</a>
+                    <a href="#" ng-click="cerrarSesion()">Salir</a>
                 </li>
             </ul>
         </div>

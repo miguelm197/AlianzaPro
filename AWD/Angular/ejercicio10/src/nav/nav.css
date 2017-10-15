@@ -1,9 +1,10 @@
 .menu-lateral{
     /* background-color: gray;  */
-    position: absolute;
+    position: fixed;
     height: 100%;   
     width:50px;
     box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.11);
+    z-index: 1;
 }
 .menu-btn{
     background-color: transparent;
@@ -22,7 +23,15 @@
 .abajo{
     bottom: 0px;
 }
-
+.arriba a span{
+    margin-left: 50%;
+    margin-top: 50%;
+    transform: translate(-50%, -50%);
+}
+.arriba a{
+    position: absolute;
+    color: black;
+}
 .menu-lateral .dropdown-menu{
     margin-left: 50px;
     margin-bottom: -40px !important;

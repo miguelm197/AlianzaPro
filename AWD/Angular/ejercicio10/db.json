@@ -1,5 +1,83 @@
 {
-  "tareas": [],
+  "tareas": [
+    {
+      "resumen": "Prueba",
+      "descripcion": "Prueba",
+      "usuarioEncargado": "miguel merelli",
+      "fechaCreado": "2017-10-15T22:05:27.377Z",
+      "id": 1
+    },
+    {
+      "resumen": "Sape",
+      "descripcion": "Sape",
+      "usuarioEncargado": "Usuario",
+      "fechaCreado": "2017-10-15T22:12:04.851Z",
+      "id": 2
+    },
+    {
+      "resumen": "asf",
+      "descripcion": "asf",
+      "usuarioEncargado": "Sin asignar",
+      "fechaCreado": "2017-10-15T22:12:33.057Z",
+      "id": 3
+    },
+    {
+      "resumen": "asf",
+      "descripcion": "asf",
+      "usuarioEncargado": "miguel merelli",
+      "fechaCreado": "2017-10-15T22:12:37.301Z",
+      "id": 4
+    },
+    {
+      "resumen": "asf",
+      "descripcion": "asf",
+      "usuarioEncargado": "Sin asignar",
+      "fechaCreado": "2017-10-15T22:13:33.201Z",
+      "id": 5
+    },
+    {
+      "resumen": "asf",
+      "descripcion": "asf",
+      "usuarioEncargado": "asd asdasd",
+      "fechaCreado": "2017-10-15T22:13:54.468Z",
+      "id": 6
+    },
+    {
+      "resumen": "asf",
+      "descripcion": "asf",
+      "usuarioEncargado": "asd asdasd",
+      "fechaCreado": "2017-10-15T22:13:58.841Z",
+      "id": 7
+    },
+    {
+      "resumen": "asf",
+      "descripcion": "asf",
+      "usuarioEncargado": "Sin asignar",
+      "fechaCreado": "2017-10-15T22:14:11.537Z",
+      "id": 8
+    },
+    {
+      "resumen": "adadad",
+      "descripcion": "adadad",
+      "usuarioEncargado": "Sin asignar",
+      "fechaCreado": "2017-10-15T22:15:26.783Z",
+      "id": 9
+    },
+    {
+      "resumen": "asf",
+      "descripcion": "asf",
+      "usuarioEncargado": "Sin asignar",
+      "fechaCreado": "2017-10-15T22:16:15.473Z",
+      "id": 10
+    },
+    {
+      "resumen": "asfasfas fa fasf",
+      "descripcion": "asfasfas fa fasf",
+      "usuarioEncargado": "asd asdasd",
+      "fechaCreado": "2017-10-15T22:16:39.363Z",
+      "id": 11
+    }
+  ],
   "usuarios": [
     {
       "nombre": "miguel",
@@ -8,6 +86,30 @@
       "clave": "asd",
       "activo": "true",
       "id": 1
+    },
+    {
+      "nombre": "asd",
+      "apellido": "asdasd",
+      "correo": "asd@asd",
+      "clave": "asd",
+      "activo": "true",
+      "id": 2
+    },
+    {
+      "nombre": "dada",
+      "apellido": "dodo",
+      "correo": "dada@dada.com",
+      "clave": "dada",
+      "activo": "true",
+      "id": 3
+    },
+    {
+      "nombre": "das",
+      "apellido": "asd",
+      "correo": "das@das.com",
+      "clave": "das",
+      "activo": "true",
+      "id": 4
     }
   ]
 }

@@ -1,0 +1,28 @@
+.nuevaTarea-panel{
+    width: 50%;   
+}
+
+.nuevaTarea-panel .combo-responsable{
+    width: 100%;
+}
+
+.nuevaTarea-panel .combo-responsable button{
+    width: 100%;
+    text-align: left;
+}
+.nuevaTarea-panel .combo-responsable button span{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+.nuevaTarea-panel .combo-responsable ul{
+    width: 100%;
+    text-align: left;
+}
+.nuevaTarea-panel .combo-responsable ul li{
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.nuevaTarea-panel .combo-responsable ul li:hover{
+    background-color: rgba(0, 0, 0, 0.082);
+}
