@@ -109,6 +109,10 @@ app.factory("FacLogin", ["$http", '$cookies', '$rootScope', function ($http, $co
             $rootScope.globals = {};
             $cookies.remove('Tareas');
             $http.defaults.headers.common.Authorization = 'Basic';
+        },
+
+        consultaClave: function (correo){
+            return $http.get("http://localhost:3000/usuarios/?correo=" + correo);
         }
     }
 

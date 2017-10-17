@@ -13,7 +13,7 @@ app.controller("registroCtrl", ["$scope", "FacRegistro", function ($scope, FacRe
             }
             FacRegistro.agregarUsuario(objeto).then(
                 function (res) {
-
+                    
                 }
             );
         } else {

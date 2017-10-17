@@ -3,7 +3,6 @@ app.controller("nuevaTareaCtrl", ["$scope", "FacTareasCtrl", "FacLogin", functio
     $scope.listaUsuarios = [];
 
 
-
     FacTareasCtrl.consultaUsuarios().then(function (data) {
         data = data.data;
         for (var u = 0; u < data.length; u++) {
@@ -23,6 +22,7 @@ app.controller("nuevaTareaCtrl", ["$scope", "FacTareasCtrl", "FacLogin", functio
 
     $scope.agregarTarea = function () {
         var tarea = {
+            estado:"Abierta",
             resumen: $scope.nuevaTarea.resumen,
             descripcion: $scope.nuevaTarea.resumen,
             usuarioEncargado: $scope.usuarioSeleccionado,

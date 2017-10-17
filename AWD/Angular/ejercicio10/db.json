@@ -5,6 +5,7 @@
       "descripcion": "Prueba",
       "usuarioEncargado": "miguel merelli",
       "fechaCreado": "2017-10-15T22:05:27.377Z",
+      "estado": "Abierta",
       "id": 1
     },
     {
@@ -12,6 +13,7 @@
       "descripcion": "Sape",
       "usuarioEncargado": "Usuario",
       "fechaCreado": "2017-10-15T22:12:04.851Z",
+      "estado": "Abierta",
       "id": 2
     },
     {
@@ -19,63 +21,30 @@
       "descripcion": "asf",
       "usuarioEncargado": "Sin asignar",
       "fechaCreado": "2017-10-15T22:12:33.057Z",
+      "estado": "Abierta",
       "id": 3
     },
     {
-      "resumen": "asf",
-      "descripcion": "asf",
+      "resumen": "Agregar comentario cuando se marca salida de vehículo de forma manual",
+      "descripcion": "Agregar comentario cuando se marca salida de vehículo de forma manual",
       "usuarioEncargado": "miguel merelli",
-      "fechaCreado": "2017-10-15T22:12:37.301Z",
+      "fechaCreado": "2017-10-17T20:42:00.087Z",
       "id": 4
     },
     {
-      "resumen": "asf",
-      "descripcion": "asf",
-      "usuarioEncargado": "Sin asignar",
-      "fechaCreado": "2017-10-15T22:13:33.201Z",
+      "resumen": "Resumen de Caja no filtra correctamente por Servicio",
+      "descripcion": "Resumen de Caja no filtra correctamente por Servicio",
+      "usuarioEncargado": "miguel merelli",
+      "fechaCreado": "2017-10-17T20:46:02.327Z",
       "id": 5
     },
     {
-      "resumen": "asf",
-      "descripcion": "asf",
-      "usuarioEncargado": "asd asdasd",
-      "fechaCreado": "2017-10-15T22:13:54.468Z",
+      "estado": "Abierta",
+      "resumen": "Resumen de Caja no filtra correctamente por Servicio asfasfgsa ag rgreg erg serg drh drh",
+      "descripcion": "Resumen de Caja no filtra correctamente por Servicio asfasfgsa ag rgreg erg serg drh drh",
+      "usuarioEncargado": "Pablo558( (jk",
+      "fechaCreado": "2017-10-17T20:49:39.440Z",
       "id": 6
-    },
-    {
-      "resumen": "asf",
-      "descripcion": "asf",
-      "usuarioEncargado": "asd asdasd",
-      "fechaCreado": "2017-10-15T22:13:58.841Z",
-      "id": 7
-    },
-    {
-      "resumen": "asf",
-      "descripcion": "asf",
-      "usuarioEncargado": "Sin asignar",
-      "fechaCreado": "2017-10-15T22:14:11.537Z",
-      "id": 8
-    },
-    {
-      "resumen": "adadad",
-      "descripcion": "adadad",
-      "usuarioEncargado": "Sin asignar",
-      "fechaCreado": "2017-10-15T22:15:26.783Z",
-      "id": 9
-    },
-    {
-      "resumen": "asf",
-      "descripcion": "asf",
-      "usuarioEncargado": "Sin asignar",
-      "fechaCreado": "2017-10-15T22:16:15.473Z",
-      "id": 10
-    },
-    {
-      "resumen": "asfasfas fa fasf",
-      "descripcion": "asfasfas fa fasf",
-      "usuarioEncargado": "asd asdasd",
-      "fechaCreado": "2017-10-15T22:16:39.363Z",
-      "id": 11
     }
   ],
   "usuarios": [
@@ -110,6 +79,38 @@
       "clave": "das",
       "activo": "true",
       "id": 4
+    },
+    {
+      "nombre": "julio",
+      "apellido": "merelli",
+      "correo": "dknwkd@hptmail.com",
+      "clave": "123",
+      "activo": "true",
+      "id": 5
+    },
+    {
+      "nombre": "julio",
+      "apellido": "merelli",
+      "correo": "xsfxcx@hptmail.com",
+      "clave": "123",
+      "activo": "true",
+      "id": 6
+    },
+    {
+      "nombre": "resumen",
+      "apellido": "asfasf",
+      "correo": "lala@lala",
+      "clave": "asd",
+      "activo": "true",
+      "id": 7
+    },
+    {
+      "nombre": "Pablo558(",
+      "apellido": "(jk",
+      "correo": "pablo@fx2.com.uy",
+      "clave": "1234",
+      "activo": "true",
+      "id": 8
     }
   ]
 }

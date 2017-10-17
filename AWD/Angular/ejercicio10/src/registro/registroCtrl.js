@@ -1,4 +1,4 @@
-app.controller("registroCtrl", ["$scope", "FacRegistro", "FacLogin", function ($scope, FacRegistro, FacLogin) {
+app.controller("registroCtrl", ["$scope", "$location","FacRegistro", "FacLogin", function ($scope, $location, FacRegistro, FacLogin) {
 
     $scope.registrarse = function () {
         var nombre = $scope.usuario.nombre;

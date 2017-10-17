@@ -6,10 +6,19 @@ app.controller("loginCtrl", ["$scope", "FacRegistro", "FacLogin", "$location", f
         FacRegistro.existenciaCorreo(correo).then(
             function (res) {
                 var datos = res.data;
-                console.log(datos)
                 if (datos.length > 0) {
-                    FacLogin.setCredentials(correo, clave);
-                    $location.path('/home');
+                    FacLogin.consultaClave(correo).then(function (res) {
+                        var datos = res.data;
+                        var claveBD = datos[0].clave;
+                        if (clave == claveBD) {
+                            FacLogin.setCredentials(correo, clave);
+                            $location.path('/home');
+                        } else {
+                            alertify.dialog('alert').set({ transition: 'flipx', message: 'Contraseña incorrecta' }).show();
+                            $(".ajs-header").text("Login");
+                        }
+                    })
+
                 } else {
                     alertify.dialog('alert').set({ transition: 'flipx', message: 'No está registrado este correo' }).show();
                     $(".ajs-header").text("Login");

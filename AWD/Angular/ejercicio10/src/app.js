@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ['ngRoute', 'ngCookies']);
+var app = angular.module("myApp", ['ngRoute', 'ngCookies', 'ui.grid']);
 
 
 
@@ -13,20 +13,20 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'src/registro/registro.html',
             controller: 'registroCtrl'
         })
-
         .when('/login', {
             templateUrl: 'src/login/login.html',
             controller: 'loginCtrl'
         })
-
         .when('/home', {
             templateUrl: 'src/home/home.html'
         })
-
         .when('/nuevaTarea', {
             templateUrl: 'src/nuevaTarea/nuevaTarea.html',
             controller: 'nuevaTareaCtrl'
-            
+        })
+        .when('/listaTareas', {
+            templateUrl: 'src/listaTareas/listaTareas.html',
+            controller: 'listaTareasCtrl'
         })
 
         .otherwise({ redirectTo: "/home" });
@@ -59,3 +59,17 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
 
 
 }]);
+
+
+app.directive('gravatarDirective', function () {
+    return {
+        restrict: 'AE',
+        template: '<span></span>',
+        replace: true,
+        pre: function (scope, elem, attrs) {
+           console.log(scope)
+
+        }
+    }
+});
+
