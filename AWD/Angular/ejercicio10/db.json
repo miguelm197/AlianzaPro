@@ -1,4 +1,30 @@
 {
+  "comentarios": [
+    {
+      "comentario": "AAAAAAAAAA",
+      "fecha": "21/10/2017",
+      "hora": "15:29",
+      "usuario": "fede fede",
+      "tareaId": "10",
+      "id": 3
+    },
+    {
+      "comentario": "Comentario 1 editado",
+      "fecha": "23/10/2017",
+      "hora": "20:27",
+      "usuario": "Mauri D'Ambrosio",
+      "tareaId": "12",
+      "id": 4
+    },
+    {
+      "comentario": "hola, soy el admin",
+      "fecha": "23/10/2017",
+      "hora": "20:28",
+      "usuario": "admin admin",
+      "tareaId": "12",
+      "id": 5
+    }
+  ],
   "tareas": [
     {
       "resumen": "Prueba",
@@ -25,6 +51,7 @@
       "id": 3
     },
     {
+      "estado": "Abierta",
       "resumen": "Agregar comentario cuando se marca salida de vehículo de forma manual",
       "descripcion": "Agregar comentario cuando se marca salida de vehículo de forma manual",
       "usuarioEncargado": "miguel merelli",
@@ -32,6 +59,7 @@
       "id": 4
     },
     {
+      "estado": "Abierta",
       "resumen": "Resumen de Caja no filtra correctamente por Servicio",
       "descripcion": "Resumen de Caja no filtra correctamente por Servicio",
       "usuarioEncargado": "miguel merelli",
@@ -45,6 +73,46 @@
       "usuarioEncargado": "Pablo558( (jk",
       "fechaCreado": "2017-10-17T20:49:39.440Z",
       "id": 6
+    },
+    {
+      "estado": "Abierta",
+      "resumen": "t1",
+      "descripcion": "ttttttt",
+      "usuarioEncargado": "fede fede",
+      "fechaCreado": "2017-10-19T22:43:58.710Z",
+      "id": 7
+    },
+    {
+      "estado": "Abierta",
+      "resumen": "fafafafafafafafafafafafa",
+      "descripcion": "a",
+      "usuarioEncargado": "asd asdasd",
+      "fechaCreado": "2017-10-20T22:15:26.168Z",
+      "id": 10
+    },
+    {
+      "estado": "Abierta",
+      "resumen": "Prueba de tarea",
+      "descripcion": "aosifj oaisjf oasjfoasijf oasijf oaisfj aosifj idj alsdji sdg haspiugh aspigu haspigu hasdpigu haspdiguh aspguh asdpiguadpgiu haspiug haspidug haspdfogih aspdigu haspgiuh asdpogi whoi so´gdij s´dgioj s´gio js´di jsdóig js´doigj asdógij as´dogij as´dogij as´doigj as´doigj asódigj asódigj asódigjas oi",
+      "usuarioEncargado": "miguel merelli",
+      "fechaCreado": "2017-10-21T04:51:19.635Z",
+      "id": 11
+    },
+    {
+      "estado": "Abierta",
+      "resumen": "Cargar horas",
+      "descripcion": "Cargar horas miguel por favor",
+      "usuarioEncargado": "Mauri D'Ambrosio",
+      "fechaCreado": "2017-10-23T23:26:41.207Z",
+      "id": 12
+    },
+    {
+      "postParam": "",
+      "id": 13
+    },
+    {
+      "postParam": "",
+      "id": 14
     }
   ],
   "usuarios": [
@@ -111,6 +179,60 @@
       "clave": "1234",
       "activo": "true",
       "id": 8
+    },
+    {
+      "nombre": "asfasf",
+      "apellido": "asfasfasfasfasfasfasf",
+      "correo": "afafafafa@asfafaf",
+      "clave": "afafaf",
+      "activo": "true",
+      "id": 9
+    },
+    {
+      "nombre": "Pablo",
+      "apellido": "Sanchez",
+      "correo": "pabloPuto@gmail.com",
+      "clave": "202cb962ac59075b964b07152d234b70",
+      "activo": "true",
+      "id": 10
+    },
+    {
+      "nombre": "admin",
+      "apellido": "admin",
+      "correo": "admin@admin.com",
+      "clave": "21232f297a57a5a743894a0e4a801fc3",
+      "activo": "true",
+      "id": 11
+    },
+    {
+      "nombre": "fede",
+      "apellido": "fede",
+      "clave": "7d11810cf99c74a1f3fa22c3879ea39d",
+      "activo": "true",
+      "id": 12
+    },
+    {
+      "nombre": "asfsaeg",
+      "apellido": "sdgsdgsd",
+      "clave": "7815696ecbf1c96e6894b779456d330e",
+      "activo": "true",
+      "id": 13
+    },
+    {
+      "nombre": "fede",
+      "apellido": "fede",
+      "correo": "fede@gmail.com",
+      "clave": "7d11810cf99c74a1f3fa22c3879ea39d",
+      "activo": "true",
+      "id": 14
+    },
+    {
+      "nombre": "Mauri",
+      "apellido": "D'Ambrosio",
+      "correo": "dambrosio@gmail.com",
+      "clave": "81dc9bdb52d04dc20036dbd8313ed055",
+      "activo": "true",
+      "id": 15
     }
   ]
 }

@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ['ngRoute', 'ngCookies', 'ui.grid']);
+var app = angular.module("myApp", ['ngRoute', 'ngCookies', 'ui.grid', 'angular-md5', 'ui.bootstrap.datetimepicker']);
 
 
 
@@ -27,6 +27,10 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/listaTareas', {
             templateUrl: 'src/listaTareas/listaTareas.html',
             controller: 'listaTareasCtrl'
+        })
+        .when('/tarea/:id', {
+            templateUrl: 'src/tarea/tarea.html',
+            controller: 'tareaCtrl'
         })
 
         .otherwise({ redirectTo: "/home" });
@@ -59,17 +63,3 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
 
 
 }]);
-
-
-app.directive('gravatarDirective', function () {
-    return {
-        restrict: 'AE',
-        template: '<span></span>',
-        replace: true,
-        pre: function (scope, elem, attrs) {
-           console.log(scope)
-
-        }
-    }
-});
-

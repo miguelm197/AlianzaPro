@@ -1,4 +1,4 @@
-app.controller("loginCtrl", ["$scope", "FacRegistro", "FacLogin", "$location", function ($scope, FacRegistro, FacLogin, $location) {
+app.controller("loginCtrl", ["$scope", "FacRegistro", "FacLogin", "$location", "md5", function ($scope, FacRegistro, FacLogin, $location, md5) {
 
     $scope.login = function (correo, clave) {
         correo = correo.$viewValue;
@@ -10,7 +10,8 @@ app.controller("loginCtrl", ["$scope", "FacRegistro", "FacLogin", "$location", f
                     FacLogin.consultaClave(correo).then(function (res) {
                         var datos = res.data;
                         var claveBD = datos[0].clave;
-                        if (clave == claveBD) {
+                        var claveUs = md5.createHash(clave);
+                        if (claveUs == claveBD) {
                             FacLogin.setCredentials(correo, clave);
                             $location.path('/home');
                         } else {

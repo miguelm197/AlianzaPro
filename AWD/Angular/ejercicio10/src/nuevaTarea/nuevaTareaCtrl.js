@@ -24,7 +24,7 @@ app.controller("nuevaTareaCtrl", ["$scope", "FacTareasCtrl", "FacLogin", functio
         var tarea = {
             estado:"Abierta",
             resumen: $scope.nuevaTarea.resumen,
-            descripcion: $scope.nuevaTarea.resumen,
+            descripcion: $scope.nuevaTarea.descripcion,
             usuarioEncargado: $scope.usuarioSeleccionado,
             fechaCreado: new Date()
         }

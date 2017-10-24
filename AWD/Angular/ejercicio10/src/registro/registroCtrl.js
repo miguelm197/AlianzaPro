@@ -1,4 +1,4 @@
-app.controller("registroCtrl", ["$scope", "$location","FacRegistro", "FacLogin", function ($scope, $location, FacRegistro, FacLogin) {
+app.controller("registroCtrl", ["$scope", "$location", "FacRegistro", "FacLogin", "md5", function ($scope, $location, FacRegistro, FacLogin, md5) {
 
     $scope.registrarse = function () {
         var nombre = $scope.usuario.nombre;
@@ -6,14 +6,13 @@ app.controller("registroCtrl", ["$scope", "$location","FacRegistro", "FacLogin",
         var correo = $scope.usuario.correo;
         var claveUno = $scope.usuario.claveUno;
         var claveDos = $scope.usuario.claveDos;
-
-
+    
         if (claveUno === claveDos) {
             var objeto = {
                 "nombre": nombre,
                 "apellido": apellido,
                 "correo": correo,
-                "clave": claveDos,
+                "clave": md5.createHash(claveDos),
                 "activo": "true"
             }
             FacRegistro.existenciaCorreo(correo).then(

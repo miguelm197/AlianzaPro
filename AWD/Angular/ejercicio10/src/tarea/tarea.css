@@ -1,0 +1,56 @@
+.cont-home .container .row{
+    width: 70%;
+}
+
+.cont-home .container .botones{
+    margin-top: 20px;
+}
+
+.cont-home .container .informacion{
+    margin-top: 40px;
+}
+
+.cont-home .container .descripcion{
+    margin-top: 40px;
+}
+.cont-home .container .comentarios a{
+    cursor: pointer;
+}
+
+.cont-home .container .comentarios{
+    margin-top: 40px;
+    width: 70%;
+}
+
+.cont-home .container .comentarios .contenedorComentario{
+    position: reelative;
+}
+
+.cont-home .container .comentarios .nuevoComentario{
+    bottom: 10px;
+}
+
+.cont-home .container .comentarios .nuevoComentario textarea{
+    height: 200px;
+    resize: vertical;
+}
+
+.cont-home .container .comentarios .nuevoComentario button{
+ float: right;
+ width: 200px;
+}
+
+.cont-home .container .comentarios .panel-heading{
+  position: relative;
+}
+
+.cont-home .container .comentarios .panel-heading .derecha{
+    position: absolute;
+    right:  0px;
+    top: 0px;
+}
+.cont-home .container .comentarios .panel-body .fecha{
+    float: right;
+}
+
+

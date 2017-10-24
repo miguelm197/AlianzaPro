@@ -24,27 +24,11 @@ app.controller("listaTareasCtrl", ["$scope", "FacListaTareas", function ($scope,
                     resumen: data.resumen,
                     asignado: usuarioEncargado,
                     creada: formatoFecha(data.fechaCreado),
-                    enlace: function () { return "listaTareas/" + id }
+                    enlace: function () { return "#!/tarea/" + tarea.id }
                 }
                 $scope.datos.datos.push(tarea);
             });
         }
     });
 
-    function formatoFecha(fecha) {
-        var fech = new Date(fecha);
-        var dia = fech.getDate();
-        var mes = fech.getMonth();
-        var ani = fech.getFullYear();
-
-        if (dia < 10) {
-            dia = "0" + dia;
-        }
-        if (mes < 10) {
-            mes = "0" + mes;
-        }
-
-        var fechaSalida = dia + "/" + mes + "/" + ani;
-        return fechaSalida;
-    }
 }]);
