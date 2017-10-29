@@ -19,7 +19,7 @@
   ],
   "tareas": [
     {
-      "estado": "Cerrada",
+      "estado": "En progreso",
       "resumen": "Tarea 1s",
       "descripcion": "Prueba de tareapppppdasfaaaaaaG",
       "usuarioEncargado": "Mauri D'Ambrosio",
@@ -27,23 +27,81 @@
       "id": 1
     },
     {
-      "estado": "Resuelta",
+      "estado": "En progreso",
       "resumen": "Sapee",
       "descripcion": "asfasfasf",
       "usuarioEncargado": "dada dodo",
       "fechaCreado": "2017-10-26T13:26:04.825Z",
       "id": 2
+    },
+    {
+      "estado": "Abierta",
+      "resumen": "asf",
+      "descripcion": "sf",
+      "usuarioEncargado": "Sin asignar",
+      "fechaCreado": "2017-10-29T16:59:37.098Z",
+      "id": 3
+    },
+    {
+      "estado": "Abierta",
+      "resumen": "asf",
+      "descripcion": "fss",
+      "usuarioEncargado": "Sin asignar",
+      "fechaCreado": "2017-10-29T17:00:10.595Z",
+      "id": 4
+    },
+    {
+      "estado": "Abierta",
+      "resumen": "sf",
+      "descripcion": "ass",
+      "usuarioEncargado": "Sin asignar",
+      "fechaCreado": "2017-10-29T17:00:21.901Z",
+      "id": 5
+    },
+    {
+      "estado": "Abierta",
+      "resumen": "asfasf",
+      "descripcion": "safas",
+      "usuarioEncargado": "Fede asd",
+      "fechaCreado": "2017-10-29T17:01:49.354Z",
+      "id": 6
+    },
+    {
+      "estado": "Abierta",
+      "resumen": "kh",
+      "descripcion": "hkhkhk",
+      "usuarioEncargado": "Sin asignar",
+      "fechaCreado": "2017-10-29T17:05:26.302Z",
+      "id": 7
     }
   ],
   "usuarios": [
     {
-      "nombre": "Fede",
+      "nombre": "Fedesdaa",
       "apellido": "asd",
-      "correo": "fede@fede.com",
-      "rolUsuario": "public",
-      "clave": "7d11810cf99c74a1f3fa22c3879ea39d",
+      "correo": "fede@fede.coma",
+      "rol": "admin",
+      "clave": "ead0242d347decdb071818cedf073c1f",
       "activo": "true",
       "id": 2
+    },
+    {
+      "nombre": "Miguel",
+      "apellido": "Merelli",
+      "correo": "miguelmerelli.ll@gmail.com",
+      "rol": "admin",
+      "clave": "7815696ecbf1c96e6894b779456d330e",
+      "activo": "true",
+      "id": 3
+    },
+    {
+      "nombre": "asd",
+      "apellido": "asd",
+      "correo": "asd@asd",
+      "rol": "admin",
+      "clave": "7815696ecbf1c96e6894b779456d330e",
+      "activo": "true",
+      "id": 4
     }
   ]
 }

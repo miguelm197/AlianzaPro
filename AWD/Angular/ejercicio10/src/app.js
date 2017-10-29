@@ -1,5 +1,11 @@
 var app = angular.module("myApp", ['ngRoute', 'ngCookies', 'ui.grid', 'angular-md5', 'ui.bootstrap.datetimepicker', 'angular-carousel']);
 
+app.controller('MiControlador', function ($scope) {
+    $scope.cliente = {
+        nombre: 'Jhon',
+        direccion: 'Av. Jose pardo 481'
+    };
+});
 
 
 
@@ -16,7 +22,8 @@ app.config(function ($routeProvider, $locationProvider) {
             controller: 'loginCtrl'
         })
         .when('/home', {
-            templateUrl: 'src/home/home.html'
+            templateUrl: 'src/home/home.html',
+            controller: 'homeCtrl'
         })
         .when('/nuevaTarea', {
             templateUrl: 'src/nuevaTarea/nuevaTarea.html',
@@ -29,6 +36,10 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/tarea/:id', {
             templateUrl: 'src/tarea/tarea.html',
             controller: 'tareaCtrl'
+        })
+        .when('/perfil', {
+            templateUrl: 'src/perfil/perfil.html',
+            controller: 'perfilCtrl'
         })
 
         .otherwise({ redirectTo: "/home" });
@@ -60,28 +71,23 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
 
     //Verifica cada vez que cambia la url (queda escuchando)
     $rootScope.$on('$locationChangeStart', function (event, next, current) {
-        // redirect a la pagina de login sino no hay usuario logueado
-        /* if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
-            $location.path('/login');
-        }
-        */
 
         var loggedIn = $rootScope.globals ? $rootScope.globals.currentUser : false;
         if (loggedIn) {
             var rolUsuario = loggedIn.rolUsuario;
 
-            var paginasPublic = ['/registro', '/home', '/listaTareas'];
-            var paginasAdmins = ['/registro', '/home', '/listaTareas', '/nuevaTarea'];
+            var paginasPublic = ['/nuevaTarea'];
+            var paginasAdmins = [];
             var paginas = [""];
 
-            if (rolUsuario == "admin") {
+            if (rolUsuario == "admin")
                 paginas = paginasAdmins;
-            }
-            if (rolUsuario == "piblic") {
-                paginas = paginasPublic;
-            }
 
-            var restrictedPage = paginas.indexOf($location.path()) != -1 ? true : false;
+            if (rolUsuario == "public")
+                paginas = paginasPublic;
+
+            var pag = $location.path();
+            var restrictedPage = paginas.indexOf(pag) == -1 ? true : false;
 
             if (!restrictedPage) {
                 $location.path('/home');
@@ -89,15 +95,13 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
 
         } else {
             var paginas = ['/registro', '/login'];
-            var restrictedPage = $.inArray($location.path(),) === -1;
+            var restrictedPage = $.inArray($location.path(), ) === -1;
             var restrictedPage = paginas.indexOf($location.path()) != -1 ? true : false;
-            
-            if (!restrictedPage){
+
+            if (!restrictedPage) {
                 $location.path('/login');
             }
         }
-
-
 
     });
 

@@ -3,9 +3,12 @@
     <!-- BOTONES DE ARRIBA 
          *********************************  -->
     <div class="arriba">
-            <a href="/#!/nuevaTarea" class="itemUno sape menu-btn">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span>
-            </a>
+        <a href="/#!/home" class="menu-btn logo">
+            <span class="glyphicon glyphicon-check" aria-hidden="true"> </span>
+        </a>
+        <a href="/#!/nuevaTarea" class="menu-btn">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span>
+        </a>
     </div>
 
     <!-- BOTONES DE ABAJO 
@@ -14,7 +17,7 @@
 
         <!-- MENÚ -->
         <div class="btn-group dropup">
-            <button type="button" class="itemCuatro menu-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class=" menu-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
             </button>
             <ul class="dropdown-menu">
@@ -35,7 +38,7 @@
 
         <!-- AYUDA -->
         <div class="btn-group dropup">
-            <button type="button" class="itemCuatro menu-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class=" menu-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
             </button>
             <ul class="dropdown-menu">
@@ -50,7 +53,7 @@
                     <a href="#">Reportar error</a>
                 </li>
                 <li>
-                    <a href="#">Miguel Merelli</a>
+                    <a href="https://www.linkedin.com/in/miguel-merelli-6931a6106/">Miguel Merelli</a>
                 </li>
             </ul>
         </div>
@@ -58,18 +61,18 @@
 
         <!-- MI PERFIL -->
         <div class="btn-group dropup">
-            <button type="button" class="itemCuatro menu-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class=" menu-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
             </button>
             <ul class="dropdown-menu">
                 <li>
                     <!-- <span class="menu-title">MI PERFIL</span> -->
-                    <span  class="menu-title">{{sesion.nombre}}</span>
+                    <span class="menu-title">{{sesion.nombre}}</span>
                     <H6 class="menu-title">{{sesion.rol}}</H6>
                     <div class="separador"></div>
                 </li>
                 <li>
-                    <a href="#">Perfil</a>
+                    <a href="/#!/perfil">Perfil</a>
                 </li>
                 <li>
                     <a href="#">Preferencias</a>

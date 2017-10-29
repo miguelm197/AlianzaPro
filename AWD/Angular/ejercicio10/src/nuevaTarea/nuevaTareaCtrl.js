@@ -1,4 +1,4 @@
-app.controller("nuevaTareaCtrl", ["$scope", "FacTareas", "FacLogin", function ($scope, FacTareas, FacLogin) {
+app.controller("nuevaTareaCtrl", ["$scope", "$location", "FacTareas", "FacLogin", function ($scope, $location, FacTareas, FacLogin) {
     $scope.usuarioSeleccionado = "Usuario";
     $scope.listaUsuarios = [];
 
@@ -22,7 +22,7 @@ app.controller("nuevaTareaCtrl", ["$scope", "FacTareas", "FacLogin", function ($
 
     $scope.agregarTarea = function () {
         var tarea = {
-            estado:"Abierta",
+            estado: "Abierta",
             resumen: $scope.nuevaTarea.resumen,
             descripcion: $scope.nuevaTarea.descripcion,
             usuarioEncargado: $scope.usuarioSeleccionado,
@@ -40,6 +40,14 @@ app.controller("nuevaTareaCtrl", ["$scope", "FacTareas", "FacLogin", function ($
                 // se agregó correctamente
                 alertify.dialog('alert').set({ transition: 'flipx', message: id + ' | ' + resumen }).show();
                 $(".ajs-header").text("Se creó la tarea");
+
+                if (!$scope.crearOtraTarea) {
+                    $location.path('/listaTareas');
+                } else {
+                    $scope.nuevaTarea.resumen = "";
+                    $scope.nuevaTarea.descripcion = "";
+                    $scope.usuarioSeleccionado = "Usuario";
+                }
             } else {
                 // no se pudo agregar
                 alertify.dialog('alert').set({ transition: 'flipx', message: 'No se pudo agregar la tarea' }).show();

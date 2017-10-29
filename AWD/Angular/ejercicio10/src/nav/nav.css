@@ -24,13 +24,17 @@
     bottom: 0px;
 }
 .arriba a span{
-    margin-left: 50%;
+    margin-left: 42%;
     margin-top: 50%;
     transform: translate(-50%, -50%);
 }
 .arriba a{
-    position: absolute;
+    position: relative;
     color: black;
+    margin-bottom: 50px;
+}
+.arriba .logo{
+    font-size: 30px; 
 }
 .menu-lateral .dropdown-menu{
     margin-left: 50px;

@@ -1,5 +1,4 @@
 <div class="cont-home">
-
     <div class="container">
         <h2>Nueva Tarea</h2>
         <br>
@@ -42,6 +41,11 @@
 
                 <!-- AGREGAR TAREA -->
                 <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="crearOtraTarea"> Crear otra tarea
+                        </label>
+                    </div>
                     <button type="submit" class="btn btn-default form-control" ng-disabled="form.res.$error.required || form.des.$error.required"
                         ng-click="agregarTarea()">Agregar tarea</button>
                 </div>

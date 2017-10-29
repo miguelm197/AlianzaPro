@@ -9,5 +9,16 @@
 .resizableVertical {
     resize: vertical;
     overflow: auto;
-  }
-
+}
+a{
+    cursor: pointer;
+}
+.panel-btn{
+    cursor: pointer;
+    transition:all 1s;
+}
+.panel-btn:hover{
+    cursor: pointer;
+    background-color: rgb(247, 247, 247);
+    transition:all .5s;
+}

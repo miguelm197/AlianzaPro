@@ -8,13 +8,13 @@ app.controller("loginCtrl", ["$scope", "FacRegistro", "FacLogin", "$location", "
                 var datos = res.data;
                 if (datos.length > 0) {
                     FacLogin.consultaClave(correo).then(function (res) {
-                        var datos = res.data;
-                        var claveBD = datos[0].clave;
+                        var datos = res.data[0];
+                        var claveBD = datos.clave;
                         var claveUs = md5.createHash(clave);
                         if (claveUs == claveBD) {
-                            var rolUsuario = datos[0].rolUsuario;
-                            var nombre = datos[0].nombre;
-                            var apellido = datos[0].apellido;
+                            var rolUsuario = datos.rol;
+                            var nombre = datos.nombre;
+                            var apellido = datos.apellido;
                             FacLogin.setCredentials(correo, clave, rolUsuario, nombre, apellido);
                             $location.path('/home');
                         } else {

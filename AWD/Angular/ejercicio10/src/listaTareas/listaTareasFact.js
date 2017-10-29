@@ -1,9 +1,9 @@
 app.factory("FacListaTareas", ["$http", function ($http) {
     return {
-        consultaUsuarios: function () {
+        consultaTareas: function () {
             return $http.get("http://localhost:3000/tareas");
         },
-        consultaUsuarioEncargado: function (id) {
+        consultaTareaId: function (id) {
             return $http.get("http://localhost:3000/tareas/" + id);
         }
 

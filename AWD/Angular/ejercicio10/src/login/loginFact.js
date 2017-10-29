@@ -82,7 +82,7 @@ app.factory("FacLogin", ["$http", '$cookies', '$rootScope', function ($http, $co
         }
     };
 
-    
+
     return {
 
         // Método para ingresar las credenciales en una cookie
@@ -97,7 +97,6 @@ app.factory("FacLogin", ["$http", '$cookies', '$rootScope', function ($http, $co
                     apellido: apellido
                 }
             };
-
             // Seteamos los headers del http requests
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
 
@@ -114,7 +113,7 @@ app.factory("FacLogin", ["$http", '$cookies', '$rootScope', function ($http, $co
             $http.defaults.headers.common.Authorization = 'Basic';
         },
 
-        consultaClave: function (correo){
+        consultaClave: function (correo) {
             return $http.get("http://localhost:3000/usuarios/?correo=" + correo);
         }
     }

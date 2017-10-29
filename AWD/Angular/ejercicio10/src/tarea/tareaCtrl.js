@@ -7,11 +7,6 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", "F
     $scope.tareaEditada.usuarioSeleccionado = "Usuario";
     $scope.listaUsuarios = [];
 
-    $scope.estado = {
-        "iniciar": true,
-        "cerrar": true
-    };
-
     var url = $location.$$url;
     var id = url.split("/")[2];
 
@@ -212,5 +207,35 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", "F
             });
         });
     };
+
+    $scope.reAbrirTarea = function () {
+        var id = $scope.tarea.id;
+        var estado = "Re abierta";
+
+        FacTarea.consultaTarea(id).then(function (res) {
+            var tarea = res.data;
+            tarea.estado = estado;
+
+            FacTarea.editarTarea(id, tarea).then(function () {
+                $scope.tarea.estado = estado;
+            });
+        });
+    };
+
+    $scope.pararTarea = function () {
+        var id = $scope.tarea.id;
+        var estado = "Abierta";
+
+        FacTarea.consultaTarea(id).then(function (res) {
+            var tarea = res.data;
+            tarea.estado = estado;
+
+            FacTarea.editarTarea(id, tarea).then(function () {
+                $scope.tarea.estado = estado;
+            });
+        });
+    };
+
+    
 }]);
 

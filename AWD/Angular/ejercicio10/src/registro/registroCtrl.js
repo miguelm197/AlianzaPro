@@ -23,7 +23,7 @@ app.controller("registroCtrl", ["$scope", "$location", "FacRegistro", "FacLogin"
                     if (datos.length == 0) {
                         FacRegistro.agregarUsuario(objeto).then(
                             function (res) {
-                                FacLogin.setCredentials(objeto.correo, objeto.clave);
+                                FacLogin.setCredentials(objeto.correo, objeto.clave, objeto.rol, objeto.nombre, objeto.apellido);
                                 $location.path('/home');
                             }
                         );
