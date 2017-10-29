@@ -86,12 +86,15 @@ app.factory("FacLogin", ["$http", '$cookies', '$rootScope', function ($http, $co
     return {
 
         // Método para ingresar las credenciales en una cookie
-        setCredentials: function (correo, clave) {
+        setCredentials: function (correo, clave, rolUsuario, nombre, apellido) {
             var authdata = Base64.encode(correo + ':' + clave);
             $rootScope.globals = {
                 currentUser: {
                     correo: correo,
                     authdata: authdata,
+                    rolUsuario: rolUsuario,
+                    nombre: nombre,
+                    apellido: apellido
                 }
             };
 
@@ -101,13 +104,13 @@ app.factory("FacLogin", ["$http", '$cookies', '$rootScope', function ($http, $co
             // Guardamos datos del usuario  logueado en las cookies globales Manteniendose activas por una semana(o hasta que el usuario se deslogue)
             var cookieExp = new Date();
             cookieExp.setDate(cookieExp.getDate() + 7);
-            $cookies.putObject('Tareas', $rootScope.globals, { expires: cookieExp });
+            $cookies.putObject('globals', $rootScope.globals, { expires: cookieExp });
         },
 
         //Metodo para limpiar las cookies y borrar los datos del usuario
         ClearCredentials: function () {
-            $rootScope.globals = {};
-            $cookies.remove('Tareas');
+            $rootScope.globals = false;
+            $cookies.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic';
         },
 

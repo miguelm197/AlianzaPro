@@ -20,6 +20,9 @@ app.factory("FacTarea", ["$http", function ($http) {
         },
         consultaTarea: function (id) {
             return $http.get("http://localhost:3000/tareas/" + id);
+        },
+        editarTarea: function (id, tarea) {
+            return $http.put("http://localhost:3000/tareas/" + id, tarea);
         }
 
     }

@@ -1,9 +1,9 @@
-app.controller("nuevaTareaCtrl", ["$scope", "FacTareasCtrl", "FacLogin", function ($scope, FacTareasCtrl, FacLogin) {
+app.controller("nuevaTareaCtrl", ["$scope", "FacTareas", "FacLogin", function ($scope, FacTareas, FacLogin) {
     $scope.usuarioSeleccionado = "Usuario";
     $scope.listaUsuarios = [];
 
 
-    FacTareasCtrl.consultaUsuarios().then(function (data) {
+    FacTareas.consultaUsuarios().then(function (data) {
         data = data.data;
         for (var u = 0; u < data.length; u++) {
             var usuario = {
@@ -31,7 +31,7 @@ app.controller("nuevaTareaCtrl", ["$scope", "FacTareasCtrl", "FacLogin", functio
         if ($scope.usuarioSeleccionado == "Usuario") {
             tarea.usuarioEncargado = "Sin asignar";
         }
-        FacTareasCtrl.agregarTarea(tarea).then(function (res) {
+        FacTareas.agregarTarea(tarea).then(function (res) {
             var tareaAgregada = res.data;
             var id = tareaAgregada.id;
             var resumen = tareaAgregada.resumen;

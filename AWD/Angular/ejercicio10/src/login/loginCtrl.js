@@ -12,7 +12,10 @@ app.controller("loginCtrl", ["$scope", "FacRegistro", "FacLogin", "$location", "
                         var claveBD = datos[0].clave;
                         var claveUs = md5.createHash(clave);
                         if (claveUs == claveBD) {
-                            FacLogin.setCredentials(correo, clave);
+                            var rolUsuario = datos[0].rolUsuario;
+                            var nombre = datos[0].nombre;
+                            var apellido = datos[0].apellido;
+                            FacLogin.setCredentials(correo, clave, rolUsuario, nombre, apellido);
                             $location.path('/home');
                         } else {
                             alertify.dialog('alert').set({ transition: 'flipx', message: 'Contraseña incorrecta' }).show();

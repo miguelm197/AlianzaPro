@@ -1,9 +1,16 @@
-app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", function ($scope, $location, $rootScope, FacTarea) {
+app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", "FacTareas", function ($scope, $location, $rootScope, FacTarea, FacTareas) {
     $scope.comentarioEditado = {};
-    $scope.tareaEditado = {};
+    $scope.tareaEditada = {};
     $scope.tarea = {};
     $scope.sinComentario = true;
     $scope.comEnEdicion = false;
+    $scope.tareaEditada.usuarioSeleccionado = "Usuario";
+    $scope.listaUsuarios = [];
+
+    $scope.estado = {
+        "iniciar": true,
+        "cerrar": true
+    };
 
     var url = $location.$$url;
     var id = url.split("/")[2];
@@ -17,9 +24,7 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", fu
 
             FacTarea.consultaComentarios(id).then(function (res) {
                 var comentarios = res.data;
-                console.log(comentarios)
                 $scope.tarea.comentarios = comentarios;
-                console.log(comentarios.length)
                 if (comentarios.length > 0) {
                     $scope.sinComentario = false;
                 } else {
@@ -28,6 +33,23 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", fu
             });
         }
     );
+
+    FacTareas.consultaUsuarios().then(function (data) {
+        data = data.data;
+        for (var u = 0; u < data.length; u++) {
+            var usuario = {
+                id: data[u].id,
+                nombre: data[u].nombre,
+                apellido: data[u].apellido,
+                correo: data[u].correo
+            }
+            $scope.listaUsuarios.push(usuario);
+        }
+    });
+
+    $scope.seleccionado = function (usuario) {
+        $scope.tareaEditada.usuarioSeleccionado = usuario.nombre + " " + usuario.apellido;
+    }
 
     $scope.agregarComentario = function () {
         var correo = $rootScope.$root.$root.globals.currentUser.correo;
@@ -43,8 +65,7 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", fu
             var apellido = res.data[0].apellido;
             comentario.usuario = nombre + " " + apellido;
 
-            console.log("----------")
-            console.log(comentario)
+
             FacTarea.agregarComentario(id, comentario).then(
                 function (res) {
                     comentario.id = res.data.id;
@@ -56,7 +77,6 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", fu
                 }
             )
         });
-        console.log($scope.tarea)
     };
 
     $scope.eliminarComentario = function (comentario) {
@@ -119,5 +139,78 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", fu
 
     };
 
+
+    $scope.emparejarEditado = function () {
+        $scope.tareaEditada.estado = $scope.tarea.estado;
+        $scope.tareaEditada.usuarioSeleccionado = $scope.tarea.usuarioEncargado;
+        $scope.tareaEditada.descripcion = $scope.tarea.descripcion;
+        $scope.tareaEditada.resumen = $scope.tarea.resumen;
+    };
+
+    $scope.guardarTarea = function () {
+        var id = $scope.tarea.id;
+        var estado = $scope.tareaEditada.estado;
+        var responsable = $scope.tareaEditada.usuarioSeleccionado;
+        var descripcion = $scope.tareaEditada.descripcion;
+        var resumen = $scope.tareaEditada.resumen;
+
+        FacTarea.consultaTarea(id).then(function (res) {
+            var tarea = res.data;
+            tarea.descripcion = descripcion;
+            tarea.usuarioEncargado = responsable;
+            tarea.estado = estado;
+            tarea.resumen = resumen;
+
+
+            FacTarea.editarTarea(id, tarea).then(function () {
+                $scope.tarea.estado = estado;
+                $scope.tarea.descripcion = descripcion;
+                $scope.tarea.usuarioEncargado = responsable;
+                $scope.tarea.resumen = resumen;
+            });
+        });
+    };
+
+    $scope.resolverTarea = function () {
+        var id = $scope.tarea.id;
+        var estado = "Resuelta";
+
+        FacTarea.consultaTarea(id).then(function (res) {
+            var tarea = res.data;
+            tarea.estado = estado;
+
+            FacTarea.editarTarea(id, tarea).then(function () {
+                $scope.tarea.estado = estado;
+            });
+        });
+    };
+
+    $scope.cerrarTarea = function () {
+        var id = $scope.tarea.id;
+        var estado = "Cerrada";
+
+        FacTarea.consultaTarea(id).then(function (res) {
+            var tarea = res.data;
+            tarea.estado = estado;
+
+            FacTarea.editarTarea(id, tarea).then(function () {
+                $scope.tarea.estado = estado;
+            });
+        });
+    };
+
+    $scope.iniciarTarea = function () {
+        var id = $scope.tarea.id;
+        var estado = "En progreso";
+
+        FacTarea.consultaTarea(id).then(function (res) {
+            var tarea = res.data;
+            tarea.estado = estado;
+
+            FacTarea.editarTarea(id, tarea).then(function () {
+                $scope.tarea.estado = estado;
+            });
+        });
+    };
 }]);
 

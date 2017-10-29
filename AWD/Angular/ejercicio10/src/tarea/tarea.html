@@ -1,149 +1,134 @@
 <div class="cont-home">
+    <div class="tarea-panel">
 
 
-    <div class="container">
+        <div class="container">
 
 
-        <div class="row titulo">
-            <h2>{{tarea.resumen}}</h2>
-            <h4>ID-{{tarea.id}}</h4>
-        </div>
+            <div class="row titulo">
+                <div ng-hide="tarea.editar">
+                    <h2>{{tarea.resumen}}</h2>
+                </div>
 
-
-        <div class="row botones">
-            <button class="btn">Resolver</button>
-            <button class="btn" ng-click="tarea.editar = true; tareaEditado.descripcion = tarea.descripcion">Editar</button>
-            <button class="btn">Iniciar progreso</button>
-            <button class="btn">Cerrar</button>
-        </div>
-
-
-
-
-        <div class="row informacion">
-            <div class="col col-md-3">
                 <div ng-show="tarea.editar">
-
-                    <span>Estado: </span>
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{tarea.estado}}
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li>
-                                <a href="" ng-click="tarea.estado = 'Abierta'">Abierta</a>
-                            </li>
-                            <li>
-                                <a href="" ng-click="tarea.estado = 'Cerrada'">Cerrada</a>
-                            </li>
-                            <li>
-                                <a href="" ng-click="tarea.estado = 'En progreso'">En progreso</a>
-                            </li>
-                            <li>
-                                <a href="" ng-click="tarea.estado = 'Sin resolver'">Sin resolver</a>
-                            </li>
-                        </ul>
+                    <br>
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="tareaEditada.resumen">
                     </div>
 
                 </div>
+                <h4>ID-{{tarea.id}}</h4>
 
-                <div ng-hide="tarea.editar">
-                    <span>Estado: </span>
-                    <span>{{tarea.estado}}</span>
-                </div>
             </div>
-            <div class="col col-md-3">
-                <span>Creada: {{tarea.fechaCreado}}</span>
+
+
+            <div class="row botones">
+                <button class="btn" ng-click="resolverTarea()">Resolver</button>
+                <button class="btn" ng-click="tarea.editar = true; emparejarEditado()">Editar</button>
+                <button class="btn" ng-click="iniciarTarea()" ng-show="estado.iniciar">Iniciar progreso</button>
+                <button class="btn" ng-click="cerrarTarea()">Cerrar</button>
             </div>
-            <div class="col col-md-4">
-                <span>Encargado: {{tarea.usuarioEncargado}}</span>
-            </div>
-        </div>
 
 
 
 
+            <div class="row informacion">
+
+                <div class="col col-md-3">
+
+                    <div ng-hide="tarea.editar">
+                        <span>Estado: </span>
+                        <span>{{tarea.estado}}</span>
+                    </div>
 
 
-        <div class="row">
-
-
-            <!-- <p>Selected Date: {{ data.date | date:'yyyy-MM-dd' }}</p>
-            <datetimepicker data-ng-model="data.date" data-datetimepicker-config="{ startView:'day', minView:'day'} "></datetimepicker>
-
-            ------
-
-            <div class="dropdown">
-                <input class="btn btn-default dropdown-toggle form-control" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-                    value="Selected Date: {{ data.date | date:'yyyy-MM-dd' }}">
-
-                <span class="input-group-addon">
-                    <i class="glyphicon glyphicon-calendar"></i>
-                </span>
-                </input>
-
-                         
-            <div class="input-group">
-                <input type="text" class="form-control" data-ng-model="data.dateDropDownInput">
-                <span class="input-group-addon">
-                        <i class="glyphicon glyphicon-calendar"></i>
-                    </span>
-                </div> 
-
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li>
-                        <datetimepicker data-ng-model="data.date" data-datetimepicker-config="{ startView:'day', minView:'day'} "></datetimepicker>
-                    </li>
-                </ul>
- -->
-
-            <div class="dropdown">
-                <!-- <div class="input-group"> -->
-                <!-- <input type="text" class="form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="combo" value="{{ data.date | date:'yyyy-MM-dd' }}">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                            <i class="glyphicon glyphicon-calendar"></i>
-                        </button>
-                    </span> -->
-
-                <!-- <div class="input-group">
-                    <input type="text" class="form-control" data-toggle="dropdown"  id="combo">
-
-                </div> -->
-
-
-
-                <div class="dropdown">
-                    <a class="dropdown-toggle fechaInput date " role="button" data-toggle="dropdown">
-                        <div class="input-group">
-                            <input type="text" class="form-control"
-                             data-ng-model="data.dateDropDownInput">
-                            <span class="input-group-addon">
-                                <i class="glyphicon glyphicon-calendar"></i>
-                            </span>
+                    <!-- ========== EDITAR ESTADO =========== -->
+                    <div ng-show="tarea.editar">
+                        <span>Estado: </span>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                {{tareaEditada.estado}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li>
+                                    <a href="" ng-click="tareaEditada.estado = 'Abierta'">Abierta</a>
+                                </li>
+                                <li>
+                                    <a href="" ng-click="tareaEditada.estado = 'Cerrada'">Cerrada</a>
+                                </li>
+                                <li>
+                                    <a href="" ng-click="tareaEditada.estado = 'En progreso'">En progreso</a>
+                                </li>
+                                <li>
+                                    <a href="" ng-click="tareaEditada.estado = 'Sin resolver'">Sin resolver</a>
+                                </li>
+                            </ul>
                         </div>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <datetimepicker data-ng-model="data.dateDropDownInput" data-datetimepicker-config="{ dropdownSelector: '#dropdown2',startView:'day', 
-                        minView:'day', modelType: 'MM-DD-YYYY'}" />
-                    </ul>
+                    </div>
+                    <!-- ======================================== -->
+
                 </div>
 
 
 
+                <div class="col col-md-3">
+                    <span>Creada: {{tarea.fechaCreado}}</span>
+                </div>
 
+
+                <div class="col col-md-4">
+
+                    <div ng-hide="tarea.editar">
+                        <span>Encargado: {{tarea.usuarioEncargado}}</span>
+                    </div>
+
+                    <!-- ========== EDITAR ENCARGADO =========== -->
+                    <div ng-show="tarea.editar">
+                        <span>Encargado: </span>
+                        <div class="dropdown combo-responsable">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                {{tareaEditada.usuarioSeleccionado}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li ng-repeat="usuario in listaUsuarios" ng-click="seleccionado(usuario)">
+                                    <span>{{usuario.nombre + " " + usuario.apellido}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- ======================================== -->
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="row">
 
                 <div class="row descripcion">
                     <h5>Descripción:</h5>
-                    <div ng-show="tarea.editar">
-                        <textarea class="form-control" ng-model="tareaEditado.descripcion"></textarea>
-                        <br>
-                        <button class="btn pull-right" ng-click="tarea.editar = false">Cancelar</button>
-                        <button class="btn btn-primary pull-right">Guardar</button>
-                    </div>
+
                     <div ng-hide="tarea.editar">
                         <span>{{tarea.descripcion}}</span>
+                    </div>
+
+                    <!-- ========== EDITAR DESCRIPCION =========== -->
+                    <div ng-show="tarea.editar">
+                        <textarea class="form-control" ng-model="tareaEditada.descripcion"></textarea>
+                    </div>
+                    <!-- ======================================== -->
+
+                    <br>
+                    <div ng-show="tarea.editar">
+                        <button class="btn pull-right" ng-click="tarea.editar = false">Cancelar</button>
+                        <button class="btn btn-primary pull-right" ng-click="tarea.editar = false; guardarTarea()">Guardar</button>
                     </div>
                 </div>
 
@@ -214,3 +199,22 @@
 
 
         </div>
+    </div>
+
+
+    <!-- <div class="dropdown">
+                <div class="dropdown">
+                    <a class="dropdown-toggle fechaInput date " role="button" data-toggle="dropdown">
+                            <div class="input-group">
+                                <input type="text" class="form-control" data-ng-model="data.dateDropDownInput">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </span>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <datetimepicker data-ng-model="data.dateDropDownInput" data-datetimepicker-config="{ dropdownSelector: '#dropdown2',startView:'day', 
+                            minView:'day', modelType: 'MM-DD-YYYY'}" />
+                        </ul>
+                    </div>
+                </div> -->

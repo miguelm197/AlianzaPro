@@ -1,4 +1,4 @@
-app.factory("FacTareasCtrl", ["$http", function ($http) {
+app.factory("FacTareas", ["$http", function ($http) {
     return {
         consultaUsuarios: function () {
             return $http.get("http://localhost:3000/usuarios");

@@ -6,12 +6,14 @@ app.controller("registroCtrl", ["$scope", "$location", "FacRegistro", "FacLogin"
         var correo = $scope.usuario.correo;
         var claveUno = $scope.usuario.claveUno;
         var claveDos = $scope.usuario.claveDos;
-    
+        var rol = $scope.usuario.rol;
+        rol = "admin";
         if (claveUno === claveDos) {
             var objeto = {
                 "nombre": nombre,
                 "apellido": apellido,
                 "correo": correo,
+                "rol": rol,
                 "clave": md5.createHash(claveDos),
                 "activo": "true"
             }
