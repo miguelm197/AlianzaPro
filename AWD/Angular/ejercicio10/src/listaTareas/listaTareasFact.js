@@ -1,10 +1,11 @@
 app.factory("FacListaTareas", ["$http", function ($http) {
+    var servicio = app.config.urlServicios;
     return {
         consultaTareas: function () {
-            return $http.get("http://localhost:3000/tareas");
+            return $http.get(servicio + "/tareas");
         },
         consultaTareaId: function (id) {
-            return $http.get("http://localhost:3000/tareas/" + id);
+            return $http.get(servicio + "/tareas/" + id);
         }
 
     }

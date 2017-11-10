@@ -1,4 +1,5 @@
-var app = angular.module("myApp", ['ngRoute', 'ngCookies', 'ui.grid', 'angular-md5', 'ui.bootstrap.datetimepicker', 'angular-carousel']);
+var app = angular.module("myApp", ['ngRoute', 'ngCookies', 'ui.grid', 'angular-md5', 'ui.bootstrap.datetimepicker', 'angular-carousel', 'ngTouch']);
+
 
 app.controller('MiControlador', function ($scope) {
     $scope.cliente = {
@@ -49,6 +50,12 @@ app.config(function ($routeProvider, $locationProvider) {
 
 //Autenticacaion
 app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $location, $cookies, $http) {
+
+    var urlServices = "http://localhost";
+    var portServices = 3000;
+
+    app.config['urlServicios'] = urlServices + ":" + portServices;
+
     // mantenerse logueado luego de resfrescar la pagina
     $rootScope.globals = $cookies.getObject('globals') || false;//Obtengo los valore de las cookies si hay
     // console.log($rootScope.globals);

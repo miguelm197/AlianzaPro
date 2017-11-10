@@ -1,5 +1,5 @@
 .cont-home .container .row{
-    width: 70%;
+    width: 80%;
 }
 
 .cont-home .container .botones{
@@ -53,28 +53,28 @@
     float: right;
 }
 
-.tarea-panel .combo-responsable{
+.tarea-panel .combo{
     width: 100%;
 }
 
-.tarea-panel .combo-responsable button{
+.tarea-panel .combo button{
     width: 100%;
     text-align: left;
 }
-.tarea-panel .combo-responsable button span{
+.tarea-panel .combo button span{
     position: absolute;
     right: 10px;
     top: 15px;
 }
-.tarea-panel .combo-responsable ul{
+.tarea-panel .combo ul{
     width: 100%;
     text-align: left;
 }
-.tarea-panel .combo-responsable ul li{
+.tarea-panel .combo ul li{
     padding: 5px 10px;
     cursor: pointer;
 }
-.tarea-panel .combo-responsable ul li:hover{
+.tarea-panel .combo ul li:hover{
     background-color: rgba(0, 0, 0, 0.082);
 }
 

@@ -5,8 +5,10 @@ var methodOverride = require("method-override");
 var mongoose = require('mongoose');
 
 
-// Conexión a la Base de Datos
-mongoose.connect('mongodb://localhost/BDtareas', function (err, res) {
+var conS = "mongodb://root:toor@ds241025.mlab.com:41025/taskedbd?authSource=taskedbd";
+
+mongoose.connect(conS, function (err, res) {
+    console.log(err)
     if (err) throw err;
     console.log('Conectado a la Base de Datos');
 });
@@ -22,10 +24,10 @@ function perimitirCrossDomain(req, res, next) {
 }
 
 // Middlewares
+app.use(perimitirCrossDomain);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
-app.use(perimitirCrossDomain);
 
 
 // Imports de Modelo y Controlador

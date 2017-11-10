@@ -12,7 +12,6 @@
                     <label class="control-label">Resumen*</label>
                     <input type="text" class="form-control" name="res" placeholder="Resumen" ng-model="nuevaTarea.resumen" required>
                 </div>
-
                 <!-- DESCRIPCIÓN -->
                 <div class="form-group">
                     <label lass="control-label">Descripción*</label>
@@ -23,7 +22,7 @@
                 <!-- RESPONSABLE -->
                 <div class="form-group">
                     <label class="control-label">Responsable*</label>
-                    <div class="dropdown combo-responsable">
+                    <div class="dropdown combo">
                         <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             {{usuarioSeleccionado}}
                             <span class="caret"></span>
@@ -34,7 +33,33 @@
                             </li>
                         </ul>
                     </div>
+                </div>
 
+                <!-- TIPO DE INCIDENTE -->
+                <div class="form-group">
+                    <label class="control-label">Tipo*</label>
+                    <div class="dropdown combo">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            {{tipoTicket}}
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <!-- ---------------------- -->
+                            <li ng-click="tipoTicket = 'Tarea'">
+                                <span>Tarea</span>
+                            </li>
+                            <li ng-click="tipoTicket = 'Error'">
+                                <span>Error</span>
+                            </li>
+                            <li ng-click="tipoTicket = 'Mejora'">
+                                <span>Mejora</span>
+                            </li>
+                            <li ng-click="tipoTicket = 'Nueva funcionalidad'">
+                                <span>Nueva Funcionalidad</span>
+                            </li>
+                            <!-- ---------------------- -->
+                        </ul>
+                    </div>
                 </div>
                 <br>
                 <br>

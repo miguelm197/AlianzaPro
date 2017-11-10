@@ -1,5 +1,4 @@
 app.controller("loginCtrl", ["$scope", "FacRegistro", "FacLogin", "$location", "md5", function ($scope, FacRegistro, FacLogin, $location, md5) {
-
     $scope.login = function (correo, clave) {
         correo = correo.$viewValue;
         clave = clave.$viewValue;

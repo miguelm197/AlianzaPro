@@ -22,3 +22,9 @@ a{
     background-color: rgb(247, 247, 247);
     transition:all .5s;
 }
+.separador{
+    border-bottom: 1px solid gray;
+    margin: 5px 0px;
+    margin-top: -5px;
+    margin-left: -10px;
+}

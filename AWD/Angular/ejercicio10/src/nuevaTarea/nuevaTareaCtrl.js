@@ -1,4 +1,5 @@
 app.controller("nuevaTareaCtrl", ["$scope", "$location", "FacTareas", "FacLogin", function ($scope, $location, FacTareas, FacLogin) {
+    $scope.tipoTicket = "Tarea";
     $scope.usuarioSeleccionado = "Usuario";
     $scope.listaUsuarios = [];
 
@@ -26,6 +27,7 @@ app.controller("nuevaTareaCtrl", ["$scope", "$location", "FacTareas", "FacLogin"
             resumen: $scope.nuevaTarea.resumen,
             descripcion: $scope.nuevaTarea.descripcion,
             usuarioEncargado: $scope.usuarioSeleccionado,
+            tipo: $scope.tipoTicket,
             fechaCreado: new Date()
         }
         if ($scope.usuarioSeleccionado == "Usuario") {

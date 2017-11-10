@@ -5,6 +5,8 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", "F
     $scope.sinComentario = true;
     $scope.comEnEdicion = false;
     $scope.tareaEditada.usuarioSeleccionado = "Usuario";
+    $scope.tareaEditada.tipo = "Tarea";
+
     $scope.listaUsuarios = [];
 
     var url = $location.$$url;
@@ -140,6 +142,7 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", "F
         $scope.tareaEditada.usuarioSeleccionado = $scope.tarea.usuarioEncargado;
         $scope.tareaEditada.descripcion = $scope.tarea.descripcion;
         $scope.tareaEditada.resumen = $scope.tarea.resumen;
+        $scope.tareaEditada.tipo = $scope.tarea.tipo;
     };
 
     $scope.guardarTarea = function () {
@@ -148,6 +151,7 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", "F
         var responsable = $scope.tareaEditada.usuarioSeleccionado;
         var descripcion = $scope.tareaEditada.descripcion;
         var resumen = $scope.tareaEditada.resumen;
+        var tipo = $scope.tareaEditada.tipo;
 
         FacTarea.consultaTarea(id).then(function (res) {
             var tarea = res.data;
@@ -155,6 +159,7 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", "F
             tarea.usuarioEncargado = responsable;
             tarea.estado = estado;
             tarea.resumen = resumen;
+            tarea.tipo = tipo;
 
 
             FacTarea.editarTarea(id, tarea).then(function () {
@@ -162,6 +167,7 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", "F
                 $scope.tarea.descripcion = descripcion;
                 $scope.tarea.usuarioEncargado = responsable;
                 $scope.tarea.resumen = resumen;
+                $scope.tarea.tipo = tipo;
             });
         });
     };
@@ -236,6 +242,6 @@ app.controller("tareaCtrl", ["$scope", "$location", "$rootScope", "FacTarea", "F
         });
     };
 
-    
+
 }]);
 

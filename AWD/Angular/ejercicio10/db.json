@@ -9,22 +9,31 @@
       "id": 1
     },
     {
-      "comentario": "f",
-      "fecha": "26/10/2017",
-      "hora": "14:19",
-      "usuario": "qwe qwe",
-      "tareaId": "1",
+      "comentario": "holapppp",
+      "fecha": "08/11/2017",
+      "hora": "14:25",
+      "usuario": "jorge artave",
+      "tareaId": "13",
       "id": 2
+    },
+    {
+      "comentario": "Soy migue",
+      "fecha": "08/11/2017",
+      "hora": "14:25",
+      "usuario": "Miguelo Merelli",
+      "tareaId": "13",
+      "id": 3
     }
   ],
   "tareas": [
     {
-      "estado": "En progreso",
+      "estado": "Resuelta",
       "resumen": "Tarea 1s",
-      "descripcion": "Prueba de tareapppppdasfaaaaaaG",
-      "usuarioEncargado": "Mauri D'Ambrosio",
+      "descripcion": "Prueba de tareapppppdasfaaaaaaGasdasdasdasdasddddddddddddddddddddddddddddddddd",
+      "usuarioEncargado": "Fedesdaa asd",
       "fechaCreado": "2017-10-26T13:16:38.120Z",
-      "id": 1
+      "id": 1,
+      "tipo": "Tarea"
     },
     {
       "estado": "En progreso",
@@ -73,6 +82,60 @@
       "usuarioEncargado": "Sin asignar",
       "fechaCreado": "2017-10-29T17:05:26.302Z",
       "id": 7
+    },
+    {
+      "estado": "Re abierta",
+      "resumen": "Error",
+      "descripcion": "as",
+      "usuarioEncargado": "Miguelo Merelli",
+      "tipo": "Tarea",
+      "fechaCreado": "2017-11-04T04:04:32.476Z",
+      "id": 8
+    },
+    {
+      "estado": "Abierta",
+      "resumen": "rara",
+      "descripcion": "asd",
+      "usuarioEncargado": "Miguelo Merelli",
+      "tipo": "Error",
+      "fechaCreado": "2017-11-06T17:02:31.539Z",
+      "id": 9
+    },
+    {
+      "estado": "Abierta",
+      "resumen": "asd",
+      "descripcion": "asdasdasdasdasd",
+      "usuarioEncargado": "asd asd",
+      "tipo": "Tarea",
+      "fechaCreado": "2017-11-06T17:02:41.737Z",
+      "id": 10
+    },
+    {
+      "estado": "Abierta",
+      "resumen": "adad",
+      "descripcion": "adada",
+      "usuarioEncargado": "Miguelo Merelli",
+      "tipo": "Tarea",
+      "fechaCreado": "2017-11-06T17:02:46.975Z",
+      "id": 11
+    },
+    {
+      "estado": "Abierta",
+      "resumen": "ad",
+      "descripcion": "assssssssssss",
+      "usuarioEncargado": "Sin asignar",
+      "tipo": "Tarea",
+      "fechaCreado": "2017-11-06T17:02:55.770Z",
+      "id": 12
+    },
+    {
+      "estado": "Re abierta",
+      "resumen": "Cargar las horas en Jiraaaaaaaa",
+      "descripcion": "hola puto",
+      "usuarioEncargado": "jorge artave",
+      "tipo": "Error",
+      "fechaCreado": "2017-11-08T17:21:54.689Z",
+      "id": 13
     }
   ],
   "usuarios": [
@@ -86,11 +149,11 @@
       "id": 2
     },
     {
-      "nombre": "Miguel",
+      "nombre": "Miguelo",
       "apellido": "Merelli",
       "correo": "miguelmerelli.ll@gmail.com",
       "rol": "admin",
-      "clave": "7815696ecbf1c96e6894b779456d330e",
+      "clave": "202cb962ac59075b964b07152d234b70",
       "activo": "true",
       "id": 3
     },
@@ -102,6 +165,15 @@
       "clave": "7815696ecbf1c96e6894b779456d330e",
       "activo": "true",
       "id": 4
+    },
+    {
+      "nombre": "jorge",
+      "apellido": "artave",
+      "correo": "jorge@fx2.com.uy",
+      "rol": "public",
+      "clave": "202cb962ac59075b964b07152d234b70",
+      "activo": "true",
+      "id": 5
     }
   ]
 }

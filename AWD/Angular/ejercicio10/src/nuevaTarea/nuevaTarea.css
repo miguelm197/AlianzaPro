@@ -2,27 +2,27 @@
     width: 50%;   
 }
 
-.nuevaTarea-panel .combo-responsable{
+.nuevaTarea-panel .combo{
     width: 100%;
 }
 
-.nuevaTarea-panel .combo-responsable button{
+.nuevaTarea-panel .combo button{
     width: 100%;
     text-align: left;
 }
-.nuevaTarea-panel .combo-responsable button span{
+.nuevaTarea-panel .combo button span{
     position: absolute;
     right: 10px;
     top: 15px;
 }
-.nuevaTarea-panel .combo-responsable ul{
+.nuevaTarea-panel .combo ul{
     width: 100%;
     text-align: left;
 }
-.nuevaTarea-panel .combo-responsable ul li{
+.nuevaTarea-panel .combo ul li{
     padding: 5px 10px;
     cursor: pointer;
 }
-.nuevaTarea-panel .combo-responsable ul li:hover{
+.nuevaTarea-panel .combo ul li:hover{
     background-color: rgba(0, 0, 0, 0.082);
 }

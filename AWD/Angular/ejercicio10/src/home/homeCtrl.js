@@ -1,4 +1,5 @@
 app.controller("homeCtrl", ["$scope", "$location", function ($scope, $location) {
+    
     $scope.nuevaTarea = function () {
         $location.path("/nuevaTarea");
     }
@@ -8,4 +9,5 @@ app.controller("homeCtrl", ["$scope", "$location", function ($scope, $location) 
     $scope.perfil = function () {
         $location.path("/perfil");
     }
+
 }]);    

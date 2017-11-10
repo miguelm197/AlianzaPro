@@ -1,3 +1,4 @@
+<input type="text" class="form-control" placeholder="Buscar..." ng-model="buscador.resumen">
 <table class="mf-table">
     <thead>
         <tr>
@@ -10,14 +11,13 @@
             <th>
                 <span>Resumen</span>
             </th>
-
             <th>
                 <span>Creada</span>
             </th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="tarea in datos.datos">
+        <tr ng-repeat="tarea in datos.datos | filter:buscador:strict" >
             <td class="col2p">
                 <span>{{tarea.id}}</span>
             </td>
