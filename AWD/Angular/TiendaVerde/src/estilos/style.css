@@ -1,0 +1,10 @@
+.dropdown-menu span{
+    padding: 20px;
+    color: gray;
+}
+.dropdown-menu{
+    box-shadow: none !important;
+}
+a:hover{
+    cursor: pointer;
+}

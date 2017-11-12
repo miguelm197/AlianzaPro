@@ -1,0 +1,42 @@
+{
+  "usuarios": [
+    {
+      "nombre": "Miguelo",
+      "apellido": "Merelli",
+      "correo": "miguelmerelli.ll@gmail.com",
+      "rol": "admin",
+      "clave": "202cb962ac59075b964b07152d234b70",
+      "activo": "true",
+      "id": 3
+    },
+    {
+      "nombre": "Migue",
+      "apellido": "Mere",
+      "correo": "migue@migue.com",
+      "direccion": "Chayos",
+      "rol": "admin",
+      "clave": "76d80224611fc919a5d54f0ff9fba446",
+      "activo": "true",
+      "id": 4
+    },
+    {
+      "nombre": "Juan",
+      "apellido": "Pablo",
+      "correo": "juanpa@gmail.com",
+      "direccion": "Chayos 5057",
+      "rol": "admin",
+      "clave": "efe6398127928f1b2e9ef3207fb82663",
+      "activo": "true",
+      "id": 5
+    },
+    {
+      "nombre": "Usuario",
+      "apellido": "Uno",
+      "correo": "usuario1@asd.com",
+      "rol": "admin",
+      "clave": "202cb962ac59075b964b07152d234b70",
+      "activo": "true",
+      "id": 6
+    }
+  ]
+}

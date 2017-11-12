@@ -85,7 +85,6 @@ app.factory("FacLogin", ["$http", '$cookies', '$rootScope', function ($http, $co
 
 
     return {
-
         // Método para ingresar las credenciales en una cookie
         setCredentials: function (correo, clave, rolUsuario, nombre, apellido) {
             var authdata = Base64.encode(correo + ':' + clave);
@@ -113,10 +112,13 @@ app.factory("FacLogin", ["$http", '$cookies', '$rootScope', function ($http, $co
             $cookies.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic';
         },
-
-        consultaClave: function (correo) {
+        existenciaCorreo: function (correo) {
             return $http.get(servicio + "/usuarios/?correo=" + correo);
-        }
+        },
+        agregarUsuario: function (objeto) {
+            return $http.post(servicio + "/usuarios", objeto);
+        },
+
     }
 
 }]);

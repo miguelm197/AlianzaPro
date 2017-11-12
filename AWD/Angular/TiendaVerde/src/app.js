@@ -7,8 +7,12 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'src/login/login.html',
             controller: 'loginCtrl'
         })
+        .when('/home', {
+            templateUrl: 'src/home/home.html',
+            controller: 'homeCtrl'
+        })
 
-        .otherwise({ redirectTo: "/login" });
+        .otherwise({ redirectTo: "/home" });
 });
 
 
@@ -39,7 +43,8 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
         if (loggedIn) {
             var rolUsuario = loggedIn.rolUsuario;
 
-            var paginasPublic = ['/nuevaTarea'];    
+            //Páginas en las cuales no puede entrar el rol
+            var paginasPublic = ['/nuevaTarea'];
             var paginasAdmins = [];
             var paginas = [""];
 
@@ -57,7 +62,7 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
             }
 
         } else {
-            var paginas = ['/login'];
+            var paginas = ['/login', '/home'];
             var restrictedPage = $.inArray($location.path(), ) === -1;
             var restrictedPage = paginas.indexOf($location.path()) != -1 ? true : false;
 

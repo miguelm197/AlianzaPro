@@ -1,0 +1,115 @@
+<div class="panel-nav" ng-controller="navCtrl">
+
+    <div class="row principal">
+        <div class="container">
+
+            <!-- Logo -->
+            <div class="col col-lg-2 col-xs-6 col-sm-4">
+                <div class="logo">
+                </div>
+            </div>
+            <!-- Categoría -->
+            <div class="col col-lg-2 col-xs-1 hide hidden-xs hidden-sm hidden-md" id="categ">
+                <button type="button" class="btn-categoria">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                    <span class="visible-lg-inline">CATEGORÍA</span>
+                    <span class="glyphicon glyphicon-menu-down visible-lg-inline" aria-hidden="true"></span>
+                </button>
+            </div>
+            <!-- Categoría celular -->
+            <div class="col col-xs-1 col-sm-offset-2 hidden-lg">
+                <button type="button" class="btn-categoria">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                </button>
+            </div>
+            <!-- buscador -->
+            <div class="col col-lg-8 col-xs-1 col-sm-1" id="busca">
+                <div class="buscador">
+
+                    <div class="input-group hidden-xs hidden-sm hidden-md">
+                        <input type="search" class="form-control" id="clU" placeholder="Buscar..." name="clave" ng-model="usuario.direccion">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </span>
+                    </div>
+
+                    <button type="button" class="btn btn-default hidden-lg" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+
+                </div>
+            </div>
+            <!-- carrito y perfil -->
+            <div class="col col-lg-2 col-xs-4">
+                <div class="carper">
+                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                    </button>
+
+                    <button ng-hide="sesions" type="button" class="btn btn-default" aria-label="Left Align" ng-click="iniciarSesion()">
+                        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                    </button>
+
+                    <button ng-show="sesions" class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="true">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li>
+                            <span>{{sesion.nombre}}</span>
+                            <span>{{sesion.rol}}</span>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a href="#">Mi perfil</a>
+                        </li>
+                        <li>
+                            <a href="#">Configuración</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a ng-click="cerrarSesion()">Salir</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row secundario visible-lg-inline-block">
+        <div class="container">
+            <div class="col col-lg-4">
+                <button type="button" class="btn-categoria">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> CATEGORÍA
+                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="col col-lg-4">
+                <div class="direccion">
+                    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                    <span>Dirección: Av.Siempre Viva 372</span>
+                </div>
+            </div>
+            <div class="col col-lg-4">
+                <div class="telefono">
+                    <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
+                    <span>Teléfono: 095647545</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 
+<div class="panel-perfil-nav">
+    <span>
+        MIGUEL MERELLI
+    </span>
+    <span>
+        Administrador
+    </span>
+    <span>
+
+    </span>
+</div> -->
