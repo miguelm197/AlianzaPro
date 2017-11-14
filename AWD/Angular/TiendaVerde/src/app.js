@@ -11,6 +11,14 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'src/home/home.html',
             controller: 'homeCtrl'
         })
+        .when('/configuracion', {
+            templateUrl: 'src/configuracion/configuracion.html',
+            controller: 'configuracionCtrl'
+        })
+        .when('/nuevoProducto', {
+            templateUrl: 'src/nuevoProducto/nuevoProducto.html',
+            controller: 'nuevoProductoCtrl'
+        })
 
         .otherwise({ redirectTo: "/home" });
 });
@@ -71,7 +79,20 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
             }
         }
 
-    });
 
+        var currPag = $location.path();
+        // páginas donde no se tiene que mostrar el buscador
+        var pags = ["/configuracion", "/nuevoProducto"];
+        for (var i = 0; i <= pags.length; i++) {
+            if (currPag == pags[i]) {
+                $("#busca").addClass("invisible");
+            } else {
+                $("#busca").removeClass("invisible");
+            }
+        }
+
+
+
+    });
 
 }]);

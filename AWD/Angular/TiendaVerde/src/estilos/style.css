@@ -1,10 +1,65 @@
-.dropdown-menu span{
+.dropdown-menu span {
     padding: 20px;
     color: gray;
 }
-.dropdown-menu{
+
+.invisible {
+    opacity: 0;
+    transition: all .5s;
+}
+
+input {
+    transition: all .5s;
+}
+
+.dropdown-menu {
     box-shadow: none !important;
 }
-a:hover{
+
+a:hover {
     cursor: pointer;
+}
+
+
+/* .col-lg-6{
+    transition: all 1s;
+}
+.col-lg-8{
+    transition: all 1s;
+} */
+
+.combo {
+    width: 100%;
+}
+
+.combo button {
+    width: 100%;
+    text-align: left;
+}
+
+.combo button span {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+
+.combo ul {
+    width: 100%;
+    text-align: left;
+}
+
+.combo ul li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.combo ul li:hover {
+    background-color: rgba(0, 0, 0, 0.082);
+}
+
+input[type="file"] {
+    cursor: pointer;
+}
+textarea{
+    resize: vertical;
 }

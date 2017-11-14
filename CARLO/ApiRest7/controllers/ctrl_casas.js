@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
-var SCH_Rangos =  require('../models/mdl_rango').Rango;
-var SCH_Casas =  require('../models/mdl_casa').Casa;
+var SCH_Rangos = require('../models/mdl_rango').Rango;
+var SCH_Casas = require('../models/mdl_casa').Casa;
 
 
 //GET - Retorna todas las Casas de la Base de Datos
@@ -75,11 +75,39 @@ exports.eliminarCasa = function (req, res) {
 
 //GET - Retorna todas las Rangos de la Base de Datos
 exports.consultaRangos = function (req, res) {
-    SCH_Rangos.find(function (err, rangos) {
+
+    SCH_Casas.findById(req.params.id, function (err, casa) {
         if (err) res.send(500, err.message);
-        console.log('GET /rangos');
-        res.status(200).jsonp(rangos);
+        var precio = casa.precio;
+
+
+
+        //GET - Retorna el rango que pertenezca a un precio 
+        SCH_Rangos.find({ $and: [{ min: { $lte: precio } }, { max: { $gte: precio } }] }, function (err, rangos) {
+            if (err) res.send(500, err.message);
+
+
+            console.log('GET /cotegoria/' + req.params.id);
+            var categoria = rangos[0].categoria;
+            res.status(200).jsonp(categoria);
+
+        });
+        //db.getCollection('rango').find({$and:[ {min:{$lte:90000}}, {max:{$gte:90000}} ]} )
+
+
+
+
+
+        // res.status(200).jsonp(casa);
     });
+
+
+
+    // SCH_Rangos.find(function (err, rangos) {
+    //     if (err) res.send(500, err.message);
+    //     console.log('GET /rangos');
+    //     res.status(200).jsonp(rangos);
+    // });
 };
 
 

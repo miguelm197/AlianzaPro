@@ -2,6 +2,7 @@ app.controller("navCtrl", ["$scope", "FacLogin", "$location", '$rootScope', func
     $scope.scroll = true;
     $scope.sesions = false;
     $scope.sesion = {}
+    $scope.categoria = {  }
     $(window).scroll(function () {
         var posicion = $(document).scrollTop();
         if (posicion < 92) {

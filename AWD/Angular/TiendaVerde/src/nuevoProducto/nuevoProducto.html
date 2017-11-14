@@ -1,0 +1,145 @@
+<div class="nuevoProducto-panel">
+    <form class="form" name="form">
+
+        <div class="container">
+            <h2>Nuevo producto</h2>
+            <br>
+            <br>
+
+            <div class="row">
+                <!-- NOMBRE -->
+                <div class="col col-lg-6">
+                    <div class="form-group">
+                        <label class="control-label">Nombre*</label>
+                        <input type="text" class="form-control" name="res" placeholder="Nombre" ng-model="producto.nombre" required>
+                    </div>
+                </div>
+
+                <!-- CATEGORIA -->
+                <div class="col col-lg-2">
+                    <div class="form-group">
+                        <label class="control-label">Categoría*</label>
+                        <div class="dropdown combo">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                {{categoria}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <!-- ---------------------- -->
+                                <li ng-click="categoria = 'Verde'">
+                                    <span>Verde</span>
+                                </li>
+                                <li ng-click="categoria = 'Naranja'">
+                                    <span>Naranja</span>
+                                </li>
+                                <li ng-click="categoria = 'Rojo'">
+                                    <span>Rojo</span>
+                                </li>
+                                <li ng-click="categoria = 'Violeta'">
+                                    <span>Violeta</span>
+                                </li>
+                                <li ng-click="categoria = 'Blanco'">
+                                    <span>Blanco</span>
+                                </li>
+                                <!-- ---------------------- -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRECIO -->
+                <div class="col col-lg-2">
+                    <div class="form-group">
+                        <label class="control-label">Precio*</label>
+                        <input type="number" class="form-control" name="res" ng-model="producto.precio" required>
+                    </div>
+                </div>
+                <!-- STOCK  -->
+                <div class="col col-lg-2">
+                    <div class="form-group">
+                        <label class="control-label">Stock*</label>
+                        <input type="number" class="form-control" name="res" ng-model="producto.stock" required>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <!-- IMAGEN  -->
+                <div class="col col-lg-12">
+                    <div class="form-group">
+                        <label class="control-label">Imágen*</label>
+                        <input type="file" class="form-control" name="res" ng-model="producto.imagen" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- DESCRIPCION -->
+                <div class="col col-lg-12">
+                    <div class="form-group">
+                        <label for="message-text" class="control-label">Descripción:</label>
+                        <textarea class="form-control" ng-model="producto.descripcion"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- NOTRICIONAL -->
+                <div class="col col-lg-2 col-lg-offset-2">
+                    <div class="form-group">
+                        <label class="control-label">Calorías*</label>
+                        <input type="number" class="form-control" name="res" ng-model="producto.nutricional.calorias" required>
+                    </div>
+                </div>
+                <!-- PROTEÍNAS -->
+                <div class="col col-lg-2">
+                    <div class="form-group">
+                        <label class="control-label">Proteínas*</label>
+                        <input type="number" class="form-control" name="res" ng-model="producto.nutricional.proteinas" required>
+                    </div>
+                </div>
+                <!-- HIDRATOS -->
+                <div class="col col-lg-2">
+                    <div class="form-group">
+                        <label class="control-label">Hidratos*</label>
+                        <input type="number" class="form-control" name="res" ng-model="producto.nutricional.hidratos" required>
+                    </div>
+                </div>
+                <!-- GRASAS -->
+                <div class="col col-lg-2">
+                    <div class="form-group">
+                        <label class="control-label">Grasas*</label>
+                        <input type="number" class="form-control" name="res" ng-model="producto.nutricional.grasas" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-lg-12">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="crearOtroProducto"> Crear otro producto
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col col-lg-3">
+                    <!-- CANCELAR PRODUCTO -->
+
+                    <button type="submit" class="btn btn-default form-control" ng-disabled="form.res.$error.required || form.des.$error.required"
+                        ng-click="agreagarProducto()">Cancelar</button>
+                </div>
+                <div class="col col-lg-9">
+
+
+                    <!-- AGREGAR PRODUCTO -->
+
+                    <button type="submit" class="btn btn-default form-control btn-agregar" ng-disabled="form.res.$error.required || form.des.$error.required"
+                        ng-click="agreagarProducto()" >Agregar producto</button>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+</div>
+</div>

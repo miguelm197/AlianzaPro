@@ -70,7 +70,7 @@ router.route('/rangos/:id')
     .delete(CtrlRangos.eliminarRango)
 
 
-router.route('/casasCategory/')
+router.route('/casasCategory/:id')
     .get(CtrlCasas.consultaRangos)
 
 app.use(router);
