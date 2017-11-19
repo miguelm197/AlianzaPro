@@ -42,7 +42,7 @@ app.controller("loginCtrl", ["$scope", "FacLogin", "$location", "md5", function 
                     var nombre = datos.nombre;
                     var apellido = datos.apellido;
                     FacLogin.setCredentials(correo, clave, rolUsuario, nombre, apellido);
-                     $location.path('/home');
+                    $location.path('/home');
                     console.log("sape wacho")
                 } else {
                     console.log("Conraseña incorrecta")
@@ -71,7 +71,8 @@ app.controller("loginCtrl", ["$scope", "FacLogin", "$location", "md5", function 
                 "direccion": direccion,
                 "rol": rol,
                 "clave": md5.createHash(claveDos),
-                "activo": "true"
+                "activo": true,
+                "bloqueado": false
             }
             FacLogin.existenciaCorreo(correo).then(
                 function (res) {

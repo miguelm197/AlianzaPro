@@ -7,7 +7,9 @@
     background-color: rgb(87, 193, 78);
     z-index: 10;
 }
-
+.panel-login input{
+    border-radius: 0px !important;
+}
 .panel-login .caja-login {
     width: 100%;
     height: auto;
@@ -30,7 +32,7 @@
 }
 
 .panel-login .caja-login .cinta .menu .texto span {
-    font-size: 20px;
+    font-size: 20px; 
     justify-content: center;
     color: white;
 }

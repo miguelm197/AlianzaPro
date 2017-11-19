@@ -1,0 +1,86 @@
+<div class="panel-listaProductos">
+
+    <div class="container-fluid">
+        <h2 class=" col col-lg-offset-1">Lista de Productos</h2>
+        <br>
+        <br>
+        <div class="row">
+
+            <div class="buscador  col col-lg-5 col-lg-offset-1">
+                <div class="input-group">
+                    <input type="search" autocomplete="off" class="form-control" placeholder="Buscar..." name="clave">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+        <br>
+
+        <div class="row">
+            <table class="mf-table col col-lg-10 col-lg-offset-1">
+                <thead>
+                    <tr>
+                        <th>
+                            <span>Imágen</span>
+                        </th>
+                        <th>
+                            <span>Nombre</span>
+                        </th>
+                        <th>
+                            <span>Descripción</span>
+                        </th>
+                        <th>
+                            <span>Precio</span>
+                        </th>
+                        <th>
+                            <span>Stock</span>
+                        </th>
+                        <th>
+                            <span>Editar</span>
+                        </th>
+                        <th>
+                            <span>Eliminar</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="producto in datos.datos">
+                        <td class="col5p">
+                            <span>imágen</span>
+                        </td>
+                        <td class="colp20">
+                            <span>{{producto.nombre}}</span>
+                        </td>
+                        <td class="col58p">
+                            <span>{{producto.descripcion}}</span>
+                        </td>
+                        <td class="col10p">
+                            <span>{{producto.precio}}</span>
+                        </td>
+                        <td class="col10p">
+                            <span>{{producto.stock}}</span>
+                        </td>
+                        <td class="col1p">
+                            <span>E</span>
+                        </td>
+                        <td class="col1p">
+                            <span>X</span>
+                        </td>
+                </tbody>
+                <tfoot>
+                    <tr class="paginacion">
+                        <td>
+                            <span>1</span>
+                            <span> - </span>
+                            <span>{{datos.datos.length}}</span>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,93 @@
+<div class="panel-listaUsuarios">
+
+    <div class="container-fluid">
+        <h2 class=" col col-lg-offset-1">Lista de Usuarios</h2>
+        <br>
+        <br>
+        <div class="row">
+
+            <div class="buscador  col col-lg-5 col-lg-offset-1">
+                <div class="input-group">
+                    <input type="search" autocomplete="off" class="form-control" placeholder="Buscar..." name="clave">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+        <br>
+
+        <div class="row">
+            <table class="mf-table col col-lg-10 col-lg-offset-1">
+                <thead>
+                    <tr>
+                        <th>
+                            <span>Nombre</span>
+                        </th>
+                        <th>
+                            <span>Apellido</span>
+                        </th>
+                        <th>
+                            <span>Correo</span>
+                        </th>
+                        <th>
+                            <span>Rol</span>
+                        </th>
+                        <th>
+                            <span>Editar</span>
+                        </th>
+                        <th>
+                            <span>Eliminar</span>
+                        </th>
+                        <th>
+                            <span>Bloquear</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="usuario in datos.datos">
+
+                        <td class="col20p">
+                            <span>{{usuario.nombre}}</span>
+                        </td>
+                        <td class="col20p">
+                            <span>{{usuario.apellido}}</span>
+                        </td>
+                        <td class="col70p">
+                            <span>{{usuario.correo}}</span>
+                        </td>
+                        <td class="col30p">
+                            <span>{{usuario.rol}}</span>
+                        </td>
+                        <td class="col1p">
+                            <span>
+                                <center> E </center>
+                            </span>
+                        </td>
+                        <td class="col1p">
+                            <span>
+                                <center> E </center>
+                            </span>
+                        </td>
+                        <td class="col1p">
+                            <span>
+                                <center> B</center>
+                            </span>
+                        </td>
+                </tbody>
+                <tfoot>
+                    <tr class="paginacion">
+                        <td>
+                            <span>1</span>
+                            <span> - </span>
+                            <span>{{datos.datos.length}}</span>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+    </div>
+
+</div>

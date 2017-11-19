@@ -1,0 +1,80 @@
+.panel-listaProductos {}
+
+.panel-listaProductos .buscador .input-group-addon {
+    background-color: white !important;
+    border-left: none !important;
+}
+
+.panel-listaProductos .buscador input {
+    border-right: none !important;
+}
+
+.panel-listaProductos .buscador input:focus {
+    outline: 0px;
+    border: 1px solid rgb(209, 209, 209);
+    border-right: 0px;
+}
+
+
+.panel-listaProductos table thead {
+    border-bottom: 1px solid gray;
+}
+
+.panel-listaProductos table thead th {
+    padding: 10px 30px;
+    font-size: 14px;
+    color: #808080e6;
+}
+
+.panel-listaProductos table tbody td {
+    padding: 10px 30px;
+}
+
+.panel-listaProductos table tbody tr:hover {
+    transition: all .3s;
+}
+
+.panel-listaProductos table tbody tr:hover {
+    background-color: #8080801a;
+    transition: all .3s;
+}
+
+.panel-listaProductos table tfoot {
+    border-top: 1px solid gray;
+}
+
+.panel-listaProductos table tfoot td {
+    padding: 10px 30px;
+}
+
+.panel-listaProductos .col1p {
+    width: 1%
+}
+
+.panel-listaProductos .col5p {
+    width: 5%
+}
+
+.panel-listaProductos .col10p {
+    width: 10%
+}
+
+.panel-listaProductos .col15p {
+    width: 15%
+}
+
+.panel-listaProductos .col20+ {
+    width: 20%
+}
+
+.panel-listaProductos .col25p {
+    width: 25%
+}
+
+.panel-listaProductos .col30p {
+    width: 30%
+}
+
+.panel-listaProductos .col35p {
+    width: 35%
+}

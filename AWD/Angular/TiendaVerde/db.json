@@ -1,42 +1,54 @@
 {
   "usuarios": [
     {
-      "nombre": "Miguelo",
+      "nombre": "Miguel",
       "apellido": "Merelli",
       "correo": "miguelmerelli.ll@gmail.com",
-      "rol": "admin",
-      "clave": "202cb962ac59075b964b07152d234b70",
-      "activo": "true",
-      "id": 3
-    },
-    {
-      "nombre": "Migue",
-      "apellido": "Mere",
-      "correo": "migue@migue.com",
-      "direccion": "Chayos",
-      "rol": "admin",
-      "clave": "76d80224611fc919a5d54f0ff9fba446",
-      "activo": "true",
-      "id": 4
-    },
-    {
-      "nombre": "Juan",
-      "apellido": "Pablo",
-      "correo": "juanpa@gmail.com",
       "direccion": "Chayos 5057",
       "rol": "admin",
-      "clave": "efe6398127928f1b2e9ef3207fb82663",
-      "activo": "true",
-      "id": 5
+      "clave": "7815696ecbf1c96e6894b779456d330e",
+      "activo": false,
+      "bloqueado": false,
+      "id": 1
     },
     {
-      "nombre": "Usuario",
-      "apellido": "Uno",
-      "correo": "usuario1@asd.com",
+      "nombre": "Miguel",
+      "apellido": "Merelli",
+      "correo": "miguelmerelli.ll@gmail.com",
+      "direccion": "Chayos 5057",
       "rol": "admin",
-      "clave": "202cb962ac59075b964b07152d234b70",
-      "activo": "true",
-      "id": 6
+      "clave": "7815696ecbf1c96e6894b779456d330e",
+      "activo": true,
+      "bloqueado": false,
+      "id": 2
+    }
+  ],
+  "productos": [
+    {
+      "nombre": "asd",
+      "precio": 1,
+      "stock": 2,
+      "descripcion": "safffff",
+      "nutricional": {
+        "calorias": 1,
+        "proteinas": 2,
+        "hidratos": 3,
+        "grasas": 4
+      },
+      "id": 1
+    },
+    {
+      "nombre": "Tomate",
+      "precio": 30,
+      "stock": 500,
+      "descripcion": "Tomates canadienses",
+      "nutricional": {
+        "calorias": 2,
+        "proteinas": 3,
+        "hidratos": 4,
+        "grasas": 5
+      },
+      "id": 2
     }
   ]
 }

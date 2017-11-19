@@ -1,0 +1,91 @@
+.panel-listaUsuarios {}
+
+.panel-listaUsuarios .buscador .input-group-addon {
+    background-color: white !important;
+    border-left: none !important;
+}
+
+.panel-listaUsuarios .buscador input {
+    border-right: none !important;
+}
+
+.panel-listaUsuarios .buscador input:focus {
+    outline: 0px;
+    border: 1px solid rgb(209, 209, 209);
+    border-right: 0px;
+}
+
+.panel-listaUsuarios table thead {
+    border-bottom: 1px solid gray;
+}
+
+.panel-listaUsuarios table thead th {
+    padding: 10px 30px;
+    font-size: 14px;
+    color: #808080e6;
+}
+
+.panel-listaUsuarios table tbody td {
+    padding: 10px 30px;
+}
+
+.panel-listaUsuarios table tbody tr:hover {
+    transition: all .3s;
+}
+
+.panel-listaUsuarios table tbody tr:hover {
+    background-color: #8080801a;
+    transition: all .3s;
+}
+
+.panel-listaUsuarios table tfoot {
+    border-top: 1px solid gray;
+}
+
+.panel-listaUsuarios table tfoot td {
+    padding: 10px 30px;
+}
+
+.panel-listaUsuarios .col1p {
+    width: 1%
+}
+
+.panel-listaUsuarios .col5p {
+    width: 5%
+}
+
+.panel-listaUsuarios .col7p {
+    width: 7%
+}
+
+.panel-listaUsuarios .col10p {
+    width: 10%
+}
+
+.panel-listaUsuarios .col15p {
+    width: 15%
+}
+
+.panel-listaUsuarios .col20p {
+    width: 20%
+}
+
+.panel-listaUsuarios .col25p {
+    width: 25%
+}
+
+.panel-listaUsuarios .col30p {
+    width: 30%
+}
+
+.panel-listaUsuarios .col35p {
+    width: 35%
+}
+
+.panel-listaUsuarios .col50p {
+    width: 50%
+}
+
+.panel-listaUsuarios .col70p {
+    width: 70%
+}

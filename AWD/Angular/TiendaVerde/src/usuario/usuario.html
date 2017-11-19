@@ -1,0 +1,171 @@
+<div class="panel-usuario">
+    <form class="form" name="formUsr">
+
+        <div class="container-fluid">
+            <h2 class="col col-lg-offset-1">{{usuario.nombre.toUpperCase()}} {{usuario.apellido.toUpperCase()}}</h2>
+            <br>
+            <br>
+
+            <div class="col col-lg-6 col-lg-offset-1">
+                <div class="row">
+
+                    <div class="col col-lg-8">
+                        <!-- nombre -->
+                        <div class="row lista">
+                            <div class="col col-lg-2 colT">
+                                <span>Nombre:</span>
+                            </div>
+
+                            <div class="col col-lg-8">
+                                <div ng-show="editar">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Nombre" name="formUsr.nombre" ng-model="usuarioEdit.nombre">
+                                    </div>
+                                </div>
+                                <div ng-hide="editar" class="colT">
+                                    <span> {{usuario.nombre}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- nombre -->
+                        <div class="row lista">
+                            <div class="col col-lg-2 colT">
+                                <span>Apellido:</span>
+                            </div>
+
+                            <div class="col col-lg-8">
+                                <div ng-show="editar">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Apellido" name="formUsr.apellido" ng-model="usuarioEdit.apellido">
+                                    </div>
+                                </div>
+                                <div ng-hide="editar" class="colT">
+                                    <span> {{usuario.apellido}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- correo -->
+                        <div class="row lista">
+                            <div class="col col-lg-2 colT">
+                                <span>Correo:</span>
+                            </div>
+
+                            <div class="col col-lg-8">
+                                <div ng-show="editar">
+                                    <div class="form-group">
+                                        <input type="mail" class="form-control" placeholder="Correo" name="formUsr.correo" ng-model="usuarioEdit.correo">
+                                    </div>
+                                </div>
+                                <div ng-hide="editar" class="colT">
+                                    <span> {{usuario.correo}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- rol -->
+                        <div class="row lista">
+                            <div class="col col-lg-2 colT">
+                                <span>Rol:</span>
+                            </div>
+
+                            <div class="col col-lg-8">
+                                <div ng-show="editar">
+                                    <div class="form-group">
+                                        <div class="dropdown combo">
+                                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                {{rolSelected}}
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <!-- ---------------------- -->
+                                                <li ng-click="rolSelected = 'Público'">
+                                                    <span>Público</span>
+                                                </li>
+                                                <li ng-click="rolSelected = 'Administrador'">
+                                                    <span>Administrador</span>
+                                                </li>
+                                                <!-- ---------------------- -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ng-hide="editar" class="colT">
+                                    <span> {{usuario.rol}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dirección -->
+                        <div class="row lista">
+                            <div class="col col-lg-2 colT">
+                                <span>Dirección:</span>
+                            </div>
+
+                            <div class="col col-lg-8">
+                                <div ng-show="editar">
+                                    <div class="form-group">
+                                        <input type="mail" class="form-control" placeholder="Dirección" name="formUsr.direccion" ng-model="usuarioEdit.direccion">
+                                    </div>
+                                </div>
+                                <div ng-hide="editar" class="colT">
+                                    <span> {{usuario.direccion}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Contraseña -->
+                        <div class="row lista" ng-show="reesClave">
+                            <hr>
+                            <div class="col col-lg-2 colT">
+                                <span>Contraseña:</span>
+                            </div>
+
+                            <div class="col col-lg-8">
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Contraseña" name="formUsr.clave" ng-model="claveRes.clUno">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Confirmación -->
+                        <div class="row lista" ng-show="reesClave">
+                            <div class="col col-lg-2 colT">
+                                <span>Confirmación:</span>
+                            </div>
+
+                            <div class="col col-lg-8">
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Confirmar contraseña" name="formUsr.claveConf" ng-model="claveRes.clDos">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <span>Apellido: {{usuario.apellido}}</span> -->
+                        <!-- <span>Correo: {{usuario.correo}}</span> -->
+                        <!-- <span>Rol:{{usuario.rol}}</span>    -->
+                        <!-- <span>Dirección: {{usuario.direccion}} </span> -->
+                    </div>
+                    <div class="col col-lg-4">
+                        <div class="row botonera">
+                            <button class="col col-lg-12 btn btn-default" ng-click="reestablecerClaveU()" ng-hide="editar || reesClave">Reestablecer contraseña</button>
+                            <button class="col col-lg-12 btn btn-default" ng-click="guardarClaveU()" ng-show="reesClave">Guardar</button>
+                            <button class="col col-lg-12 btn btn-default" ng-click="guardarU()" ng-show="editar">Guardar</button>
+                            <button class="col col-lg-4 btn btn-default" ng-click="editarU()" ng-hide="editar || reesClave">Editar</button>
+                            <button class="col col-lg-4 btn btn-default" ng-click="editarU()" ng-show="editar">Cancelar</button>
+                            <button class="col col-lg-4 btn btn-default" ng-click="reestablecerClaveU()" ng-show="reesClave">Cancelar</button>
+                            <button class="col col-lg-4 btn btn-default" ng-click="bloquearU()" ng-hide="usuario.bloqueado">Bloquear</button>
+                            <button class="col col-lg-4 btn btn-default" ng-click="bloquearU()" ng-show="usuario.bloqueado">Desbloquear</button>
+                            <button class="col col-lg-4 btn btn-default" ng-click="eliminarU()" ng-hide="usuario.activo">Eliminar</button>
+                            <button class="col col-lg-4 btn btn-default" ng-click="eliminarU()" ng-show="usuario.activo">Reactivar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>

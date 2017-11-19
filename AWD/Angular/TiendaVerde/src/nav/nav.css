@@ -127,3 +127,20 @@
 
 
 
+ .strike {
+    text-decoration: line-through;
+    background-color: blue;
+}
+.bold {
+    font-weight: bold;
+}
+.red {
+    color: red;
+}
+.has-error {
+    color: red;
+    background-color: yellow;
+}
+.orange {
+    color: orange;
+}

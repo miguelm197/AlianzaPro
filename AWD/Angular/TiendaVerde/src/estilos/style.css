@@ -10,6 +10,9 @@
 
 input {
     transition: all .5s;
+    box-shadow: none !important;
+    border-radius: 4px !important;
+
 }
 
 .dropdown-menu {

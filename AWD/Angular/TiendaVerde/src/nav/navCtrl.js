@@ -2,7 +2,10 @@ app.controller("navCtrl", ["$scope", "FacLogin", "$location", '$rootScope', func
     $scope.scroll = true;
     $scope.sesions = false;
     $scope.sesion = {}
-    $scope.categoria = {  }
+    $scope.categoria = {}
+    $scope.buscado = {}
+    // $scope.hola = false;
+
     $(window).scroll(function () {
         var posicion = $(document).scrollTop();
         if (posicion < 92) {
@@ -16,6 +19,27 @@ app.controller("navCtrl", ["$scope", "FacLogin", "$location", '$rootScope', func
             $("#categ").removeClass("hide");
             $("#busca").addClass("col-lg-6");
         }
+        // var posicion = $(document).scrollTop();
+        // if (posicion < 92) {
+        //     $scope.scroll = false;
+
+        //     $scope.buscado = {
+        //         "stroke": true,
+        //         "col-lg-6": false,
+        //         "col-lg-8": true,
+        //         "hide": true
+        //     }
+        //     $scope.hola = true;
+        // } else {
+        //     $scope.scroll = true;
+        //     $scope.hola = false;
+
+        //     $scope.buscado = {
+        //         "col-lg-6": true,
+        //         "col-lg-8": false,
+        //         "hide": false
+        //     }
+        // }
     });
 
 
