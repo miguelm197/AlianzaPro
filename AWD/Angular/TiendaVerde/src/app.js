@@ -31,6 +31,10 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'src/usuario/usuario.html',
             controller: 'usuarioCtrl'
         })
+        .when('/producto/:id', {
+            templateUrl: 'src/producto/producto.html',
+            controller: 'productoCtrl'
+        })
 
         .otherwise({ redirectTo: "/home" });
 });

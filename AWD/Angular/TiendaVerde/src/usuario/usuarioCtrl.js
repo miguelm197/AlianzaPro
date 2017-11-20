@@ -11,12 +11,11 @@ app.controller("usuarioCtrl", ["$scope", "$location", 'FacUsuario', 'md5', funct
     FacUsuario.consultaUsuarioPorId(id).then(function (res) {
         var usr = res.data;
         $scope.usuario = usr;
-        console.log(usr)
     });
 
     $scope.editarU = function () {
         if ($scope.editar) {
-            $scope.editar = false;
+            $scope.editar = false; 
         } else {
             $scope.usuarioEdit.nombre = $scope.usuario.nombre;
             $scope.usuarioEdit.apellido = $scope.usuario.apellido;

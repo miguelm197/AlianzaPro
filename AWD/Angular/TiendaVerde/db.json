@@ -13,10 +13,10 @@
     },
     {
       "nombre": "Miguel",
-      "apellido": "Merelli",
+      "apellido": "Merelliiiiiiiiiiii",
       "correo": "miguelmerelli.ll@gmail.com",
       "direccion": "Chayos 5057",
-      "rol": "admin",
+      "rol": "public",
       "clave": "7815696ecbf1c96e6894b779456d330e",
       "activo": true,
       "bloqueado": false,
@@ -28,6 +28,7 @@
       "nombre": "asd",
       "precio": 1,
       "stock": 2,
+      "subtitulo": "asd canadienses",
       "descripcion": "safffff",
       "nutricional": {
         "calorias": 1,
@@ -41,7 +42,8 @@
       "nombre": "Tomate",
       "precio": 30,
       "stock": 500,
-      "descripcion": "Tomates canadienses",
+      "subtitulo": "Tomates canadienses",
+      "descripcion": "Las versiones modernas de las tecnologías de asistencia anunciarán contenido generado por CSS, así como también caracteres específicos de Unicode. Para evitar resultados imprevistos y confusos en los lectores de pantalla (especialmente cuando los iconos se usan exclusivamente para decoración), los ocultamos con el atributo.",
       "nutricional": {
         "calorias": 2,
         "proteinas": 3,
@@ -49,6 +51,21 @@
         "grasas": 5
       },
       "id": 2
+    },
+    {
+      "nombre": "Manzana",
+      "precio": 50,
+      "stock": 700,
+      "subtitulo": "Manzanas uruguayas",
+      "descripcion": "Las versiones modernas de las tecnologías de asistencia anunciarán contenido generado por CSS, así como también caracteres específicos de Unicode. Para evitar resultados imprevistos y confusos en los lectores de pantalla (especialmente cuando los iconos se usan exclusivamente para decoración), los ocultamos con el atributo.",
+      "nutricional": {
+        "calorias": 23,
+        "proteinas": 2,
+        "hidratos": 3,
+        "grasas": 4
+      },
+      "categoria": "Rojo",
+      "id": 3
     }
   ]
 }

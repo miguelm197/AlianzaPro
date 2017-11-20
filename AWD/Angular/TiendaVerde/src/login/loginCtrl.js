@@ -26,8 +26,6 @@ app.controller("loginCtrl", ["$scope", "FacLogin", "$location", "md5", function 
         }
     }
 
-
-
     $scope.login = function (correo, clave) {
         correo = correo.$viewValue;
         clave = clave.$viewValue;
@@ -41,15 +39,14 @@ app.controller("loginCtrl", ["$scope", "FacLogin", "$location", "md5", function 
                     var rolUsuario = datos.rol;
                     var nombre = datos.nombre;
                     var apellido = datos.apellido;
-                    FacLogin.setCredentials(correo, clave, rolUsuario, nombre, apellido);
+                    var id = datos.id;
+                    FacLogin.setCredentials(correo, clave, rolUsuario, nombre, apellido, id);
                     $location.path('/home');
-                    console.log("sape wacho")
                 } else {
-                    console.log("Conraseña incorrecta")
+                    alert("Contraseña incorrecta");
                 }
-
             } else {
-                console.log("mal el correo wachin")
+                alert("No existe este correo");
             }
         });
     }

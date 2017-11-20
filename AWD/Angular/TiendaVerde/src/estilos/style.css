@@ -66,3 +66,6 @@ input[type="file"] {
 textarea{
     resize: vertical;
 }
+.btn{
+    box-shadow: none !important;
+}

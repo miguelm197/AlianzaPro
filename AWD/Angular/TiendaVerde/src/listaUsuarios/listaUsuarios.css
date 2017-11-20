@@ -7,6 +7,8 @@
 
 .panel-listaUsuarios .buscador input {
     border-right: none !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
 }
 
 .panel-listaUsuarios .buscador input:focus {

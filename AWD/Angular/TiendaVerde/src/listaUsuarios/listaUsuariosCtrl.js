@@ -10,12 +10,10 @@ app.controller("listaUsuariosCtrl", ["$scope", "FacUsuarios", function ($scope, 
     FacUsuarios.consultaUsuarios().then(function (data) {
         var resultado = [];
         data = data.data;
-        console.log(data);
-        console.log("-------")
         for (var i = 0; i < data.length; i++) {
             var id = data[i].id;
+            data[i]["ver"] = "/#!/usuario/" + id;
             $scope.datos.datos.push(data[i])
-            console.log(data[i]);
         }
     });
 

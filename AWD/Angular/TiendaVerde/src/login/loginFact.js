@@ -86,10 +86,11 @@ app.factory("FacLogin", ["$http", '$cookies', '$rootScope', function ($http, $co
 
     return {
         // Método para ingresar las credenciales en una cookie
-        setCredentials: function (correo, clave, rolUsuario, nombre, apellido) {
+        setCredentials: function (correo, clave, rolUsuario, nombre, apellido, id) {
             var authdata = Base64.encode(correo + ':' + clave);
             $rootScope.globals = {
                 currentUser: {
+                    id: id,
                     correo: correo,
                     authdata: authdata,
                     rolUsuario: rolUsuario,

@@ -1,146 +1,260 @@
- .panel-nav {
-     top: 0px;
-     width: 100%;
-     margin: 0px;
- }
+         .panel-nav {
+             top: 0px;
+             width: 100%;
+             margin: 0px;
+         }
 
- .panel-nav .principal {
-     position: fixed;
-     padding-top: 17px;
-     top: 0px;
-     height: 72px;
-     width: 100%;
-     margin: 0px;
-     background-color: white;
-     border-bottom: 2px solid #678126;
-     z-index: 2;
- }
+         .panel-nav .principal {
+             position: fixed;
+             padding-top: 17px;
+             top: 0px;
+             height: 72px;
+             width: 100%;
+             margin: 0px;
+             background-color: white;
+             border-bottom: 2px solid #678126;
+             z-index: 2;
+         }
 
- .panel-nav .principal .logo {
-     background-image: url(../img/TiendaVerde.png);
-     background-size: cover;
-     margin-top: 6px;
-     margin-bottom: -3px;
-     height: 33px;
-     width: 100%;
- }
+         .panel-nav .principal .logo {
+             background-image: url(../img/TiendaVerde.png);
+             background-size: cover;
+             margin-top: 6px;
+             margin-bottom: -3px;
+             height: 33px;
+             width: 100%;
+         }
 
- .panel-nav .principal .btn-categoria {
-     border: 0px;
-     background: transparent;
-     font-weight: normal;
-     border-radius: 0px;
-     margin-top: 9px;
-     margin-bottom: -9px;
- }
+         .panel-nav .principal .btn-categoria {
+             border: 0px;
+             background: transparent;
+             font-weight: normal;
+             border-radius: 0px;
+             margin-top: 9px;
+             margin-bottom: -9px;
+         }
 
- .panel-nav .principal .btn-categoria:focus {
-     outline: 0px;
- }
+         .panel-nav .principal .btn-categoria:focus {
+             outline: 0px;
+         }
 
- .panel-nav .principal .buscador input {
-     border: 1px solid rgb(209, 209, 209);
-     box-shadow: none;
-     border-right: 0px;
- }
+         .panel-nav .principal .buscador input {
+             border: 1px solid rgb(209, 209, 209);
+             box-shadow: none;
+             border-right: 0px;
+             border-top-right-radius: 0px !important;
+             border-bottom-right-radius: 0px !important;
+         }
 
- .panel-nav .principal .buscador input:focus {
-     outline: 0px;
-     border: 1px solid rgb(209, 209, 209);
-     border-right: 0px;
- }
+         .panel-nav .principal .buscador input:focus {
+             outline: 0px;
+             border: 1px solid rgb(209, 209, 209);
+             border-right: 0px;
+         }
 
- .panel-nav .principal .buscador button {
-     border: none;
-     background-color: inherit;
-     border-radius: 100%;
-     width: 40px;
-     height: 40px;
-     box-shadow: none;
- }
+         .panel-nav .principal .buscador button {
+             border: none;
+             background-color: inherit;
+             border-radius: 100%;
+             width: 40px;
+             height: 40px;
+             box-shadow: none;
+         }
 
- .panel-nav .principal .buscador .input-group-addon {
-     background-color: white;
- }
+         .panel-nav .principal .buscador .input-group-addon {
+             background-color: white;
+         }
 
- .panel-nav .principal .carper button {
-     border: none;
-     background-color: inherit;
-     border-radius: 100%;
-     width: 40px;
-     height: 40px;
-     box-shadow: none;
-     /* background-color: gray; */
- }
+         .panel-nav .principal .carper button {
+             border: none;
+             background-color: inherit;
+             border-radius: 100%;
+             width: 40px;
+             height: 40px;
+             box-shadow: none;
+             /* background-color: gray; */
+         }
 
- .panel-nav .principal .carper .perfil {
-     width: auto;
- }
+         .panel-nav .principal .carper .perfil {
+             width: auto;
+         }
 
- .panel-nav .principal .carper button:focus {
-     outline: 0px;
- }
+         .panel-nav .principal .carper button:focus {
+             outline: 0px;
+         }
 
- .panel-nav .principal .carper button:hover {
-     background-color: #e8e8e8;
- }
+         .panel-nav .principal .carper button:hover {
+             background-color: #e8e8e8;
+         }
 
- .panel-nav .secundario {
-     position: relative;
-     margin: 0px;
-     margin-top: 72px;
-     background-color: #6eb121;
-     height: 40px;
-     width: 100%;
-     z-index: 1;
- }
+         .panel-nav .secundario {
+             position: relative;
+             margin: 0px;
+             margin-top: 72px;
+             background-color: #6eb121;
+             height: 40px;
+             width: 100%;
+             z-index: 1;
+         }
 
- .panel-nav .secundario .col {
-     left: 10%;
- }
+         .panel-nav .secundario .col {
+             left: 10%;
+         }
 
- .panel-nav .secundario .btn-categoria {
-     border: 0px;
-     background: transparent;
-     font-weight: normal;
-     border-radius: 0px;
-     margin-top: 8px;
-     margin-bottom: -6px;
-     color: white;
- }
+         .panel-nav .secundario .btn-categoria {
+             border: 0px;
+             background: transparent;
+             font-weight: normal;
+             border-radius: 0px;
+             margin-top: 8px;
+             margin-bottom: -6px;
+             color: white;
+         }
 
- .panel-nav .secundario .direccion,
- .panel-nav .secundario .telefono {
-     color: white;
-     margin-top: 8px;
- }
- /* PANEL PERFIL */
+         .panel-nav .secundario .direccion,
+         .panel-nav .secundario .telefono {
+             color: white;
+             margin-top: 8px;
+         }
+         /* CATEGORIAS */
 
- .panel-perfil-nav {
-     position: fixed;
-     top: 80px;
-     right: calc(50% - 500px);
-     background-color: rgb(218, 218, 218);
-     z-index: 3;
-     padding: 20px;
- }
+         .panel-nav .categorias {
+             position: fixed;
+             right: 0px;
+             left: 0px;
+             height: 100%;
+             margin-top: -5px;
+             padding: 0px;
+         }
 
+         .panel-nav .fondo {
+             background-color: rgb(0, 0, 0);
+             position: fixed;
+             top: 0px;
+             left: 0px;
+             width: 100%;
+             height: 100%;
+             opacity: .8;
+         }
 
+         .panel-nav .categorias .contenedor .col {
+             margin: 0px;
+             padding: 5px;
+             padding-top: 7px;
+         }
 
- .strike {
-    text-decoration: line-through;
-    background-color: blue;
-}
-.bold {
-    font-weight: bold;
-}
-.red {
-    color: red;
-}
-.has-error {
-    color: red;
-    background-color: yellow;
-}
-.orange {
-    color: orange;
-}
+         .panel-nav .categorias .contenedor {
+             background-color: rgb(0, 10, 0);
+             padding: 0px 18px;
+             color: white;
+         }
+
+         .panel-nav .categorias .contenedor .categoria {
+             font-size: 27px;
+         }
+
+         .panel-nav .categorias .contenedor .por {
+             font-size: 15px;
+         }
+
+         .panel-nav .categorias .contenedor .color {
+             font-size: 38px;
+         }
+
+         .panel-nav .categorias .contenedor .imagen {
+             height: 320px;
+         }
+
+         .panel-nav .categorias .contenedor .imagen .info {
+             width: 100%;
+             height: 100%;
+             box-shadow: inset 0px -150px 114px -17px rgba(0, 0, 0, 0.98);
+             opacity: 1;
+         }
+
+         .panel-nav .categorias .contenedor .imagen .info span {
+             bottom: 10px;
+             position: absolute;
+             padding: 7px;
+             padding-right: 10px;
+             color: white;
+             margin-bottom: -100px;
+             /* opacity: 0; */
+             transition: all .5s;
+         }
+
+         .panel-nav .categorias .contenedor .imagen .info span:hover {
+             /* opacity: 1; */
+             margin-bottom: 0px;
+         }
+
+         .panel-nav .categorias .contenedor .imagen .tela {
+             position: absolute;
+             background-color: black;
+             width: 100%;
+             height: 40%;
+             bottom: 0px;
+             box-shadow: inset 0px 20px 121px 18px rgba(0, 0, 0, 0.57);
+         }
+
+         .panel-nav .categorias .contenedor .catVerde {
+             background-color: green;
+             background-image: url("../img/textVerde.jpg");
+             background-size: cover;
+         }
+
+         .panel-nav .categorias .contenedor .catNaranja {
+             background-color: orange;
+             background-image: url("../img/textNaranja.jpg");
+             background-size: cover;
+         }
+
+         .panel-nav .categorias .contenedor .catRojo {
+             background-color: red;
+             background-image: url("../img/textRojo.jpg");
+             background-size: cover;
+         }
+
+         .panel-nav .categorias .contenedor .catVioleta {
+             background-color: violet;
+             background-image: url("../img/textVioleta.jpg");
+             background-size: cover;
+         }
+
+         .panel-nav .categorias .contenedor .catBlanco {
+             background-color: white;
+             background-image: url("../img/textBlanco.jpg");
+             background-size: cover;
+         }
+         /* PANEL PERFIL */
+
+         .panel-perfil-nav {
+             position: fixed;
+             top: 80px;
+             right: calc(50% - 500px);
+             background-color: rgb(218, 218, 218);
+             z-index: 3;
+             padding: 20px;
+         }
+
+         .strike {
+             text-decoration: line-through;
+             background-color: blue;
+         }
+
+         .bold {
+             font-weight: bold;
+         }
+
+         .red {
+             color: red;
+         }
+
+         .has-error {
+             color: red;
+             background-color: yellow;
+         }
+
+         .orange {
+             color: orange;
+         }

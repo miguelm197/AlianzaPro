@@ -72,4 +72,10 @@ app.controller("navCtrl", ["$scope", "FacLogin", "$location", '$rootScope', func
         console.log("iniciar")
         $location.path("/login");
     }
+
+    $scope.perfil = function () {
+        var cook = $rootScope.globals;
+        var id = cook.currentUser.id;
+        $location.path("/usuario/" + id);
+    }
 }]);

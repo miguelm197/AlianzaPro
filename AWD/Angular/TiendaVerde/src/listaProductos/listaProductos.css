@@ -1,5 +1,10 @@
 .panel-listaProductos {}
 
+.panel-listaProductos a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
 .panel-listaProductos .buscador .input-group-addon {
     background-color: white !important;
     border-left: none !important;

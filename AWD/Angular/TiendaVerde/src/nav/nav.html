@@ -1,4 +1,5 @@
 <div class="panel-nav" ng-controller="navCtrl">
+    <div class="fondo"></div>
 
     <div class="row principal">
         <div class="container">
@@ -64,7 +65,7 @@
                         </li>
                         <li role="separator" class="divider"></li>
                         <li>
-                            <a href="#">Mi perfil</a>
+                            <a ng-click="perfil()">Mi perfil</a>
                         </li>
                         <li>
                             <a href="#!/configuracion">Configuración</a>
@@ -103,16 +104,104 @@
             </div>
         </div>
     </div>
-</div>
-<!-- 
-<div class="panel-perfil-nav">
-    <span>
-        MIGUEL MERELLI
-    </span>
-    <span>
-        Administrador
-    </span>
-    <span>
 
-    </span>
-</div> -->
+
+    <div class="row categorias">
+        <div class="row">
+            <div class="col col-lg-8 col-lg-offset-2 contenedor">
+                <div class="row">
+                    <div class="col col-lg-2">
+                        <div class="container">
+                            <br>
+                            <br>
+                            <span class="categoria"> CATEGORÍAS </span>
+                            <br>
+                            <span class="por"> POR </span>
+                            <span class="color"> COLOR </span>
+                        </div>
+                    </div>
+
+                    <div class="col col-lg-2">
+                        <div class="imagen catVerde">
+                            <!-- <div class="tela"> </div> -->
+                            <div class="info">
+                                <span>
+                                    <center>
+                                        <h3> VERDE </h3>
+                                        <br>
+                                    </center>
+                                    <center>
+                                        Brocoli Repollo Puerro Perejil Espinaca Apio Lechuga Chaucha Arbeja
+                                    </center>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col col-lg-2">
+                        <div class="imagen catNaranja">
+                            <div class="info">
+
+                                <span>
+                                    <center>
+                                        <h3> NARANJA </h3>
+                                        <br>
+                                    </center>
+                                    <center>
+                                        Narnja Melón Mango Papaya Zapallo Mandarina Boñato Calabaza
+                                    </center>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col col-lg-2">
+                        <div class="imagen catRojo">
+                            <div class="info">
+                                <span>
+                                    <center>
+                                        <h3> ROJO </h3>
+                                        <br>
+                                    </center>
+                                    <center>
+                                        Tomate Morrón Picle Chile Manzana Sandía Frutilla Papas
+                                    </center>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-2">
+                        <div class="imagen catVioleta">
+                            <div class="info">
+                                <span>
+                                    <center>
+                                        <h3> VIOLETA </h3>
+                                        <br>
+                                    </center>
+                                    <center>
+                                        Berenjena Uva Cebolla morada Col morada Papas violetas Remolacha
+                                    </center>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-2">
+                        <div class="imagen catBlanco">
+                            <div class="info">
+                                <span>
+                                    <center>
+                                        <h3> BLANCO </h3>
+                                        <br>
+                                    </center>
+                                    <center>
+                                        Ajo Cebolla Coliflor Espárrago Nabo Papas Puerro Pepino Pera
+                                    </center>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
