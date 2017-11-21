@@ -4,20 +4,39 @@ app.controller("navCtrl", ["$scope", "FacLogin", "$location", '$rootScope', func
     $scope.sesion = {}
     $scope.categoria = {}
     $scope.buscado = {}
+
+    $scope.clCategorias = {
+        "abrirCategorias": false,
+        "cerrarCategorias": true
+    }
+    $scope.fondo = {
+        "ocultarFondo": false,
+        "mostrarFondo": false,
+        "quitarFondo": true,
+        "colocarFondo": false
+    }
+    var cat = false;
+
+
     // $scope.hola = false;
 
     $(window).scroll(function () {
         var posicion = $(document).scrollTop();
-        if (posicion < 92) {
+        if (posicion < 72) {
             $scope.scroll = false;
             $("#busca").removeClass("col-lg-6");
             $("#busca").addClass("col-lg-8");
             $("#categ").addClass("hide");
+
+            $(".categorias").css("margin-top", "-5px");
         } else {
             $scope.scroll = true;
             $("#busca").removeClass("col-lg-8");
             $("#categ").removeClass("hide");
             $("#busca").addClass("col-lg-6");
+
+            $(".categorias").css("margin-top", "-45px");
+
         }
         // var posicion = $(document).scrollTop();
         // if (posicion < 92) {
@@ -77,5 +96,47 @@ app.controller("navCtrl", ["$scope", "FacLogin", "$location", '$rootScope', func
         var cook = $rootScope.globals;
         var id = cook.currentUser.id;
         $location.path("/usuario/" + id);
+    }
+
+    $scope.categorias = function () {
+        if (cat) {
+            $scope.clCategorias.abrirCategorias = false;
+            $scope.clCategorias.cerrarCategorias = true;
+            $scope.fondo.colocarFondo = false;
+            $scope.fondo.quitarFondo = true;
+            
+
+
+            // $scope.fondo.quitarFondo = true;
+            // $scope.fondo.mostrarFondo = false;
+
+
+
+
+
+            // $scope.fondo.abrirFondo = false;
+            // $scope.fondo.cerrarFondo = true;
+
+            cat = false;
+        } else {
+            $scope.clCategorias.abrirCategorias = true;
+            $scope.clCategorias.cerrarCategorias = false;
+            $scope.fondo.colocarFondo = true;
+            $scope.fondo.quitarFondo = false;
+
+
+
+            // $scope.fondo.mostrarFondo = true;
+            
+            
+
+
+            // $scope.fondo.colocarFondo = true;
+
+            // $scope.fondo.cerrarFondo = false;
+
+
+            cat = true;
+        }
     }
 }]);

@@ -1,5 +1,5 @@
 <div class="panel-nav" ng-controller="navCtrl">
-    <div class="fondo"></div>
+    <div class="fondo" ng-class="fondo"></div>
 
     <div class="row principal">
         <div class="container">
@@ -11,7 +11,7 @@
             </div>
             <!-- Categoría -->
             <div class="col col-lg-2 col-xs-1 hide hidden-xs hidden-sm hidden-md" id="categ">
-                <button type="button" class="btn-categoria">
+                <button type="button" class="btn-categoria" ng-click="categorias()">
                     <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                     <span class="visible-lg-inline">CATEGORÍA</span>
                     <span class="glyphicon glyphicon-menu-down visible-lg-inline" aria-hidden="true"></span>
@@ -85,7 +85,7 @@
     <div class="row secundario visible-lg-inline-block">
         <div class="container">
             <div class="col col-lg-4">
-                <button type="button" class="btn-categoria">
+                <button type="button" class="btn-categoria" ng-click="categorias()">
                     <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> CATEGORÍA
                     <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
                 </button>
@@ -106,8 +106,8 @@
     </div>
 
 
-    <div class="row categorias">
-        <div class="row">
+    <div class="row categorias visible-lg">
+        <div class="row" ng-class="clCategorias">
             <div class="col col-lg-8 col-lg-offset-2 contenedor">
                 <div class="row">
                     <div class="col col-lg-2">

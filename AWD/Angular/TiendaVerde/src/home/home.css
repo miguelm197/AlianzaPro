@@ -3,9 +3,7 @@
     padding: 0px;
     /* background-color: greenyellow; */
 }
-
-@media only screen and (max-width: 1199px) {
-    .panel-home {
-        margin-top: 80px;
-    }
+.imagenes{
+    height: 500px;
+    z-index: 8;
 }
