@@ -1,0 +1,49 @@
+    .panel-productos {}
+
+    .panel-productos {
+        /* background-color: gray; */
+    }
+    /* ##########################3 */
+
+    .clDesplegable .row {
+        margin: 0px;
+        /* padding: 10px; */
+    }
+
+    .clMenu,
+    .clTitulo {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgb(199, 199, 199);
+        cursor: pointer;
+    }
+
+    .clTitulo {
+        font-size: 17px;
+        margin: 0px !important;
+        padding-left: 20px;
+    }
+
+    .clMenu {
+        font-size: 14px;
+        padding-left: 30px;
+        margin: 0px;
+    }
+
+    .clCerrado {
+        transition: all .3s;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        color: transparent;
+        height: 0px;
+        opacity: 0;
+        margin-top: -7px;
+        /* display: none; */
+    }
+
+    .clAbierto {
+        transition: all .3s;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    /* ########################### */

@@ -6,7 +6,8 @@
 
             <!-- Logo -->
             <div class="col col-lg-2 col-xs-6 col-sm-4">
-                <div class="logo">
+                <div class="logo" ng-click="home()">
+                    <img src="{{parametros.logo}}" alt="tiendaVERDE">
                 </div>
             </div>
             <!-- Categoría -->
@@ -24,14 +25,11 @@
                 </button>
             </div>
             <!-- buscador -->
-            <!-- <div class="col col-lg-8 col-xs-1 col-sm-1 " ng-class="{col-lg-6: hola}"> -->
-
-            <!-- <div class="col col-xs-1 col-sm-1 " ng-class="{col-lg-6:    }"> -->
             <div class="col col-lg-8 col-xs-1 col-sm-1" id="busca">
                 <div class="buscador">
 
                     <div class="input-group hidden-xs hidden-sm hidden-md">
-                        <input type="search" autocomplete="off" class="form-control" id="clU" placeholder="Buscar..." name="clave" ng-model="usuario.direccion">
+                        <input type="search" autocomplete="off" class="form-control" id="clU" placeholder="Buscar...">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                         </span>
@@ -93,13 +91,13 @@
             <div class="col col-lg-4">
                 <div class="direccion">
                     <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-                    <span>Dirección: Av.Siempre Viva 372</span>
+                    <span>Dirección: {{parametros.direccion}}</span>
                 </div>
             </div>
             <div class="col col-lg-4">
                 <div class="telefono">
                     <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
-                    <span>Teléfono: 095647545</span>
+                    <span>Teléfono: {{parametros.telefono}}</span>
                 </div>
             </div>
         </div>

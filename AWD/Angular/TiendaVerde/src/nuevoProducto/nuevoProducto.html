@@ -6,14 +6,27 @@
             <br>
             <br>
 
-            <div class="col col-lg-6 col-lg-offset-1">
-                <div class="row">
+            <div class="col col-lg-5 col-lg-offset-1">
 
+                <div class="row">
                     <!-- NOMBRE -->
-                    <div class="col col-lg-6">
+                    <div class="col col-lg-12">
                         <div class="form-group">
                             <label class="control-label">Nombre*</label>
                             <input type="text" class="form-control" name="res" placeholder="Nombre" ng-model="producto.nombre" required>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+
+                    <!-- ITEM -->
+                    <div class="col col-lg-6">
+                        <div class="form-group">
+                            <label class="control-label">Item*</label>
+                            <input type="text" class="form-control" name="res" placeholder="Item" ng-model="producto.item" required>
                         </div>
                     </div>
 
@@ -64,7 +77,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <!-- NOMBRE -->
+                    <!-- DESCRIPCION CORTA -->
                     <div class="col col-lg-12">
                         <div class="form-group">
                             <label class="control-label">Descripción corta*</label>
@@ -73,15 +86,7 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <!-- IMAGEN  -->
-                    <div class="col col-lg-12">
-                        <div class="form-group">
-                            <label class="control-label">Imágen*</label>
-                            <input type="file" class="form-control" name="res" ng-model="producto.imagen">
-                        </div>
-                    </div>
-                </div>
+
                 <div class="row">
                     <!-- DESCRIPCION -->
                     <div class="col col-lg-12">
@@ -134,7 +139,6 @@
 
                     <div class="col col-lg-3">
                         <!-- CANCELAR PRODUCTO -->
-
                         <button type="submit" class="btn btn-default form-control" ng-disabled="form.res.$error.required || form.des.$error.required"
                             ng-click="agreagarProducto()">Cancelar</button>
                     </div>
@@ -142,13 +146,35 @@
 
 
                         <!-- AGREGAR PRODUCTO -->
-
                         <button type="submit" class="btn btn-default form-control btn-agregar" ng-disabled="form.res.$error.required || form.des.$error.required"
                             ng-click="agregarProducto()">Agregar producto</button>
                     </div>
                 </div>
             </div>
 
+            <div class="col col-lg-5">
+                <div class="row">
+                    <!-- IMAGEN  -->
+                    <label class="control-label">Imágen*</label>
+
+
+
+
+                    <div class="ngf-campo">
+                        <div ngf-drop ngf-select ng-model="imagen" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+                            accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">
+                            <span class="txtIcono glyphicon glyphicon-picture" aria-hidden="true"></span>
+                            <div class="txtTexto">Presiona o arrasta la imágen</div>
+                        </div>
+                        <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                    </div>
+
+                    <div class="ngf-imagen logo">
+                        <img ngf-src="!imagen[0].$error && imagen[0]">
+                    </div>
+
+                </div>
+            </div>
         </div>
 
     </form>

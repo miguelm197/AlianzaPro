@@ -1,4 +1,4 @@
-app.controller("navCtrl", ["$scope", "FacLogin", "$location", '$rootScope', function ($scope, FacLogin, $location, $rootScope) {
+app.controller("navCtrl", ["$scope", "FacLogin", 'FacParametros', "$location", '$rootScope', function ($scope, FacLogin, FacParametros, $location, $rootScope) {
     $scope.scroll = true;
     $scope.sesions = false;
     $scope.sesion = {}
@@ -38,27 +38,7 @@ app.controller("navCtrl", ["$scope", "FacLogin", "$location", '$rootScope', func
             $(".categorias").css("margin-top", "-45px");
 
         }
-        // var posicion = $(document).scrollTop();
-        // if (posicion < 92) {
-        //     $scope.scroll = false;
 
-        //     $scope.buscado = {
-        //         "stroke": true,
-        //         "col-lg-6": false,
-        //         "col-lg-8": true,
-        //         "hide": true
-        //     }
-        //     $scope.hola = true;
-        // } else {
-        //     $scope.scroll = true;
-        //     $scope.hola = false;
-
-        //     $scope.buscado = {
-        //         "col-lg-6": true,
-        //         "col-lg-8": false,
-        //         "hide": false
-        //     }
-        // }
     });
 
 
@@ -104,39 +84,23 @@ app.controller("navCtrl", ["$scope", "FacLogin", "$location", '$rootScope', func
             $scope.clCategorias.cerrarCategorias = true;
             $scope.fondo.colocarFondo = false;
             $scope.fondo.quitarFondo = true;
-            
-
-
-            // $scope.fondo.quitarFondo = true;
-            // $scope.fondo.mostrarFondo = false;
-
-
-
-
-
-            // $scope.fondo.abrirFondo = false;
-            // $scope.fondo.cerrarFondo = true;
-
             cat = false;
         } else {
             $scope.clCategorias.abrirCategorias = true;
             $scope.clCategorias.cerrarCategorias = false;
             $scope.fondo.colocarFondo = true;
             $scope.fondo.quitarFondo = false;
-
-
-
-            // $scope.fondo.mostrarFondo = true;
-            
-            
-
-
-            // $scope.fondo.colocarFondo = true;
-
-            // $scope.fondo.cerrarFondo = false;
-
-
             cat = true;
         }
     }
+
+    $scope.home = function () {
+        $location.path("/home")
+    }
+
+    FacParametros.consultaParametros().then(function (res) {
+        var parametros = res.data[0];
+        $scope.parametros = parametros;
+        console.log("asd")
+    });
 }]);

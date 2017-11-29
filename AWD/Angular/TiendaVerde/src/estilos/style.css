@@ -12,7 +12,6 @@ input {
     transition: all .5s;
     box-shadow: none !important;
     border-radius: 4px !important;
-
 }
 
 .dropdown-menu {
@@ -24,12 +23,7 @@ a:hover {
 }
 
 
-/* .col-lg-6{
-    transition: all 1s;
-}
-.col-lg-8{
-    transition: all 1s;
-} */
+
 
 .combo {
     width: 100%;

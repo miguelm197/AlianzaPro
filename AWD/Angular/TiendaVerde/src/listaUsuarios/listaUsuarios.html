@@ -7,12 +7,7 @@
         <div class="row">
 
             <div class="buscador  col col-lg-5 col-lg-offset-1">
-                <div class="input-group">
-                    <input type="search" autocomplete="off" class="form-control" placeholder="Buscar..." name="clave">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    </span>
-                </div>
+                <buscador buscar="filtro"></buscador>
             </div>
 
         </div>
@@ -49,7 +44,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="usuario in datos.datos">
+                    <tr ng-repeat="usuario in datos.datos | filter:{nombre:filtro}">
 
                         <td class="col20p">
                             <span>{{usuario.nombre}}</span>
@@ -65,7 +60,9 @@
                         </td>
                         <td class="col1p">
                             <span>
-                                <center> <a href="{{usuario.ver}}">V</a> </center>
+                                <center>
+                                    <a href="{{usuario.ver}}">V</a>
+                                </center>
                             </span>
                         </td>
                         <td class="col1p">

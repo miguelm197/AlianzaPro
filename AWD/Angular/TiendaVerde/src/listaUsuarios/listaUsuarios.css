@@ -1,21 +1,5 @@
 .panel-listaUsuarios {}
 
-.panel-listaUsuarios .buscador .input-group-addon {
-    background-color: white !important;
-    border-left: none !important;
-}
-
-.panel-listaUsuarios .buscador input {
-    border-right: none !important;
-    border-top-right-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
-}
-
-.panel-listaUsuarios .buscador input:focus {
-    outline: 0px;
-    border: 1px solid rgb(209, 209, 209);
-    border-right: 0px;
-}
 
 .panel-listaUsuarios table thead {
     border-bottom: 1px solid gray;

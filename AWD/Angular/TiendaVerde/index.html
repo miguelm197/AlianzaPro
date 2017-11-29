@@ -5,8 +5,8 @@
     <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Verde</title>
-    <link rel="shortcut icon" type="image/png" href="./src/img/ico.png" />
+    <title ng-controller="parametrosCtrl">{{parametros.titulo}}</title>
+    <link ng-controller="parametrosCtrl" rel="shortcut icon" type="image/png" href="./src/img/ico.png" />
     <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.css">
 
     <link rel="stylesheet" type="text/css" href="./src/estilos/style.css">
@@ -20,6 +20,7 @@
     <script src="node_modules/moment/moment.js"></script>
     <script src="node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
     <script src="node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js"></script>
+    <script src="./node_modules/ng-file-upload/dist/ng-file-upload-all.min.js"></script>
 
 
 
@@ -76,7 +77,23 @@
     <script src="./src/producto/productoCtrl.js"></script>
     <script src="./src/producto/productoFact.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="./src/productos/productos.css">
+    <script src="./src/productos/productosCtrl.js"></script>
+    <script src="./src/productos/productosFact.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="./src/parametros/parametros.css">
+    <script src="./src/parametros/parametrosCtrl.js"></script>
+    <script src="./src/parametros/parametrosFact.js"></script>
+
+
+    <!-- directivas -->
+    <script src="./src/directivas/desplegable/desplegable.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./src/directivas/galeria/galeria.css">
+    <script src="./src/directivas/galeria/galeria.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./src/directivas/buscador/buscador.css">
+    <script src="./src/directivas/buscador/buscador.js"></script>
 
 
 
@@ -92,7 +109,7 @@
     <!-- VISTAS PARCIALES-->
     <div ng-view></div>
 
-
+    <hr>
 
 
 </body>

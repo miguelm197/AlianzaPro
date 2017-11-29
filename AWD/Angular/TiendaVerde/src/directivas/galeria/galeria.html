@@ -1,0 +1,37 @@
+<div class="container-fluid">
+
+  <div class="row buscadorGaleria" ng-hide="local">
+    <buscador buscar="filtro"></buscador>
+  </div>
+  <div class="row canasta">
+
+    <div class="col col-lg-3 item" ng-repeat="prod in listaProductos | filter:{nombre:filtro}">
+      <a href="/#!/producto/{{prod.id}}">
+        <div class="imagen">
+          <div style="background: url({{prod.imagen}})"></div>
+        </div>
+      </a>
+      <div class="abajo">
+        <div class="nombre">{{prod.nombre}}</div>
+        <div class="subtitulo">{{prod.subtitulo}}</div>
+        <hr>
+        <div class="precio">
+          <span class="moneda">$</span>
+          <span class="monto">{{prod.precio}}</span>
+          <div class="unidad">/Kg</div>
+        </div>
+        <div class="form-group botones">
+          <button class="btn form-control">
+            <span class="glyphicon glyphicon-plus pull-left" aria-hidden="true"></span>
+            Agregar al carrito</button>
+
+          <button class="btn form-control verde">
+            <span class="glyphicon glyphicon-shopping-cart pull-left" aria-hidden="true"></span>
+            Comprar ahora</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

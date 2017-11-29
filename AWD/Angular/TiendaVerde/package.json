@@ -19,7 +19,8 @@
     "bootstrap": "^3.3.7",
     "bootstrap-fileinput": "^4.4.6",
     "jquery": "^3.2.1",
-    "moments": "0.0.2"
+    "moments": "0.0.2",
+    "ng-file-upload": "^12.2.13"
   },
   "devDependencies": {},
   "engines": {

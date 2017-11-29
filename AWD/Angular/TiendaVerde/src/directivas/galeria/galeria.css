@@ -1,0 +1,57 @@
+.buscadorGaleria{
+    padding: 17px ;
+}
+.canasta {
+}
+
+.canasta .item {}
+
+.canasta .imagen {
+    width: 100%;
+    height: 340px;
+    background-color: gray;
+}
+
+.canasta .imagen >div{
+    background-size: cover;
+}    
+.canasta .abajo {
+    width: 100%;
+    /* background-color: gray; */
+}
+
+.canasta .abajo .nombre {
+    font-size: 25px;
+    width: 100%;
+}
+
+.canasta .abajo .subtitulo {
+    font-size: 16px
+}
+
+.canasta .abajo .precio {
+    margin-left: 10px;
+}
+
+.canasta .abajo .precio .monto {
+    font-size: 25px;
+}
+
+.canasta .abajo .precio .unidad {
+    display: inline;
+    position: absolute;
+    margin: 5px;
+}
+
+.canasta .abajo .botones button {
+    margin-bottom: 10px;
+    border: 1px solid rgb(110, 177, 33);
+    padding-top: 7px;
+    height: 45px;
+}
+
+.canasta .verde {
+    background-color: rgb(110, 177, 33);
+    border: none;
+    color: white;
+}

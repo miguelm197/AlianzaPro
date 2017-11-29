@@ -1,0 +1,20 @@
+<div class="clDesplegable">
+  <div class="row">
+    <div class="col col-lg-12">
+
+      <div class="clOpciones">
+
+        <div class="row" ng-repeat="ej in ejemplos">
+          <div class="col col-lg-12 clTitulo" ng-click="clAbrirCerrar(ejemplos, ej); cate(ej.titulo)">
+            <span>{{ej.titulo}}s </span>
+          </div>
+          <div class="col col-lg-12 clMenu" ng-repeat="a in ej.menu" ng-class="ej.colapse" ng-hide="local">
+            <a href="/#!/productos?categoria={{ej.titulo}}&item={{a}}">{{a}}</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

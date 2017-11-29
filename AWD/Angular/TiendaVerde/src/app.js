@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ['ngRoute', 'ngCookies', 'angular-md5', 'angular-carousel', 'ngTouch']);
+var app = angular.module("myApp", ['ngRoute', 'ngCookies', 'angular-md5', 'angular-carousel', 'ngTouch', 'ngFileUpload']);
 
 /*ENRUTAMIENTO*/
 app.config(function ($routeProvider, $locationProvider) {
@@ -35,6 +35,14 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'src/producto/producto.html',
             controller: 'productoCtrl'
         })
+        .when('/productos', {
+            templateUrl: 'src/productos/productos.html',
+            controller: 'productosCtrl'
+        })
+        .when('/parametros', {
+            templateUrl: 'src/parametros/parametros.html',
+            controller: 'parametrosCtrl'
+        })
 
         .otherwise({ redirectTo: "/home" });
 });
@@ -67,8 +75,8 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
         if (loggedIn) {
             var rolUsuario = loggedIn.rolUsuario;
 
-            //Páginas en las cuales no puede entrar el rol
-            var paginasPublic = ['/nuevaTarea'];
+            //Páginas en las cuales NO puede entrar el rol
+            var paginasPublic = ['/nuevaTarea', '/parametros'];
             var paginasAdmins = [];
             var paginas = [""];
 
@@ -86,19 +94,29 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
             }
 
         } else {
-            var paginas = ['/login', '/home'];
-            var restrictedPage = $.inArray($location.path(), ) === -1;
-            var restrictedPage = paginas.indexOf($location.path()) != -1 ? true : false;
 
+
+            //Páginas que puede entrar un usuario sin estar logueado
+            var paginas = ['/login', '/home', '/productos'];
+            // var restrictedPage = $.inArray($location.path(), ) === -1;
+
+            var restrictedPage = false;
+            if ($location.path().indexOf("/producto/") != -1) {
+                restrictedPage = true;
+            } else {
+                restrictedPage = paginas.indexOf($location.path()) != -1 ? true : false;
+            }
+
+            
             if (!restrictedPage) {
-                $location.path('/login');
+                $location.path('/home');
             }
         }
 
 
         var currPag = $location.path();
-        // páginas donde no se tiene que mostrar el buscador
-        var pags = ["/configuracion", "/nuevoProducto"];
+        // páginas donde no se tiene que mostrar el usuario buscador xel nav
+        var pags = ["/configuracion", "/nuevoProducto", "/parametros"];
         for (var i = 0; i <= pags.length; i++) {
             if (currPag == pags[i]) {
                 $("#busca").addClass("invisible");

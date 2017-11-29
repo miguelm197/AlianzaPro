@@ -1,11 +1,11 @@
 var express = require("express");
 var app = express();
-var bodyParser = require("body-parser");
+var bodyParser = require("body-parser");    
 var methodOverride = require("method-override");
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt');
 
-var connectionString = "mongodb://root:toor@ds143245.mlab.com:43245/casasbd";
-
+var connectionString = "mongodb://root:toor@ds117336.mlab.com:17336/tiendaverde";
 mongoose.connect(connectionString, function (err, res) {
     if (err) throw err;
     console.log('Conectado a la Base de Datos');
@@ -32,12 +32,12 @@ app.use(methodOverride());
 // Imports de Modelo y Controlador
 
 // casas
-require('./models/mdl_casa');
-var CtrlCasas = require('./controllers/ctrl_casas');
+require('./models/mdl_producto');
+var CtrlProducto = require('./controllers/ctrl_producto');
 
 // rangos
-require('./models/mdl_rango');
-var CtrlRangos = require('./controllers/ctrl_rango');
+require('./models/mdl_usuario');
+var CtrlUsuario = require('./controllers/ctrl_usuario');
 
 
 // Ruteo
@@ -49,33 +49,46 @@ router.get('/', function (req, res) {
     // next();
 });
 
-router.route('/casas')
-    .get(CtrlCasas.consultaCasas)
-    .post(CtrlCasas.agregarCasa)
+router.route('/productos')
+    .get(CtrlProducto.consultaProductos)
+    .post(CtrlProducto.agregarProducto)
 
 
-router.route('/casas/:id')
-    .get(CtrlCasas.consultaCasaPorId)
-    .put(CtrlCasas.actualizarCasa)
-    .delete(CtrlCasas.eliminarCasa)
+router.route('/productos/:id')
+    .get(CtrlProducto.consultaProductoPorId)
+    .put(CtrlProducto.actualizarProductoPorId)
+    .delete(CtrlProducto.eliminarProductoPorId)
 
-router.route('/rangos')
-    .get(CtrlRangos.consultaRangos)
-    .post(CtrlRangos.agregarRango)
-
-
-router.route('/rangos/:id')
-    .get(CtrlRangos.consultaRangoPorId)
-    .put(CtrlRangos.actualizarRango)
-    .delete(CtrlRangos.eliminarRango)
+router.route('/usuarios')
+    .get(CtrlUsuario.consultaUsuarios)
+    .post(CtrlUsuario.agregarUsuario)
 
 
-router.route('/casasCategory/:id')
-    .get(CtrlCasas.consultaRangos)
+router.route('/usuarios/:id')
+    .get(CtrlUsuario.consultaUsuarioPorId)
+    .put(CtrlUsuario.actualizarUsuarioPorId)
+    .delete(CtrlUsuario.eliminarUsuarioPorId)
 
-    
-router.route('/a/:id/:a')
-.get(CtrlCasas.consultaRangos)
+
+router.route('/productosPorNombre/:nombre')
+    .get(CtrlProducto.consultaProductoPorNombre)
+
+
+
+
+
+router.route('/productosPorRango')
+    .get(CtrlProducto.consultaProductoPorRango)
+
+
+
+
+
+router.route('/productosPorCaducar')
+    .post(CtrlProducto.actualizarProductoPorCaducar)
+
+// router.route('/a/:id/:a')
+// .get(CtrlCasas.consultaRangos)
 
 
 app.use(router);
