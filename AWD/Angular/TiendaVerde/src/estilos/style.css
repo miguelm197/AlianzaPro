@@ -22,9 +22,6 @@ a:hover {
     cursor: pointer;
 }
 
-
-
-
 .combo {
     width: 100%;
 }
@@ -57,9 +54,15 @@ a:hover {
 input[type="file"] {
     cursor: pointer;
 }
-textarea{
+
+textarea {
     resize: vertical;
 }
-.btn{
+
+.btn {
     box-shadow: none !important;
+}
+
+button:focus {
+    outline: 0px;
 }
