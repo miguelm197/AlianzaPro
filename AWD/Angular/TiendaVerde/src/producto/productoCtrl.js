@@ -1,6 +1,8 @@
-app.controller("productoCtrl", ["$scope", "$location", 'FacProducto', function ($scope, $location, FacProducto) {
+app.controller("productoCtrl", ["$scope", "$location", 'FacProducto', '$rootScope', function ($scope, $location, FacProducto, $rooteScope) {
     $scope.producto = {}
     $scope.cantidad = 0;
+    $scope.editar = false;
+
     var url = $location.$$url;
     var id = url.split("/")[2];
 
@@ -9,18 +11,18 @@ app.controller("productoCtrl", ["$scope", "$location", 'FacProducto', function (
         $scope.producto = prod;
     });
 
-    // {
-    //     "nombre": "asd",
-    //     "precio": 1,
-    //     "stock": 2,
-    //     "subtitulo": "asd canadienses",
-    //     "descripcion": "safffff",
-    //     "nutricional": {
-    //       "calorias": 1,
-    //       "proteinas": 2,
-    //       "hidratos": 3,
-    //       "grasas": 4
-    //     },
-    //     "id": 1
-    //   }
+
+
+    $scope.editarProducto = function () {
+        $scope.editar = $scope.editar ? false : true;
+        
+        $rooteScope.alerta.mensaje("mensaje","Productos","El producto se ha infegiojasoifjasoifajsgo")
+        console.log("asasfasff")
+    }
+
+
+
+
+
+
 }]);

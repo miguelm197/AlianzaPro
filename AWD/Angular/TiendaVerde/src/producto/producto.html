@@ -2,13 +2,34 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col col-lg-4 col-lg-offset-1">
-                <div class="imagen"></div>
+                <div class="imagen">
+                    <div style="background:url({{producto.imagen}})"></div>
+                </div>
             </div>
             <div class="col col-lg-7 info">
                 <div class="row">
-                    <div class="col col-lg-12">
-                        <h2>{{producto.nombre.toUpperCase()}}</h2>
-                        <h4>{{producto.subtitulo}}</h4>
+                    <div class="col col-lg-11">
+
+
+                        <h2 ng-hide="editar">{{producto.nombre.toUpperCase()}}</h2>
+                        <div ng-show="editar" class="form-group">
+                            <br>
+                            <input type="text" class="form-control" ng-model="productoEditar.nombre">
+                        </div>
+
+                        <h4 ng-hide="editar">{{producto.subtitulo}}</h4>
+
+                        <div ng-show="editar" class="form-group">
+                            <input type="text" class="form-control" ng-model="productoEditar.subtitulo">
+                        </div>
+
+                    </div>
+                    <div class="col col-lg-1">
+                        <br>
+                        <br>
+                        <br>
+                        <button class="btn btn-default btn-editar" ng-click="editarProducto()">Editar</button>
+
                     </div>
                 </div>
                 <div class="row">
@@ -21,7 +42,11 @@
                             </div>
                             <div class="col col-lg-12">
                                 <span class="moneda">U$S</span>
-                                <span class="monto">{{producto.precio}}</span>
+                                <span ng-hide="editar" class="monto">{{producto.precio}}</span>
+                                <input type="number" class="form-control" ng-model="productoEditar.precio" value="123"> 
+                                <div ng-show="editar" class="form-group inputMonto">lmasf
+                                </div>
+
                             </div>
                         </div>
                     </div>

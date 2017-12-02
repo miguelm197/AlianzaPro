@@ -68,6 +68,22 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
     }
 
 
+    $rootScope.alerta = {
+        bandera: true,
+        tipo: "",
+        titulo: "",
+        texto: "",
+        mensaje: function (tipo, titulo, texto) {
+            $rootScope.alerta.tipo = tipo;
+            $rootScope.alerta.titulo = titulo;
+            $rootScope.alerta.texto = texto;
+            $rootScope.alerta.bandera = true;
+        }
+    };
+
+
+
+
     //Verifica cada vez que cambia la url (queda escuchando)
     $rootScope.$on('$locationChangeStart', function (event, next, current) {
 
@@ -107,7 +123,7 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
                 restrictedPage = paginas.indexOf($location.path()) != -1 ? true : false;
             }
 
-            
+
             if (!restrictedPage) {
                 $location.path('/home');
             }
