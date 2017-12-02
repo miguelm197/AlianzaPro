@@ -1,32 +1,37 @@
-<div class="panel-alert">
-  <div class="fondo"></div>
-  <div class="caja">
+<div class="panel-alert" ng-class="clasesPanel">
+  <div class="fondo" ng-class="clasesFondo"></div>
+  <div class="caja" ng-class="clasesCaja">
     <div class="container-fluid">
-      <div class="row ">
+      <div class="row">
         <div class="col col-lg-4 col-lg-offset-4">
-          <div class="contenedor">
+          <div class="contenedor" ng-click="cajita()">
 
 
             <div class="row arriba sec">
               <div class="col-lg-11">
-                <div class="titulo">Titulo</div>
+                <div class="titulo">
+                  {{alerta.titulo}}
+                </div>
               </div>
               <div class="col-lg-1">
-                <button class="cerrar">x</button>
+                <button class="cerrar" ng-click="cerrar()">x</button>
               </div>
             </div>
 
             <hr>
 
             <div class="row medio sec">
-              <div class="col col-lg-12">Mensaje</div>
+              <div class="col col-lg-12">
+                {{alerta.texto}}
+              </div>
             </div>
-
-            <!-- <hr> -->
-
-            <!-- <div class="row abajo sec">
-              <div class="col col-lg-12">Pie</div>
-            </div> -->
+            
+            <div ng-show="pie">
+              <hr>
+              <div class="row abajo sec">
+                <div class="col col-lg-12">Pie</div>
+              </div>
+            </div>
 
           </div>
         </div>

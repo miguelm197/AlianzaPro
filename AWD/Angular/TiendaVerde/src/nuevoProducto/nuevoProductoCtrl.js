@@ -1,4 +1,4 @@
-app.controller("nuevoProductoCtrl", ["$scope", "$location", 'FactProductos', "Upload", function ($scope, $location, FactProductos, Upload) {
+app.controller("nuevoProductoCtrl", ["$scope", "$location", 'FactProductos', "Upload", "$rootScope", function ($scope, $location, FactProductos, Upload, $rootScope) {
     $scope.categoria = "Categoría"
     $scope.nuevaImagen = "";
     $scope.agregarProducto = function () {
@@ -9,10 +9,10 @@ app.controller("nuevoProductoCtrl", ["$scope", "$location", 'FactProductos', "Up
         console.log(producto);
 
         FactProductos.agregarProducto(producto).then(function () {
-            alert("Se agregó el producto correctamente");
+
+            $rootScope.alerta.mensaje("alerta", "Nuevo producto", "Se agregó el producto correctamente")
         })
     }
-
 
     function imagen64(archivo) {
         Upload.upload({

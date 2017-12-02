@@ -1,7 +1,5 @@
-app.controller("homeCtrl", ["$scope", "$location", 'FacParametros', function ($scope, $location, FacParametros) {
+app.controller("homeCtrl", ["$rootScope", "$scope", "$location", 'FacParametros', function ($rootScope, $scope, $location, FacParametros) {
     $scope.categoriaProductosDestacado = "";
-
-
 
     FacParametros.consultaParametros().then(function (res) {
         var parametros = res.data[0];

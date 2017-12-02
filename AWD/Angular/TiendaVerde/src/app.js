@@ -67,9 +67,9 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
         $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
     }
 
-
+    $rootScope.sape = "aa"
     $rootScope.alerta = {
-        bandera: true,
+        mostrar: false,
         tipo: "",
         titulo: "",
         texto: "",
@@ -77,7 +77,8 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
             $rootScope.alerta.tipo = tipo;
             $rootScope.alerta.titulo = titulo;
             $rootScope.alerta.texto = texto;
-            $rootScope.alerta.bandera = true;
+            $rootScope.alerta.mostrar = true;
+            console.log($rootScope.alerta)
         }
     };
 
