@@ -1,4 +1,4 @@
-app.controller("productosCtrl", ["$scope", "FacParametros", "$location", function ($scope, FacParametros, $location) {
+app.controller("productosCtrl", ["$scope", "$location", function ($scope, $location) {
 
    
     // alerta("Mensaje", "Productossss", "asoifja sfiujasfiuoja sfiuhasf");

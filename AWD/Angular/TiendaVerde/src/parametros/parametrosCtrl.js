@@ -1,4 +1,4 @@
-app.controller("parametrosCtrl", ["$scope", "FacParametros", "Upload", "$timeout", "$location", function ($scope, FacParametros, Upload, $timeout, $location) {
+app.controller("parametrosCtrl", ["$scope", "FacParametros", "Upload", "$timeout", "$location", "$rootScope", function ($scope, FacParametros, Upload, $timeout, $location, $rootScope) {
     $scope.imagenes = {
         logo: "",
         icono: "",
@@ -102,7 +102,8 @@ app.controller("parametrosCtrl", ["$scope", "FacParametros", "Upload", "$timeout
         var objeto = $scope.parametros;
         objeto.nombre = nombre;
         FacParametros.guardarParametros(objeto).then(function () {
-            alert("Sape");
+            $rootScope.alerta.mensaje("alerta", "Parámetros", "Se actualizó el nombre correctamente");
+
             $scope.editar.nombre = false;
         })
     }
@@ -114,7 +115,8 @@ app.controller("parametrosCtrl", ["$scope", "FacParametros", "Upload", "$timeout
         var objeto = $scope.parametros;
         objeto.direccion = direccion;
         FacParametros.guardarParametros(objeto).then(function () {
-            alert("Sape");
+            $rootScope.alerta.mensaje("alerta", "Parámetros", "Se actualizó la dirección correctamente");
+            
             $scope.editar.direccion = false;
         })
     }
@@ -125,7 +127,8 @@ app.controller("parametrosCtrl", ["$scope", "FacParametros", "Upload", "$timeout
         var objeto = $scope.parametros;
         objeto.telefono = telefono;
         FacParametros.guardarParametros(objeto).then(function () {
-            alert("Sape");
+            $rootScope.alerta.mensaje("alerta", "Parámetros", "Se actualizó el teléfono correctamente");
+            
             $scope.editar.telefono = false;
         })
     }
@@ -137,7 +140,8 @@ app.controller("parametrosCtrl", ["$scope", "FacParametros", "Upload", "$timeout
         var objeto = $scope.parametros;
         objeto.titulo = titulo;
         FacParametros.guardarParametros(objeto).then(function () {
-            alert("Sape");
+            $rootScope.alerta.mensaje("alerta", "Parámetros", "Se actualizó el título correctamente");
+            
             $scope.editar.titulo = false;
         })
     }
@@ -147,7 +151,8 @@ app.controller("parametrosCtrl", ["$scope", "FacParametros", "Upload", "$timeout
         var objeto = $scope.parametros;
         objeto.logo = logo;
         FacParametros.guardarParametros(objeto).then(function () {
-            alert("Sape");
+            $rootScope.alerta.mensaje("alerta", "Parámetros", "Se actualizó el logo correctamente");
+            
             $scope.editar.logo = false;
         })
     }
@@ -157,7 +162,8 @@ app.controller("parametrosCtrl", ["$scope", "FacParametros", "Upload", "$timeout
         var objeto = $scope.parametros;
         objeto.icono = icono;
         FacParametros.guardarParametros(objeto).then(function () {
-            alert("Sape");
+            $rootScope.alerta.mensaje("alerta", "Parámetros", "Se actualizó el ícono correctamente");
+            
             $scope.editar.icono = false;
         })
     }
@@ -166,7 +172,8 @@ app.controller("parametrosCtrl", ["$scope", "FacParametros", "Upload", "$timeout
         var objeto = $scope.parametros;
         objeto.slide1 = slide1;
         FacParametros.guardarParametros(objeto).then(function () {
-            alert("Sape");
+            $rootScope.alerta.mensaje("alerta", "Parámetros", "Se actualizó el slide correctamente");
+            
             $scope.editar.slide1 = false;
         })
     }
@@ -175,7 +182,8 @@ app.controller("parametrosCtrl", ["$scope", "FacParametros", "Upload", "$timeout
         var objeto = $scope.parametros;
         objeto.slide2 = slide2;
         FacParametros.guardarParametros(objeto).then(function () {
-            alert("Sape");
+            $rootScope.alerta.mensaje("alerta", "Parámetros", "Se actualizó el slide correctamente");
+            
             $scope.editar.slide2 = false;
         })
     }
@@ -184,7 +192,8 @@ app.controller("parametrosCtrl", ["$scope", "FacParametros", "Upload", "$timeout
         var objeto = $scope.parametros;
         objeto.slide3 = slide3;
         FacParametros.guardarParametros(objeto).then(function () {
-            alert("Sape");
+            $rootScope.alerta.mensaje("alerta", "Parámetros", "Se actualizó el slide correctamente");
+            
             $scope.editar.slide3 = false;
         })
     }

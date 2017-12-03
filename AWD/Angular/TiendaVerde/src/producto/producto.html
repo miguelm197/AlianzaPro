@@ -1,235 +1,394 @@
 <div class="panel-producto">
     <div class="container-fluid">
         <div class="row">
-            <div class="col col-lg-4 col-lg-offset-1">
-                <div class="imagen">
-                    <div style="background:url({{producto.imagen}})"></div>
-                </div>
-            </div>
-            <div class="col col-lg-7 info">
-                <div class="row">
-                    <div class="col col-lg-11">
-
-
-                        <h2 ng-hide="editar">{{producto.nombre.toUpperCase()}}</h2>
-                        <div ng-show="editar" class="form-group">
-                            <br>
-                            <input type="text" class="form-control" ng-model="productoEditar.nombre">
-                        </div>
-
-                        <h4 ng-hide="editar">{{producto.subtitulo}}</h4>
-
-                        <div ng-show="editar" class="form-group">
-                            <input type="text" class="form-control" ng-model="productoEditar.subtitulo">
-                        </div>
-
-                    </div>
-                    <div class="col col-lg-1">
-                        <br>
-                        <br>
-                        <br>
-                        <button class="btn btn-default btn-editar" ng-click="editarProducto()">Editar</button>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <hr>
-                    <div class="col col-lg-4">
-                        <div class="row">
-                            <div class="col col-lg-12">
-                                <span class="moneda">$U</span>
-                                <span class="monto">{{producto.precio * 29}}</span>
-                            </div>
-                            <div class="col col-lg-12">
-                                <span class="moneda">U$S</span>
-                                <span ng-hide="editar" class="monto">{{producto.precio}}</span>
-                                <input type="number" class="form-control" ng-model="productoEditar.precio" value="123"> 
-                                <div ng-show="editar" class="form-group inputMonto">lmasf
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="hidden-lg">
-                    <div class="col col-lg-2">
-                        <div class="form-group">
-                            <label>Cantidad: </label>
-                            <input type="number" id="cantidad" class="form-control" min="0" value="0" ng-model="cantidad">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <hr>
-                    <div class="col col-lg-4">
-                        <div class="form-group">
-                            <button class="btn btn-default form-control">AGREGAR AL CARRITO</button>
-                        </div>
-                    </div>
-                    <div class="col col-lg-4">
-                        <div class="form-group">
-                            <button class="btn btn-default form-control comprarAhora">COMPRAR AHORA</button>
-                        </div>
-                    </div>
-                </div>
-                <hr class="visible-lg">
-                <div class="row" ng-show="cantidad > 4">
-                    <div class="col col-lg-12">
-                        <!-- envio -->
-                        <div class="row ">
-                            <div class="col col-lg-1 col-xs-2 ">
-                                <span class="glyphicon glyphicon-road circulo" aria-hidden="true"></span>
-                            </div>
-                            <div class="col col-lg-11 col-xs-10 infoEnvio">
-                                <div class="row">
-                                    <span>ENVÍO</span>
-                                </div>
-                                <div class="row">
-                                    <span>$U 578</span>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-
-                        <!-- cuotas -->
-                        <div class="row ">
-                            <div class="col col-lg-1 col-xs-2">
-                                <span class="glyphicon glyphicon-credit-card circulo" aria-hidden="true"></span>
-                            </div>
-                            <div class="col col-lg-11 col-xs-10 infoEnvio">
-                                <div class="row">
-                                    <span>Cuotas</span>
-                                </div>
-                                <div class="row">
-                                    <span>12 cuotas de $U 578</span>
-                                </div>
-                            </div>
-                        </div>
-                        <hr class="visible-lg">
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-        <hr class="hidden-lg">
-
-        <div class="row abajo">
-            <br class="visible-lg">
-            <br class="visible-lg">
-            <br class="visible-lg">
-
+            <!-- CONTENEDOR_GRAL -->
             <div class="col-lg-10 col-lg-offset-1">
+                <!-- ARRIBA -->
+                <div class="row">
+                    <!-- IMAGEN -->
+                    <div class="col col-lg-4 col-md-6">
+                        <div class="imagen">
+
+                            <!-- IMAGEN-editar -->
+                            <div ng-show="editar">
+                                <div class="prevImagen" style="background:url({{productoEditar.imagen}})"></div>
+
+                                <div class="ngf-campo agregarImagen">
+                                    <div ngf-drop ngf-select ng-model="imagen" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="false" ngf-allow-dir="true"
+                                        accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">
+                                        <span class="txtIcono glyphicon glyphicon-picture" aria-hidden="true"></span>
+                                        <div class="txtTexto">Presiona o arrasta la imágen</div>
+                                    </div>
+                                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                                </div>
+                            </div>
+
+                            <!-- IMAGEN -->
+                            <div class="vistaImagen" style="background:url({{producto.imagen}})"></div>
+                        </div>
+                    </div>
+
+                    <div class="col col-lg-8 col-md-6">
+                        <!-- ============================================================== -->
+                        <div class="row">
+                            <div class="col col-lg-10 col-md-10 col-xs-10">
+                                <div class="row">
+                                    <!-- NOMBRE -->
+                                    <div class="col col-lg-12">
+                                        <h2 ng-hide="edistar">{{producto.nombre.toUpperCase()}}</h2>
+
+                                        <!-- NOMBRE editar -->
+                                        <div ng-show="editar" class="form-group">
+                                            <br>
+                                            <input type="text" class="form-control txt25" ng-model="productoEditar.nombre">
+                                        </div>
+                                    </div>
+
+                                    <!-- SUBTITULO -->
+                                    <div class="col col-lg-12">
+                                        <h4 ng-hide="editar">{{producto.subtitulo}}</h4>
+
+                                        <!-- SUBTITULO editar -->
+                                        <div ng-show="editar" class="form-group">
+                                            <input type="text" class="form-control" ng-model="productoEditar.subtitulo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col col-lg-2 col-md-2 col-xs-2">
+                                <!-- BOTON EDITAR -->
+                                <br>
+                                <br>
+                                <br>
+                                <button class="btn btn-default btn-editar" ng-click="editarProducto()">Editar</button>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+
+                        <div class="row">
+                            <hr>
+                            <!-- CATEGORIA -->
+                            <div class="col col-lg-3 col-lg-offset-1 col-md-4 col-md-offset-1 col-xs-5 col-xs-offset-1">
+                                <label>Categoría: </label>
+                                <a ng-hide="editar" href="/#!/productos?categoria={{producto.categoria}}&item=Categoría {{producto.categoria}}">{{producto.categoria}}</a>
+
+                                <!-- CATEGORIA editar -->
+                                <div ng-show="editar" class="form-group">
+                                    <input type="text" class="form-control" ng-model="productoEditar.categoria">
+                                </div>
+                            </div>
+
+                            <!-- ITEM -->
+                            <div class="col col-lg-3 col-lg-offset-1 col-md-5  col-xs-6">
+                                <label>Item: </label>
+                                <!-- <a ng-hide="editar">{{producto.item}}</a> -->
+                                <a ng-hide="editar" href="/#!/productos?categoria={{producto.categoria}}&item={{producto.item}}">{{producto.item}}</a>
+
+                                <!-- CATEGORIA editar -->
+                                <div ng-show="editar" class="form-group">
+                                    <input type="text" class="form-control" ng-model="productoEditar.item">
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <!-- ============================================================== -->
+
+                        <div class="row">
+                            <hr>
+
+                            <!-- PRECIO-PESOS -->
+                            <div ng-hide="editar" class="col col-lg-2 col-lg-offset-1 col-md-4 col-xs-5 col-xs-offset-1">
+                                <label>Pesos</label>
+                                <br>
+                                <span class="moneda">$U</span>
+                                <span class="valor">{{producto.precio}}</span>
+                            </div>
+
+                            <!-- PRECIO editar -->
+                            <div ng-show="editar" class="col col-lg-2 col-lg-offset-1 col-md-4 col-xs-5 col-xs-offset-1">
+                                <label>Pesos $U</label>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" ng-model="productoEditar.precio">
+                                </div>
+                            </div>
+
+                            <!-- PRECIO-DOLARES -->
+                            <div ng-hide="editar" class="col col-lg-2 col-md-5 col-xs-5">
+                                <label>Dólares</label>
+                                <br>
+                                <span class="moneda">U$S</span>
+                                <span class="valor">{{(producto.precio / 30).toFixed(2)}}</span>
+                            </div>
+
+                            <!-- PRECIO-DOLARES editar -->
+                            <div ng-show="editar" class="col col-lg-2 col-md-5 col-xs-5">
+                                <label>Dólares</label>
+                                <br>
+                                <span class="moneda">U$S</span>
+                                <span class="valor">{{(productoEditar.precio / 30).toFixed(2)}}</span>
+                            </div>
+
+                            <hr class="visible-xs  visible-md  col col-xs-12">
+
+                            <!-- CANTIDAD -->
+                            <div class="col col-lg-4 col-md-10 col-xs-10 col-xs-offset-1">
+                                <div ng-hide="editar" class="form-group">
+                                    <label>Cantidad: </label>
+                                    <input type="number" class="form-control" min="0" max="9999999" ng-model="cantidad">
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="row     visible-xs  visible-md  visible-lg ">
+                                <div class="col col-xs-12  col-lg-10  col-lg-offset-1">
+                                    <hr>
+                                </div>
+                            </div>
+
+
+                            <!-- STOCK -->
+                            <div ng-show="editar" class="col col-lg-3 col-lg-offset-1 col-md-5  col-xs-6">
+                                <label>Stock: </label>
+                                <!-- STOCK editar -->
+                                <div class="form-group">
+                                    <input type="number" class="form-control" ng-model="productoEditar.stock">
+                                </div>
+                            </div>
+
+                            <!-- SUBTOTAL PESOS -->
+                            <div ng-hide="editar" class="col col-lg-5 col-md-5 col-xs-5  col-xs-offset-1">
+                                <label>Sub-total: </label>
+                                <br>
+                                <span class="moneda">$U</span>
+                                <span class="valor">{{(producto.precio * cantidad).toFixed(2)}}</span>
+                            </div>
+
+                            <!-- SUBTOTAL DOLARES -->
+                            <div ng-hide="editar" class="col col-lg-5 col-md-5 col-xs-5">
+                                <label></label>
+                                <br>
+                                <span class="moneda">U$S</span>
+                                <span class="valor">{{((producto.precio * cantidad)/30).toFixed(2)}}</span>
+                            </div>
+
+                            <!-- INFO ENVIO Y CUOTAS -->
+                            <div class="col col-lg-12    col-xs-12" ng-show="cantidad > 4 && !editar">
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col col-lg-5 col-lg-offset-1    col-xs-5 col-xs-offset-1">
+                                        <!-- envio -->
+                                        <div class="row ">
+                                            <div class="col col-lg-3    col-xs-4">
+                                                <span class="glyphicon glyphicon-road circulo" aria-hidden="true"></span>
+                                            </div>
+                                            <div class="col col-lg-9    col-xs-8  info">
+                                                <div class="row">
+                                                    <span>ENVÍO</span>
+                                                </div>
+                                                <div class="row">
+                                                    <span>$U 578</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- cuotas -->
+                                    <div class="col col-lg-5 col-xs-5">
+                                        <div class="row ">
+                                            <div class="col col-lg-3 col-xs-4">
+                                                <span class="glyphicon glyphicon-credit-card circulo" aria-hidden="true"></span>
+                                            </div>
+                                            <div class="col col-lg-9   col-xs-8 info">
+                                                <div class="row">
+                                                    <span>CUOTAS</span>
+                                                </div>
+                                                <div class="row">
+                                                    <span>12 cuotas de $U 578</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- ============================================================== -->
+
+                    </div>
+                </div>
+
+                <!-- ============================================================== -->
+
+                <!-- BOTONES -->
+                <div class="row">
+                    <hr>
+                    <!-- BOTONES EDITAR -->
+                    <div ng-show="editar">
+                        <div class="col col-lg-5 col-lg-offset-1    col-sm-8 col-sm-offset-2    col-xs-12 ">
+                            <div class="form-group">
+                                <button class="btn btn-default form-control" ng-click="cancelar()">CANCELAR</button>
+                            </div>
+                        </div>
+                        <div class="col col-lg-4  col-lg-offset-0    col-sm-8 col-sm-offset-2    col-xs-12">
+                            <div class="form-group">
+                                <button class="btn btn-default form-control verde" ng-click="guardarProducto()">GUARDAR</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BOTONES COMPRAR -->
+                    <div ng-hide="editar">
+                        <div class="col col-lg-5 col-lg-offset-1    col-sm-8 col-sm-offset-2    col-xs-12 ">
+                            <div class="form-group">
+                                <button class="btn btn-default form-control">AGREGAR AL CARRITO</button>
+                            </div>
+                        </div>
+                        <div class="col col-lg-4  col-lg-offset-0    col-sm-8 col-sm-offset-2    col-xs-12">
+                            <div class="form-group">
+                                <button class="btn btn-default form-control verde" ng-click="">COMPRAR AHORA</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============================================================== -->
+
                 <!-- DESCRIPCION -->
                 <div class="row">
+                    <hr>
+                    <!-- titulo -->
                     <div class="col col-lg-12">
                         <div class="row">
-                            <div class="col col-lg-1 col-xs-2 ">
+                            <div class="col col-lg-1      col-md-1 col-md-offset-1      col-xs-2 col-xs-offset-1">
                                 <span class="glyphicon glyphicon-align-center circulo" aria-hidden="true"></span>
                             </div>
-                            <div class="col col-lg-11 col-xs-10 titulo">
+                            <div class="col col-lg-6    col-md-6      col-xs-9 ">
                                 <div class="row">
-                                    <span>Descripción</span>
+                                    <label class="titulo">Descripción</label>
                                 </div>
                             </div>
                         </div>
-                        <br>
+                        <!-- contenido -->
                         <div class="row">
-                            <div class="col col-lg-10 col-lg-offset-1">
-                                <p>{{producto.descripcion}}</p>
+                            <div class="col col-lg-8 col-lg-offset-2    col-md-8 col-md-offset-2    col-xs-10 col-xs-offset-1 ">
+                                <br class="visible-xs visible-sm">
+                                <!-- descripcion -->
+                                <p ng-hide="editar">{{producto.descripcion}}</p>
+                                <!-- descripcion editar -->
+                                <div ng-show="editar" class="form-group">
+                                    <textarea class="form-control" ng-model="productoEditar.descripcion"></textarea>
+                                </div>
                             </div>
                         </div>
-                        <hr>
                     </div>
                 </div>
-                <!-- DATOS NUTRICIONALES -->
+
+                <!-- ============================================================== -->
+
+                <!-- INFORMACIÓN NUTRICIONAL -->
                 <div class="row">
+                    <hr>
+                    <!-- titulo -->
                     <div class="col col-lg-12">
                         <div class="row">
-                            <div class="col col-lg-1 col-xs-2 ">
+                            <div class="col col-lg-1      col-md-1 col-md-offset-1      col-xs-2 col-xs-offset-1">
                                 <span class="glyphicon glyphicon-th-list circulo" aria-hidden="true"></span>
                             </div>
-                            <div class="col col-lg-11 col-xs-10 titulo">
+                            <div class="col col-lg-6    col-md-6      col-xs-9 ">
                                 <div class="row">
-                                    <span>Datos nutricionales</span>
+                                    <label class="titulo">Datos Nutricionales</label>
                                 </div>
                             </div>
                         </div>
+                        <!-- contenido -->
                         <div class="row">
-                            <div class="col col-lg-10 col-lg-offset-1">
+                            <div class="col col-lg-8 col-lg-offset-2    col-md-8 col-md-offset-2    col-xs-18 col-xs-offset-2 ">
+                                <br class="visible-xs visible-sm">
+                                <div class="row">
 
 
-                                <div class="col col-lg-5 col-lg-offset-1">
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col col-lg-6 col-xs-6">
-                                            <span class="titulo">Calorías [g]</span>
+
+
+                                    <div class="col col-lg-5 col-lg-offset-1">
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col col-lg-5      col-md-3      col-xs-3 col-xs-offset-2">
+                                                <span class="titulo">Calorías [g]</span>
+                                            </div>
+                                            <div class="col col-lg-3 col-lg-offset-0     col-md-3  col-xs-3 col-xs-offset-2">
+                                                <!-- calorias -->
+                                                <span ng-hide="editar" class="valor">{{producto.nutricional.calorias}}</span>
+                                                <!-- calorias editar -->
+                                                <input ng-show="editar" type="number" class="form-control" min="0" ng-model="productoEditar.nutricional.calorias">
+                                            </div>
                                         </div>
-                                        <div class="col col-lg-6 col-xs-6">
-                                            <span class="valor">{{producto.nutricional.calorias}}</span>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col col-lg-5      col-xs-3 col-xs-offset-2">
+                                                <span class="titulo">Proteínas [g]</span>
+                                            </div>
+                                            <div class="col col-lg-3 col-lg-offset-0     col-xs-3 col-xs-offset-2">
+                                                <!-- proteinas -->
+                                                <span ng-hide="editar" class="valor">{{producto.nutricional.proteinas}}</span>
+                                                <!-- proteinas editar -->
+                                                <input ng-show="editar" type="number" class="form-control" min="0" ng-model="productoEditar.nutricional.proteinas">
+                                            </div>
                                         </div>
+                                        <hr>
                                     </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col col-lg-6 col-xs-6">
-                                            <span class="titulo">Proteínas [g]</span>
-                                        </div>
 
-                                        <div class="col col-lg-6 col-xs-6">
-                                            <span class="valor">{{producto.nutricional.proteinas}}</span>
+
+
+                                    <div class="col col-lg-5">
+                                        <hr class="visible-lg">
+                                        <div class="row">
+                                            <div class="col col-lg-5      col-xs-3 col-xs-offset-2">
+                                                <span class="titulo">Hidratos [g]</span>
+                                            </div>
+                                            <div class="col col-lg-3 col-lg-offset-0     col-xs-3 col-xs-offset-2">
+                                                <!-- hidratos -->
+                                                <span ng-hide="editar" class="valor">{{producto.nutricional.hidratos}}</span>
+                                                <!-- hidratos editar -->
+                                                <input ng-show="editar" type="number" class="form-control" min="0" ng-model="productoEditar.nutricional.hidratos">
+                                            </div>
                                         </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col col-lg-5      col-xs-3 col-xs-offset-2">
+                                                <span class="titulo">Grasas [g]</span>
+                                            </div>
+
+                                            <div class="col col-lg-3 col-lg-offset-0    col-xs-3 col-xs-offset-2">
+                                                <!-- grasas -->
+                                                <span ng-hide="editar" class="valor">{{producto.nutricional.grasas}}</span>
+                                                <!-- grasas editar -->
+                                                <input ng-show="editar" type="number" class="form-control" min="0" ng-model="productoEditar.nutricional.grasas">
+                                            </div>
+                                        </div>
+                                        <hr>
                                     </div>
-                                    <hr>
+
                                 </div>
-
-
-
-                                <div class="col col-lg-5">
-                                    <hr class="visible-lg">
-                                    <div class="row">
-                                        <div class="col col-lg-6 col-xs-6">
-                                            <span class="titulo">Hidratos [g]</span>
-                                        </div>
-                                        <div class="col col-lg-6 col-xs-6">
-                                            <span class="valor">{{producto.nutricional.hidratos}}</span>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <div class="row">
-                                        <div class="col col-lg-6 col-xs-6">
-                                            <span class="titulo">Grasas [g]</span>
-                                        </div>
-
-                                        <div class="col col-lg-6 col-xs-6">
-                                            <span class="valor">{{producto.nutricional.grasas}}</span>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                </div>
-
-
-
                             </div>
-
                         </div>
-
-                        <hr>
                     </div>
                 </div>
-
-
             </div>
 
 
 
 
+
+
+
+
         </div>
-
     </div>
-
-
-
-
-
 </div>
-
 </div>

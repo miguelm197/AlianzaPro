@@ -3,6 +3,7 @@
     z-index: 2000;
     width: 100%;
     height: 0%;
+    top: 0px;
 }
 
 .panel-alert .fondo {
@@ -30,7 +31,7 @@
 }
 
 .ocultarCaja {
-    margin-top: -20% !important;
+    margin-top: -50% !important;
     /* transition: all 1s; */
 }
 

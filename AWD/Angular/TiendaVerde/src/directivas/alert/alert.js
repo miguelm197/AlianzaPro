@@ -56,11 +56,9 @@ app.directive('alert', [function () {
                 scope.clasesPanel.ocultarPanel = true;
 
                 scope.$root.alerta.mostrar = false;
-                console.log("cerrando")
             }
 
             scope.cajita = function () {
-                console.log("cajita")
             }
         }
 

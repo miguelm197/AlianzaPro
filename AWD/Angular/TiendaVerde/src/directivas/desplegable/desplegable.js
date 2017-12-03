@@ -1,4 +1,4 @@
-app.directive('desplegable', ["FacProductos", function (FacProductos) {
+app.directive('desplegable', ["FacProducto", function (FacProducto) {
     return {
         templateUrl: './src/directivas/desplegable/desplegable.html',
         restrict: 'E',
@@ -9,102 +9,35 @@ app.directive('desplegable', ["FacProductos", function (FacProductos) {
         link: function (scope, element) {
             scope.local = false;
             scope.url = false;
-
-            scope.ejemplos = [
-                {
-                    "titulo": "Verde",
-                    "colapse": {
+            scope.categorias = [];
+            var colapse = {
+                "clCerrado": true,
+                "clAbierto": false
+            }
+            FacProducto.consultaCategorias().then(function (res) {
+                scope.categorias = res.data;
+                for (var i = 0; i < scope.categorias.length; i++) {
+                    scope.categorias[i].colapse = {
                         "clCerrado": true,
                         "clAbierto": false
-                    },
-                    "menu": [
-                        "Categoría verde",
-                        "Lechuga",
-                        "Brocoli",
-                        "Puerro",
-                        "Perejil",
-                        "Espinaca",
-                        "Apio",
-                        "chaucha",
-                        "Arbeja"
-                    ]
-                },
-                {
-                    "titulo": "Naranja",
-                    "colapse": {
-                        "clCerrado": true,
-                        "clAbierto": false
-                    },
-                    "menu": [
-                        "Categoría naranja",
-                        "Naranja",
-                        "Melón",
-                        "Mango",
-                        "Papaya",
-                        "Zapallo",
-                        "Mandarina",
-                        "Boñato",
-                        "Calabaza"
-                    ]
-                },
-                {
-                    "titulo": "Rojo",
-                    "colapse": {
-                        "clCerrado": true,
-                        "clAbierto": false
-                    },
-                    "menu": [
-                        "Categoría roja",
-                        "Tomate",
-                        "Morrón",
-                        "Picle",
-                        "Chile",
-                        "Manzana",
-                        "Sandóa",
-                        "Frutilla"
-                    ]
-                },
-                {
-                    "titulo": "Violeta",
-                    "colapse": {
-                        "clCerrado": true,
-                        "clAbierto": false
-                    },
-                    "menu": [
-                        "Berenjena",
-                        "Uva",
-                        "Cebolla morada",
-                        "Col morada",
-                        "Paas moradas",
-                        "Remolacha"
-                    ]
-                },
-                {
-                    "titulo": "Blanco",
-                    "colapse": {
-                        "clCerrado": true,
-                        "clAbierto": false
-                    },
-                    "menu": [
-                        "Ajo",
-                        "Cebolla",
-                        "Coliflor",
-                        "Esparrago",
-                        "Nabo",
-                        "Papas",
-                        "Puerro",
-                        "Pera"
-                    ]
+                    }
                 }
-            ];
+            });
+
+
+
+
+
+
+
             scope.local = scope.tipo == "local" ? true : false;
             scope.url = scope.tipo == "url" ? true : false;
 
-            scope.clAbrirCerrar = function (todo, opcion) {
-                for (var i = 0; i < todo.length; i++) {
-                    if (todo[i].titulo != opcion.titulo) {
-                        todo[i].colapse.clCerrado = true;
-                        todo[i].colapse.clAbierto = false;
+            scope.clAbrirCerrar = function (opcion) {
+                for (var i = 0; i < scope.categorias.length; i++) {
+                    if (scope.categorias[i].titulo != opcion.titulo) {
+                        scope.categorias[i].colapse.clCerrado = true;
+                        scope.categorias[i].colapse.clAbierto = false;
                     }
                 }
                 if (opcion.colapse.clCerrado) {
@@ -118,7 +51,7 @@ app.directive('desplegable', ["FacProductos", function (FacProductos) {
 
             scope.cate = function (categoria) {
                 if (scope.local)
-                scope.categoria = categoria;
+                    scope.categoria = categoria;
             }
         }
     };

@@ -1,4 +1,4 @@
-app.controller("loginCtrl", ["$scope", "FacLogin", "$location", "md5", function ($scope, FacLogin, $location, md5) {
+app.controller("loginCtrl", ["$scope", "FacLogin", "$location", "md5", "$rootScope", function ($scope, FacLogin, $location, md5, $rootScope) {
     $scope.loginUs = true;
     $scope.registerUs = false;
 
@@ -43,10 +43,10 @@ app.controller("loginCtrl", ["$scope", "FacLogin", "$location", "md5", function 
                     FacLogin.setCredentials(correo, clave, rolUsuario, nombre, apellido, id);
                     $location.path('/home');
                 } else {
-                    alert("Contraseña incorrecta");
+                    $rootScope.alerta.mensaje("alerta", "Inicio sesión", "Correo o contraseña incorrecta");
                 }
             } else {
-                alert("No existe este correo");
+                $rootScope.alerta.mensaje("alerta", "Inicio sesión", "Correo o contraseña incorrecta");
             }
         });
     }
@@ -81,12 +81,14 @@ app.controller("loginCtrl", ["$scope", "FacLogin", "$location", "md5", function 
                             }
                         );
                     } else {
-                        alert("Ya existe este usuario");
+                        $rootScope.alerta.mensaje("alerta", "Registro usuario", "Ya existe este usuario");
+
                     }
                 }
             );
         } else {
-            alert("Las contraseñas no son iguales");
+            $rootScope.alerta.mensaje("alerta", "Registro usuario", "Las contraseñas no son iguales");
+
         }
     }
 

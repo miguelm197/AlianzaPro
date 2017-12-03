@@ -1,4 +1,4 @@
-app.controller("usuarioCtrl", ["$scope", "$location", 'FacUsuario', 'md5', function ($scope, $location, FacUsuario, md5) {
+app.controller("usuarioCtrl", ["$rootScope", "$scope", "$location", 'FacUsuario', 'md5', function ($rootScope, $scope, $location, FacUsuario, md5) {
     $scope.usuario = {}
     $scope.usuarioEdit = {}
     $scope.resClave = false;
@@ -15,14 +15,14 @@ app.controller("usuarioCtrl", ["$scope", "$location", 'FacUsuario', 'md5', funct
 
     $scope.editarU = function () {
         if ($scope.editar) {
-            $scope.editar = false; 
+            $scope.editar = false;
         } else {
             $scope.usuarioEdit.nombre = $scope.usuario.nombre;
             $scope.usuarioEdit.apellido = $scope.usuario.apellido;
             $scope.usuarioEdit.correo = $scope.usuario.correo;
             $scope.usuarioEdit.rol = $scope.usuario.rol;
             $scope.usuarioEdit.direccion = $scope.usuario.direccion;
-            $scope.rolSelected =  $scope.usuarioEdit.rol;
+            $scope.rolSelected = $scope.usuarioEdit.rol;
             $scope.editar = true;
             $scope.reesClave = false;
         }
@@ -50,12 +50,12 @@ app.controller("usuarioCtrl", ["$scope", "$location", 'FacUsuario', 'md5', funct
                     $scope.claveRes.clUno = "";
                     $scope.claveRes.clDos = "";
                     $scope.reesClave = false;
-                    alert("Actualizado correctamente");
+                    $rootScope.alerta.mensaje("alerta", "Usuario", "Se actualizó la clave del usuario correctamente");
 
                 });
             });
         } else {
-            alert("Las contraseñas no son iguales");
+            $rootScope.alerta.mensaje("alerta", "Usuario", "Las contraseñas no son iguales");
         }
     }
 
@@ -80,12 +80,12 @@ app.controller("usuarioCtrl", ["$scope", "$location", 'FacUsuario', 'md5', funct
 
             if (usuario.nombre != "" && usuario.apellido != "" && usuario.correo != "") {
                 FacUsuario.guardarUsuarioId(id, usuario).then(function () {
-                    alert("Actualizado correctamente");
+                    $rootScope.alerta.mensaje("alerta", "Usuario", "Se actualizó el usuario correctamente");
                     $scope.usuario = usuario;
                     $scope.editar = false;
                 });
             } else {
-                alert("Revise los campos");
+                $rootScope.alerta.mensaje("alerta", "Usuario", "Revise los campos");
             }
         });
     }
@@ -99,13 +99,13 @@ app.controller("usuarioCtrl", ["$scope", "$location", 'FacUsuario', 'md5', funct
                 usuario.bloqueado = false;
                 FacUsuario.guardarUsuarioId(id, usuario).then(function () {
                     $scope.usuario.bloqueado = false;
-                    alert("Actualizado correctamente");
+                    $rootScope.alerta.mensaje("alerta", "Usuario", "Se desbloqueó el usuario correctamente");
                 });
             } else {
                 usuario.bloqueado = true;
                 FacUsuario.guardarUsuarioId(id, usuario).then(function () {
                     $scope.usuario.bloqueado = true;
-                    alert("Actualizado correctamente");
+                    $rootScope.alerta.mensaje("alerta", "Usuario", "Se bloqueó el usuario correctamente");
                 });
             }
         });
@@ -120,13 +120,13 @@ app.controller("usuarioCtrl", ["$scope", "$location", 'FacUsuario', 'md5', funct
                 usuario.activo = false;
                 FacUsuario.guardarUsuarioId(id, usuario).then(function () {
                     $scope.usuario.activo = false;
-                    alert("Actualizado correctamente");
+                    $rootScope.alerta.mensaje("alerta", "Usuario", "Se eliminó el usuario correctamente");
                 });
             } else {
                 usuario.activo = true;
                 FacUsuario.guardarUsuarioId(id, usuario).then(function () {
                     $scope.usuario.activo = true;
-                    alert("Actualizado correctamente");
+                    $rootScope.alerta.mensaje("alerta", "Usuario", "Se actualizó el usuario correctamente");
                 });
             }
         });

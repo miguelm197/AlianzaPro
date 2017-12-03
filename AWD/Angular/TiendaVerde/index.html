@@ -38,6 +38,11 @@
     <script src="./node_modules/bootstrap-fileinput/js/fileinput.min.js"></script>
     <script src="./node_modules/bootstrap-fileinput/themes/fa/theme.js"></script>
 
+
+
+    <script src="./node_modules/ng-scroll/ng-scroll.js"></script>
+
+
     <!-- <script src = "/ path / to / themes / fa / theme.js"> </ script> -->
 
     <script src="./src/app.js"></script>
@@ -110,11 +115,11 @@
 
 <body>
 
-<alert></alert>
+    <alert></alert>
 
     <!-- <alert tipo="mensaje" titulo="Productos" texto="El producto se ha ingresado correctamente"></alert> -->
 
-    <div ng-include src="'src/nav/nav.html'"></div>
+    <div ng-include src="'src/nav/nav.html'" data-ng-scroll-down="hola()"></div>
     <!-- VISTAS PARCIALES-->
     <div ng-view></div>
 

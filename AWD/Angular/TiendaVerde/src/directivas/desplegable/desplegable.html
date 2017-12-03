@@ -4,8 +4,8 @@
 
       <div class="clOpciones">
 
-        <div class="row" ng-repeat="ej in ejemplos">
-          <div class="col col-lg-12 clTitulo" ng-click="clAbrirCerrar(ejemplos, ej); cate(ej.titulo)">
+        <div class="row" ng-repeat="ej in categorias">
+          <div class="col col-lg-12 clTitulo" ng-click="clAbrirCerrar(ej); cate(ej.titulo)">
             <span>{{ej.titulo}}s </span>
           </div>
           <div class="col col-lg-12 clMenu" ng-repeat="a in ej.menu" ng-class="ej.colapse" ng-hide="local">

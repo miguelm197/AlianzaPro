@@ -1,9 +1,14 @@
+function hola() {
+    console.log("");
+}
 app.controller("navCtrl", ["$scope", "FacLogin", 'FacParametros', "$location", '$rootScope', function ($scope, FacLogin, FacParametros, $location, $rootScope) {
-    $scope.scroll = true;
+    $scope.scroll = false;
     $scope.sesions = false;
     $scope.sesion = {}
     $scope.categoria = {}
     $scope.buscado = {}
+
+
 
     $scope.clCategorias = {
         "abrirCategorias": false,
@@ -15,35 +20,69 @@ app.controller("navCtrl", ["$scope", "FacLogin", 'FacParametros', "$location", '
         "quitarFondo": true,
         "colocarFondo": false
     }
+    $scope.busca = {
+        "col-lg-6": false,
+        "col-lg-8": false
+    }
+
+    $scope.categ = {
+        "hide": false
+    }
     var cat = false;
 
+    document.body.onscroll = function () {
+        var posicion = 0;
+        $scope.posicion = window.scrollY;
 
-    // $scope.hola = false;
+        function eliminarClase(id, clase) {
+            var colClases = document.getElementById(id).className;
 
-    $(window).scroll(function () {
-        var posicion = $(document).scrollTop();
-        if (posicion < 72) {
-            $scope.scroll = false;
-            $("#busca").removeClass("col-lg-6");
-            $("#busca").addClass("col-lg-8");
-            $("#categ").addClass("hide");
+            var col = colClases.split(" ");
+            var texto = "";
 
-            $(".categorias").css("margin-top", "-5px");
-        } else {
-            $scope.scroll = true;
-            $("#busca").removeClass("col-lg-8");
-            $("#categ").removeClass("hide");
-            $("#busca").addClass("col-lg-6");
+            for (var i = 0; i < col.length; i++) {
+                if (col[i] != clase) {
+                    texto = texto + col[i] + " ";
+                }
+            }
+            document.getElementById(id).className = texto;
+        }
 
-            $(".categorias").css("margin-top", "-45px");
+        function agregarClase(id, clase) {
+            var colClases = document.getElementById(id).className;
+
+            var texto = "";
+            if (colClases.indexOf(clase) == -1) {
+                texto = colClases + " " + clase;
+            } else {
+                texto = colClases;
+            }
+            document.getElementById(id).className = texto;
 
         }
 
-    });
+
+        if ($scope.posicion < 42) {
+            $scope.scroll = false;
+        } else {
+            $scope.scroll = true;
+        }
+
+        if ($scope.scroll) {
+            document.getElementById("catego").style.display = "inline";
+            document.getElementById("categorias").style["margin-top"] = "-45px";
+
+            eliminarClase("busca", "col-lg-8");
+            agregarClase("busca", "col-lg-6");
+        } else {
+            document.getElementById("catego").style.display = "none";
+            document.getElementById("categorias").style["margin-top"] = "-5px";
+            eliminarClase("busca", "col-lg-6");
+            agregarClase("busca", "col-lg-8");
+        }
+    }
 
 
-
-    // $scope.sesion = {}
 
     $scope.$watch("globals", function (newValue, oldValue) {
         cargarDatosSesion();
@@ -68,7 +107,6 @@ app.controller("navCtrl", ["$scope", "FacLogin", 'FacParametros', "$location", '
     }
 
     $scope.iniciarSesion = function () {
-        console.log("iniciar")
         $location.path("/login");
     }
 
@@ -94,6 +132,25 @@ app.controller("navCtrl", ["$scope", "FacLogin", 'FacParametros', "$location", '
         }
     }
 
+    $scope.clCategoriasCel = {
+        "abrirCategoriasCel": false,
+        "cerrarCategoriasCel": true
+    }
+
+    $scope.categoriasCel = function () {
+        if (cat) {
+            $scope.clCategoriasCel.abrirCategoriasCel = false;
+            $scope.clCategoriasCel.cerrarCategoriasCel = true;
+          
+            cat = false;
+        } else {
+            $scope.clCategoriasCel.abrirCategoriasCel = true;
+            $scope.clCategoriasCel.cerrarCategoriasCel = false;
+
+            cat = true;
+        }
+    }
+
     $scope.home = function () {
         $location.path("/home")
     }
@@ -101,6 +158,5 @@ app.controller("navCtrl", ["$scope", "FacLogin", 'FacParametros', "$location", '
     FacParametros.consultaParametros().then(function (res) {
         var parametros = res.data[0];
         $scope.parametros = parametros;
-        console.log("asd")
     });
 }]);
