@@ -5,6 +5,19 @@
     color: inherit;
 }
 
+
+
+.panel-listaProductos .btn-tabla {
+    border: none;
+    background: none;
+}
+
+.panel-listaProductos .imagen-tabla {
+    width: 50px;
+    height: 50px;
+    background-size: cover !important;
+}
+
 .panel-listaProductos table thead {
     border-bottom: 1px solid gray;
 }

@@ -63,12 +63,9 @@ textarea {
     box-shadow: none !important;
 }
 
+input:focus,
 button:focus {
-    outline: 0px;
-}
-
-input:focus {
-    outline: 0px;
+    outline: 0px !important;
 }
 
 footer {

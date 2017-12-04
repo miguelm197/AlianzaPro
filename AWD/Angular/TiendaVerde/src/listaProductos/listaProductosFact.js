@@ -6,6 +6,9 @@ app.factory("FacListaProductos", ["$http", function ($http) {
         },
         consultaProductoId: function (id) {
             return $http.get(servicio + "/productos/" + id);
+        },
+        eliminarProducto: function (id) {
+            return $http.delete(servicio + "/productos/" + id);
         }
 
     }

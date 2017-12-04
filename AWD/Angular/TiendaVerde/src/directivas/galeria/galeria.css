@@ -4,6 +4,25 @@
 
 .canasta {}
 
+.canasta .sinRes {
+    margin-left: 55%;
+    transform: translateX(-40%);
+}
+
+.canasta .sinRes>div {
+    display: inline;
+    color: gray;
+}
+
+.canasta .sinRes .carita {
+    font-size: 50px;
+    padding-top: 10px;
+}
+.canasta .sinRes .texto {
+    position: absolute;
+    margin-top: 29px;
+}
+
 .canasta .item {}
 
 .canasta .imagen {
@@ -16,11 +35,9 @@
     background-size: cover !important;
     width: 100%;
     height: 100%;
-
 }
 
 .canasta .abajo {
- 
     width: 100%;
     /* background-color: gray; */
 }
@@ -33,7 +50,7 @@
 .canasta .abajo .subtitulo {
     font-size: 16px;
     height: 50px;
-    word-wrap: break-word; 
+    word-wrap: break-word;
 }
 
 .canasta .abajo .precio {

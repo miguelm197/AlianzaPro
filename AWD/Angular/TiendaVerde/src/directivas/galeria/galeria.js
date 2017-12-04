@@ -7,6 +7,7 @@ app.directive('galeria', ["FacProductos", "$location", function (FacProductos, $
             categoria: "="
         },
         link: function (scope, element) {
+            scope.sinRes = false;
             scope.local = false;
             scope.url = false;
             scope.destacado = false;
@@ -51,7 +52,6 @@ app.directive('galeria', ["FacProductos", "$location", function (FacProductos, $
                         scope.listaProductos = res.data;
                     });
                 }
-
             }
 
 
@@ -62,7 +62,6 @@ app.directive('galeria', ["FacProductos", "$location", function (FacProductos, $
                     categoria = scope.categoria;
                     FacProductos.consultaProductoPorCategoria(categoria).then(function (res) {
                         scope.titulo = "Producto por categoría: " + categoria;
-                        console.log(res)
                         scope.listaProductos = res.data;
                     });
                 }
@@ -80,6 +79,11 @@ app.directive('galeria', ["FacProductos", "$location", function (FacProductos, $
                             } catch (err) {
                             }
                         }
+                        if (scope.listaProductos[0] == undefined)
+                            scope.sinRes = true;
+                        else
+                            scope.sinRes = false;
+
                     });
                 }
 
