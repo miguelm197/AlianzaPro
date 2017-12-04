@@ -1,5 +1,6 @@
 app.controller("homeCtrl", ["$rootScope", "$scope", "$location", 'FacParametros', function ($rootScope, $scope, $location, FacParametros) {
-    $scope.categoriaProductosDestacado = "";
+//    variable en comun entre desplegable y galeria
+    $scope.categoriaProductosDestacado = "Verde";
 
     FacParametros.consultaParametros().then(function (res) {
         var parametros = res.data[0];

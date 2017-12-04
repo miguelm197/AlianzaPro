@@ -31,7 +31,9 @@
 }
 
 .canasta .abajo .subtitulo {
-    font-size: 16px
+    font-size: 16px;
+    height: 50px;
+    word-wrap: break-word; 
 }
 
 .canasta .abajo .precio {

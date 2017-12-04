@@ -1,13 +1,28 @@
 <div class="container-fluid">
 
-  <!-- <alert></alert> -->
+  <br class="visible-md">
+  <br class="visible-md">
+  <br class="visible-md">
+  
+  <div class="row">
+    <div class="col xs-12">
+      <div class="container-fluid">
 
-  <div class="row buscadorGaleria" ng-hide="local">
+        <h3>{{titulo}} </h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+
+    <!-- <hr> -->
+  </div>
+  <div class="row buscadorGaleria" ng-hide="destacado">
     <buscador buscar="filtro"></buscador>
   </div>
   <div class="row canasta">
 
-    <div class="col col-lg-3 item" ng-repeat="prod in listaProductos | filter:{nombre:filtro}">
+
+    <div class="col col-lg-3     col-md-4   col-sm-4    item" ng-repeat="prod in listaProductos | filter:{nombre:filtro}">
       <a href="/#!/producto/{{prod.id}}">
         <div class="imagen">
           <div style="background: url({{prod.imagen}})"></div>
@@ -34,6 +49,8 @@
       </div>
 
     </div>
+
+
 
   </div>
 </div>

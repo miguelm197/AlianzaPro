@@ -66,6 +66,22 @@ textarea {
 button:focus {
     outline: 0px;
 }
+
 input:focus {
     outline: 0px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(63, 63, 63);
+}
+
+footer .texto {
+    color: white;
+    font-size: 11px;
+    padding: 3px;
+    float: right;
+    margin-right: 50px;
 }

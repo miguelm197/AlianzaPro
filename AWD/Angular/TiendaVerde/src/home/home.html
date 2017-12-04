@@ -1,32 +1,35 @@
 <div class="panel-home">
-    <div class="row">
-        <div class="col col-lg-12-carrusel">
-            <ul rn-carousel rn-carousel-auto-slide class="image imagenes">
-                <li>
-                    
-                    <img ngf-src="!slides.slide1.$error && slides.slide1">
-                </li>
-                <li>
-                    <img ngf-src="!slides.slide2.$error && slides.slide2">
-                </li>
-                <li>
-                    <img ngf-src="!slides.slide3.$error && slides.slide3">
-                </li>
-                
-                <!-- <li><img src="https://wallpapershome.com/images/wallpapers/kiwi-3840x2160-fruit-4k-15331.jpg" alt=""></li>
-                    <li><img src="https://es.best-wallpaper.net/wallpaper/3840x2160/1607/Watermelon-slices-juice-love-hearts-summer-drinks_3840x2160.jpg" alt=""></li>
-                    <li><img src="http://res.cloudinary.com/db79cecgq/image/upload/c_crop,h_810,w_1440,x_0,y_44/c_fill,h_900,w_1600/v1409914894/La-comida-que-escoges-es-tu-mejor-tiquete-a-la-salud_2.jpg" alt=""></li> -->
-            </ul>
-        </div>
-    </div>
+    <div class="container-fluid">
 
-    <div class="row">
-        <div class="col col-lg-10 col-lg-offset-1 destacados">
-            <div class="col col-lg-2">
-                <desplegable tipo="local" categoria="categoriaProductosDestacado"></desplegable>
+        <div class="row">
+            <div class="col col-lg-12-carrusel">
+                <ul rn-carousel rn-carousel-auto-slide class="image imagenes">
+                    <li>
+
+                        <img ngf-src="!slides.slide1.$error && slides.slide1">
+                    </li>
+                    <li>
+                        <img ngf-src="!slides.slide2.$error && slides.slide2">
+                    </li>
+                    <li>
+                        <img ngf-src="!slides.slide3.$error && slides.slide3">
+                    </li>
+                </ul>
             </div>
-            <div class="col col-lg-10">
-                <galeria tipo="local" categoria="categoriaProductosDestacado"></galeria>
+        </div>
+
+        <div class="row">
+            <div class="col col-lg-10 col-lg-offset-1    destacados">
+                <div class="row">
+                
+                    
+                    <div class="col col-lg-2   col-md-12 ">
+                        <desplegable tipo="local" categoria="categoriaProductosDestacado"></desplegable>
+                    </div>
+                    <div class="col col-lg-10">
+                        <galeria tipo="destacado" categoria="categoriaProductosDestacado"></galeria>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

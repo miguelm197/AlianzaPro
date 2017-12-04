@@ -51,6 +51,8 @@
     <link rel="stylesheet" type="text/css" href="./src/nav/nav.css">
     <script src="./src/nav/navCtrl.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="./src/footer/footer.css">
+    <script src="./src/footer/footerCtrl.js"></script>
 
 
 
@@ -93,6 +95,7 @@
 
     <!-- directivas -->
     <script src="./src/directivas/desplegable/desplegable.js"></script>
+    <link rel="stylesheet" type="text/css" href="./src/directivas/desplegable/desplegable.css">
 
     <link rel="stylesheet" type="text/css" href="./src/directivas/galeria/galeria.css">
     <script src="./src/directivas/galeria/galeria.js"></script>
@@ -117,15 +120,16 @@
 
     <alert></alert>
 
-    <!-- <alert tipo="mensaje" titulo="Productos" texto="El producto se ha ingresado correctamente"></alert> -->
-
     <div ng-include src="'src/nav/nav.html'" data-ng-scroll-down="hola()"></div>
-    <!-- VISTAS PARCIALES-->
+
     <div ng-view></div>
 
-    <hr>
-
-
+    <footer>
+        <div class="texto">
+            <div>Miguel Merelli</div>
+        </div>
+    </footer>
 </body>
+
 
 </html>

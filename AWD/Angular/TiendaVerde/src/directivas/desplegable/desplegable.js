@@ -24,12 +24,6 @@ app.directive('desplegable', ["FacProducto", function (FacProducto) {
                 }
             });
 
-
-
-
-
-
-
             scope.local = scope.tipo == "local" ? true : false;
             scope.url = scope.tipo == "url" ? true : false;
 

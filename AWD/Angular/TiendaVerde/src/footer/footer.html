@@ -1,0 +1,286 @@
+<div class="panel-nav" ng-controller="navCtrl">
+    <div class="fondo" ng-class="fondo" ng-click="categorias()"></div>
+
+    <div class="row principal">
+        <div class="container">
+
+            <!-- Logo -->
+            <div class="col col-lg-2 col-xs-6 col-sm-4">
+                <div class="logo" ng-click="home()">
+                    <img src="{{parametros.logo}}" alt="tiendaVERDE">
+                </div>
+            </div>
+            <!-- Categoría -->
+            <div class="col col-lg-2 col-xs-1  hidden-xs hidden-sm hidden-md" id="catego">
+                <button type="button" class="btn-categoria" ng-click="categorias()">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                    <span class="visible-lg-inline">CATEGORÍA</span>
+                    <span class="glyphicon glyphicon-menu-down visible-lg-inline" aria-hidden="true"></span>
+                </button>
+            </div>
+            <!-- Categoría celular -->
+            <div class="col col-xs-1 col-sm-offset-2 hidden-lg">
+                <button type="button" class="btn-categoria" ng-click="categoriasCel()">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                </button>
+            </div>
+            <!-- buscador -->
+            <div class="col col-lg-6 col-xs-1 col-sm-1" id="busca" ng-class="busca">
+                <div class="buscador">
+
+                    <div class="input-group hidden-xs hidden-sm hidden-md">
+                        <input type="search" autocomplete="off" class="form-control" id="clU" placeholder="Buscar...">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </span>
+                    </div>
+
+                    <button type="button" class="btn btn-default hidden-lg" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+
+                </div>
+            </div>
+            <!-- carrito y perfil -->
+            <div class="col col-lg-2 col-xs-4">
+                <div class="carper">
+                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                    </button>
+
+                    <button ng-hide="sesions" type="button" class="btn btn-default" aria-label="Left Align" ng-click="iniciarSesion()">
+                        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                    </button>
+
+                    <button ng-show="sesions" class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="true">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li>
+                            <span>{{sesion.nombre}}</span>
+                            <span>{{sesion.rol}}</span>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a ng-click="perfil()">Mi perfil</a>
+                        </li>
+                        <li>
+                            <a href="#!/configuracion">Configuración</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a ng-click="cerrarSesion()">Salir</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BARRA VERDE -->
+    <div class="row secundario visible-lg">
+        <div class="container">
+            <!-- categoria -->
+            <div class="col col-lg-4">
+                <button type="button" class="btn-categoria" ng-click="categorias()">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> CATEGORÍA
+                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                </button>
+            </div>
+            <!-- direccion -->
+            <div class="col col-lg-4">
+                <div class="direccion">
+                    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                    <span>Dirección: {{parametros.direccion}}</span>
+                </div>
+            </div>
+            <!-- telefono -->
+            <div class="col col-lg-4">
+                <div class="telefono">
+                    <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
+                    <span>Teléfono: {{parametros.telefono}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATEGORIAS desktop, tablet -->
+    <div class="row categorias hidden-sm hidden-xs" id="categorias">
+        <div class="row" ng-class="clCategorias">
+            <div class="col col-lg-8 col-lg-offset-2   col-md-12 contenedor">
+                <br class="visible-md">
+                <br class="visible-md">
+                <br class="visible-md">
+                <br class="visible-md">
+                <div class="row">
+                    <div class="col col-md-1   visible-md"></div>
+
+                    <!-- titulo -->
+                    <div class="col col-lg-2      col-md-2 hidden-md">
+                        <div class="container">
+                            <br>
+                            <br>
+                            <span class="categoria"> CATEGORÍAS </span>
+                            <br>
+                            <span class="por"> POR </span>
+                            <span class="color"> COLOR </span>
+                        </div>
+                    </div>
+
+                    <!-- verde -->
+                    <div class="col col-lg-2      col-md-2">
+                        <div class="imagen catVerde">
+                            <div class="info">
+                                <a href="/#!/productos?categoria=Verde&item=CategoriaVerde" ng-click="categorias()">
+                                    <span>
+                                        <center>
+                                            <h3> VERDE </h3>
+                                            <br>
+                                        </center>
+                                        <center>
+                                            Brocoli Repollo Puerro Perejil Espinaca Apio Lechuga Chaucha Arbeja
+                                        </center>
+                                    </span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- naranja -->
+                    <div class="col col-lg-2      col-md-2">
+                        <div class="imagen catNaranja">
+                            <div class="info">
+                                <a href="/#!/productos?categoria=Naranja&item=CategoriaNaranja" ng-click="categorias()">
+                                    <span>
+                                        <center>
+                                            <h3> NARANJA </h3>
+                                            <br>
+                                        </center>
+                                        <center>
+                                            Narnja Melón Mango Papaya Zapallo Mandarina Boñato Calabaza
+                                        </center>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- rojo -->
+                    <div class="col col-lg-2      col-md-2">
+                        <div class="imagen catRojo">
+
+                            <div class="info">
+                                <a href="/#!/productos?categoria=Rojo&item=CategoriaRojo" ng-click="categorias()">
+                                    <span>
+                                        <center>
+                                            <h3> ROJO </h3>
+                                            <br>
+                                        </center>
+                                        <center>
+                                            Tomate Morrón Picle Chile Manzana Sandía Frutilla Papas
+                                        </center>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- violeta -->
+                    <div class="col col-lg-2      col-md-2">
+                        <div class="imagen catVioleta">
+                            <div class="info">
+                                <a href="/#!/productos?categoria=Violeta&item=CategoriaVioleta" ng-click="categorias()">
+                                    <span>
+                                        <center>
+                                            <h3> VIOLETA </h3>
+                                            <br>
+                                        </center>
+                                        <center>
+                                            Berenjena Uva Cebolla morada Col morada Papas violetas Remolacha
+                                        </center>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- blanco -->
+                    <div class="col col-lg-2      col-md-2">
+                        <div class="imagen catBlanco">
+                            <div class="info">
+                                <a href="/#!/productos?categoria=Blanco&item=CategoriaBlanco" ng-click="categorias()">
+                                    <span>
+                                        <center>
+                                            <h3> BLANCO </h3>
+                                            <br>
+                                        </center>
+                                        <center>
+                                            Ajo Cebolla Coliflor Espárrago Nabo Papas Puerro Pepino Pera
+                                        </center>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br class="hidden-md hidden-lg">
+    <br class="hidden-md hidden-lg">
+    <br class="hidden-md hidden-lg">
+
+    <div class="row categorias-cel hidden-md hidden-lg" ng-class="clCategoriasCel">
+        <br>
+        <hr>
+        <center>
+            <h3>Categorías</h3>
+        </center>
+
+        <br>
+        <hr>
+        <!-- VERDE -->
+        <div class="col col-lg-12">
+            <a href="/#!/productos?categoria=Verde&item=CategoriaVerde" ng-click="categoriasCel()">
+                <div>VERDE</div>
+            </a>
+        </div>
+        <hr>
+        <!-- NARANJA -->
+        <div class="col col-lg-12">
+            <a href="/#!/productos?categoria=Naranja&item=CategoriaNaranja" ng-click="categoriasCel()">
+                <div>NARANJA</div>
+            </a>
+        </div>
+        <hr>
+        <!-- ROJO -->
+        <div class="col col-lg-12">
+            <a href="/#!/productos?categoria=Rojo&item=CategoriaRojo" ng-click="categoriasCel()">
+                <div>ROJO</div>
+            </a>
+        </div>
+        <hr>
+        <!-- VIOLETA -->
+        <div class="col col-lg-12">
+            <a href="/#!/productos?categoria=Violeta&item=CategoriaVioleta" ng-click="categoriasCel()">
+                <div>VIOLETA</div>
+            </a>
+        </div>
+        <hr>
+        <!-- BLANCO -->
+        <div class="col col-lg-12">
+            <a href="/#!/productos?categoria=Blanco&item=CategoriaBlanco" ng-click="categoriasCel()">
+                <div>BLANCO</div>
+            </a>
+        </div>
+        <hr>
+
+    </div>
+
+</div>

@@ -1,19 +1,23 @@
-<div class="clDesplegable">
+
+<div class="container-fluid clDesplegable">
   <div class="row">
     <div class="col col-lg-12">
-
-      <div class="clOpciones">
-
-        <div class="row" ng-repeat="ej in categorias">
-          <div class="col col-lg-12 clTitulo" ng-click="clAbrirCerrar(ej); cate(ej.titulo)">
-            <span>{{ej.titulo}}s </span>
-          </div>
-          <div class="col col-lg-12 clMenu" ng-repeat="a in ej.menu" ng-class="ej.colapse" ng-hide="local">
-            <a href="/#!/productos?categoria={{ej.titulo}}&item={{a}}">{{a}}</a>
-          </div>
+      
+      <div class="row" ng-repeat="ej in categorias">
+          <hr>
+        <div class="col col-lg12 titulo" ng-click="clAbrirCerrar(ej); cate(ej.titulo)">
+          {{ej.titulo}}
         </div>
-
+        <hr>
+        <div class="col col-lg12 item" ng-repeat="a in ej.menu" ng-hide="local">
+          <a href="/#!/productos?categoria={{ej.titulo}}&item={{a}}" >
+           <div ng-class="ej.colapse">{{a}}</div>
+          </a>
+          <hr>
+        </div>
       </div>
+
+
 
     </div>
   </div>
