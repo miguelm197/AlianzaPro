@@ -1,5 +1,18 @@
 .panel-listaUsuarios {}
 
+.panel-listaUsuarios table a {
+    color: rgb(49, 49, 49);
+}
+
+.panel-listaUsuarios .btn-tabla {
+    border: none;
+    background: none;
+    color: gray;
+}
+
+.panel-listaUsuarios .btn-tabla a {
+    color: gray;
+}
 
 .panel-listaUsuarios table thead {
     border-bottom: 1px solid gray;
@@ -74,4 +87,8 @@
 
 .panel-listaUsuarios .col70p {
     width: 70%
+}
+
+.panel-listaUsuarios .col90p {
+    width: 90%
 }

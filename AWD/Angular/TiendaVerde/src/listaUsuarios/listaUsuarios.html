@@ -17,10 +17,10 @@
             <table class="mf-table col col-lg-10 col-lg-offset-1">
                 <thead>
                     <tr>
-                        <th>
+                        <th class=" hidden-sm  hidden-xs">
                             <span>Nombre</span>
                         </th>
-                        <th>
+                        <th class=" hidden-sm  hidden-xs">
                             <span>Apellido</span>
                         </th>
                         <th>
@@ -29,56 +29,53 @@
                         <th>
                             <span>Rol</span>
                         </th>
-                        <th>
-                            <span>Ver</span>
+                        <th class=" hidden-sm  hidden-xs">
+                            <span></span>
                         </th>
                         <th>
-                            <span>Editar</span>
+                            <span></span>
                         </th>
-                        <th>
-                            <span>Eliminar</span>
-                        </th>
-                        <th>
-                            <span>Bloquear</span>
+                        <th  class=" hidden-sm  hidden-xs">
+                            <span></span>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="usuario in datos.datos | filter:{nombre:filtro}">
 
-                        <td class="col20p">
+                        <td class="col20p hidden-sm  hidden-xs">
                             <span>{{usuario.nombre}}</span>
                         </td>
-                        <td class="col20p">
+                        <td class="col20p  hidden-sm hidden-xs">
                             <span>{{usuario.apellido}}</span>
                         </td>
-                        <td class="col70p">
-                            <span>{{usuario.correo}}</span>
+                        <td class="col90p">
+                            <a href="{{usuario.ver}}">
+                                <span>{{usuario.correo}}</span>
+                            </a>
                         </td>
                         <td class="col30p">
                             <span>{{usuario.rol}}</span>
                         </td>
-                        <td class="col1p">
+                        <td class="col1p  hidden-sm  hidden-xs">
                             <span>
                                 <center>
-                                    <a href="{{usuario.ver}}">V</a>
+                                    <a href="{{usuario.ver}}">
+                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                                    </a>
                                 </center>
                             </span>
                         </td>
                         <td class="col1p">
-                            <span>
-                                <center> E </center>
-                            </span>
+                            <button type="button" class="btn btn-tabla" aria-label="Left Align" ng-click="bloquear(usuario.id)">
+                                <span ng-show="usuario.bloqueado" class="glyphicon glyphicon-remove-circle" title="Bloqueado"></span>
+                                <span ng-hide="usuario.bloqueado" class="glyphicon glyphicon-ok-circle" style="color:green" title="Desbloqueado"></span>
+                            </button>
                         </td>
-                        <td class="col1p">
-                            <span>
-                                <center> E </center>
-                            </span>
-                        </td>
-                        <td class="col1p">
-                            <span>
-                                <center> B</center>
-                            </span>
+                        <td class="col1p  hidden-sm  hidden-xs">
+                            <button type="button" class="btn btn-tabla" aria-label="Left Align" ng-click="eliminar(usuario.id)">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </button>
                         </td>
                 </tbody>
                 <tfoot>

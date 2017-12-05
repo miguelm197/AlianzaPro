@@ -11,7 +11,7 @@
                 </div>
             </div>
             <!-- Categoría -->
-            <div class="col col-lg-2 col-xs-1  hidden-xs hidden-sm hidden-md" id="catego">
+            <div class="col col-lg-2 col-xs-1  hidden-xs hidden-sm hidden-md" id="catego" ng-class="visible">
                 <button type="button" class="btn-categoria" ng-click="categorias()">
                     <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                     <span class="visible-lg-inline">CATEGORÍA</span>
@@ -82,10 +82,13 @@
 
     <!-- BARRA VERDE -->
     <div class="row secundario visible-lg">
+        <div class="pull-left" style="padding-left:30px; padding-top:10px; color:white; cursor:pointer;">
+            <atras></atras>
+        </div>
         <div class="container">
             <!-- categoria -->
             <div class="col col-lg-4">
-                <button type="button" class="btn-categoria" ng-click="categorias()">
+                <button type="button" class="btn-categoria" ng-click="categorias()"  ng-class="visible" id="catebar">
                     <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> CATEGORÍA
                     <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
                 </button>

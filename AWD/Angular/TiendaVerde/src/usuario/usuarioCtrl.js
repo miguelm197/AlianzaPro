@@ -111,23 +111,29 @@ app.controller("usuarioCtrl", ["$rootScope", "$scope", "$location", 'FacUsuario'
     }
 
     $scope.eliminarU = function () {
-        FacUsuario.consultaUsuarioPorId(id).then(function (res) {
-            var usuario = res.data;
-            var activo = usuario.activo;
+        $scope.miId = $rootScope.globals.currentUser.id;
 
-            if (activo) {
-                usuario.activo = false;
-                FacUsuario.guardarUsuarioId(id, usuario).then(function () {
-                    $scope.usuario.activo = false;
-                    $rootScope.alerta.mensaje("alerta", "Usuario", "Se eliminó el usuario correctamente");
-                });
-            } else {
-                usuario.activo = true;
-                FacUsuario.guardarUsuarioId(id, usuario).then(function () {
-                    $scope.usuario.activo = true;
-                    $rootScope.alerta.mensaje("alerta", "Usuario", "Se actualizó el usuario correctamente");
-                });
-            }
-        });
+        if (id != $scope.miId) {
+            FacUsuario.consultaUsuarioPorId(id).then(function (res) {
+                var usuario = res.data;
+                var activo = usuario.activo;
+
+                if (activo) {
+                    usuario.activo = false;
+                    FacUsuario.guardarUsuarioId(id, usuario).then(function () {
+                        $scope.usuario.activo = false;
+                        $rootScope.alerta.mensaje("alerta", "Usuario", "Se eliminó el usuario correctamente");
+                    });
+                } else {
+                    usuario.activo = true;
+                    FacUsuario.guardarUsuarioId(id, usuario).then(function () {
+                        $scope.usuario.activo = true;
+                        $rootScope.alerta.mensaje("alerta", "Usuario", "Se actualizó el usuario correctamente");
+                    });
+                }
+            });
+        } else {
+            $rootScope.alerta.mensaje("alerta", "Usuario", "No puede eliminar el usuario logueado");
+        }
     }
 }]);

@@ -111,7 +111,7 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
 
 
 
-            if ($location.path().indexOf("usuario") != -1) {
+            if (($location.path().indexOf("usuario") != -1) && (rolUsuario == "public")) {
                 var miId = loggedIn.id;
                 var idUrl = $location.path().split("/")[2];
                 if (miId != idUrl)
@@ -144,15 +144,19 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
 
 
         var currPag = $location.path();
+        console.log(currPag)
         // páginas donde no se tiene que mostrar el usuario buscador xel nav
-        var pags = ["/configuracion", "/nuevoProducto", "/parametros"];
-        for (var i = 0; i <= pags.length; i++) {
-            if (currPag == pags[i]) {
-                $("#busca").addClass("invisible");
-            } else {
-                $("#busca").removeClass("invisible");
+        var pags = ["/configuracion", "/nuevoProducto", "/parametros", '/usuario', "/listaProductos", "/listaUsuarios", "/usuario"];
+        if (pags.indexOf(currPag) != -1 || currPag.indexOf("/usuario") != -1) {
+            $rootScope.buscador = {
+                visible: true
+            }
+        } else {
+            $rootScope.buscador = {
+                visible: false
             }
         }
+        console.log("+ " + $rootScope.buscador.visible)
 
 
 

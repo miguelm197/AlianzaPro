@@ -6,6 +6,9 @@ app.factory("FacUsuario", ["$http", function ($http) {
         },
         guardarUsuarioId: function (id, objeto) {
             return $http.put(servicio + "/usuarios/" + id, objeto);
+        },
+        eliminarUsuarioPorId: function(id){
+            return $http.delete(servicio + "/usuarios/" + id);
         }
 
     }
