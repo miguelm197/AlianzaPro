@@ -7,7 +7,7 @@ app.controller("usuarioCtrl", ["$rootScope", "$scope", "$location", 'FacUsuario'
 
 
     var url = $location.$$url;
-    var id = url.split("/")[2];
+    var id = url.split("/")[2].split("?")[0];
     FacUsuario.consultaUsuarioPorId(id).then(function (res) {
         var usr = res.data;
         $scope.usuario = usr;
@@ -112,7 +112,7 @@ app.controller("usuarioCtrl", ["$rootScope", "$scope", "$location", 'FacUsuario'
 
     $scope.eliminarU = function () {
         $scope.miId = $rootScope.globals.currentUser.id;
-
+        console.log(id)
         if (id != $scope.miId) {
             FacUsuario.consultaUsuarioPorId(id).then(function (res) {
                 var usuario = res.data;
@@ -121,13 +121,11 @@ app.controller("usuarioCtrl", ["$rootScope", "$scope", "$location", 'FacUsuario'
                 if (activo) {
                     usuario.activo = false;
                     FacUsuario.guardarUsuarioId(id, usuario).then(function () {
-                        $scope.usuario.activo = false;
                         $rootScope.alerta.mensaje("alerta", "Usuario", "Se eliminó el usuario correctamente");
                     });
                 } else {
                     usuario.activo = true;
                     FacUsuario.guardarUsuarioId(id, usuario).then(function () {
-                        $scope.usuario.activo = true;
                         $rootScope.alerta.mensaje("alerta", "Usuario", "Se actualizó el usuario correctamente");
                     });
                 }
