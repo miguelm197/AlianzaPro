@@ -4,6 +4,12 @@ app.controller("usuarioCtrl", ["$rootScope", "$scope", "$location", 'FacUsuario'
     $scope.resClave = false;
     $scope.editar = false;
     $scope.rolSelected = "Rol";
+    $scope.admin;
+
+
+
+    var rol = $rootScope.globals.currentUser.rolUsuario;
+    $scope.admin = rol == "admin" ? true : false;
 
 
     var url = $location.$$url;
