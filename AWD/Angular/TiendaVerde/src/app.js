@@ -144,7 +144,6 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
 
 
         var currPag = $location.path();
-        console.log(currPag)
         // páginas donde no se tiene que mostrar el usuario buscador xel nav
         var pags = ["/configuracion", "/nuevoProducto", "/parametros", '/usuario', "/listaProductos", "/listaUsuarios", "/usuario"];
         if (pags.indexOf(currPag) != -1 || currPag.indexOf("/usuario") != -1) {
@@ -156,10 +155,6 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
                 visible: false
             }
         }
-        console.log("+ " + $rootScope.buscador.visible)
-
-
-
     });
 
 }]);
