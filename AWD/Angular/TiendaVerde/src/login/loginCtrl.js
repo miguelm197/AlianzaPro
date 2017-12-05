@@ -59,7 +59,7 @@ app.controller("loginCtrl", ["$scope", "FacLogin", "$location", "md5", "$rootSco
         var claveDos = $scope.usuario.claveConf;
         var direccion = $scope.usuario.direccion;
         var rol = $scope.usuario.rol;
-        rol = "admin";
+        rol = "public";
         if (claveUno === claveDos) {
             var objeto = {
                 "nombre": nombre,

@@ -61,7 +61,6 @@ app.controller("usuarioCtrl", ["$rootScope", "$scope", "$location", 'FacUsuario'
 
     $scope.guardarU = function () {
         var rol = $scope.rolSelected;
-        console.log(rol)
         if (rol == "Administrador") {
             rol = "admin";
         } else {

@@ -3,6 +3,7 @@ app.controller("productoCtrl", ["$scope", "$location", 'FacProducto', '$rootScop
     $scope.cantidad = 20;
     $scope.editar = false;
     $scope.imagen = false;
+    $scope.admin = false;
     $scope.productoEditar = {
         "nutricional": {
             "calorias": 1,
@@ -13,6 +14,8 @@ app.controller("productoCtrl", ["$scope", "$location", 'FacProducto', '$rootScop
 
     }
 
+    var rol = $rootScope.globals.currentUser.rolUsuario;
+    $scope.admin = rol == "admin" ? true : false;
 
     var url = $location.$$url;
     var id = url.split("/")[2];
@@ -21,7 +24,10 @@ app.controller("productoCtrl", ["$scope", "$location", 'FacProducto', '$rootScop
         var prod = res.data;
         $scope.producto = prod;
         // $scope.editarProducto();
-
+    }, function (err) {
+        if (err.statusText == "Not Found") {
+            $location.path("/404")
+        }
     });
 
     $scope.$watch('imagen', function () {

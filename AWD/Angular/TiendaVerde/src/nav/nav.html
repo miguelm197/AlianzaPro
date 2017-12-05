@@ -1,13 +1,13 @@
-<div class="panel-nav" ng-controller="navCtrl">
+<div class="panel-nav" ng-controller="navCtrl"   md-swipe-down="categoriasCel()">
     <div class="fondo" ng-class="fondo" ng-click="categorias()"></div>
 
     <div class="row principal">
-        <div class="container">
+        <div class="container"    md-swipe-down="categoriasCel()">
 
             <!-- Logo -->
             <div class="col col-lg-2 col-xs-6 col-sm-4">
                 <div class="logo" ng-click="home()">
-                    <img src="{{parametros.logo}}" alt="tiendaVERDE">
+                    <img src="{{parametros.logo}}" alt="tiendaVERDE"    md-swipe-down="categoriasCel()">
                 </div>
             </div>
             <!-- Categoría -->
@@ -65,7 +65,7 @@
                         <li>
                             <a ng-click="perfil()">Mi perfil</a>
                         </li>
-                        <li>
+                        <li ng-show="admin">
                             <a href="#!/configuracion">Configuración</a>
                         </li>
                         <li role="separator" class="divider"></li>
@@ -235,6 +235,8 @@
     <br class="hidden-md hidden-lg">
     <br class="hidden-md hidden-lg">
     <br class="hidden-md hidden-lg">
+
+    <!-- CATEGORIAS CEL -->
 
     <div class="row categorias-cel hidden-md hidden-lg" ng-class="clCategoriasCel">
         <br>

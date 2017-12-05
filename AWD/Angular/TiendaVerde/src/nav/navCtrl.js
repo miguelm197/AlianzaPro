@@ -1,12 +1,12 @@
-function hola() {
-    console.log("");
-}
 app.controller("navCtrl", ["$scope", "FacLogin", 'FacParametros', "$location", '$rootScope', function ($scope, FacLogin, FacParametros, $location, $rootScope) {
     $scope.scroll = false;
     $scope.sesions = false;
     $scope.sesion = {}
     $scope.categoria = {}
     $scope.buscado = {}
+    $scope.admin = false;
+
+
 
 
 
@@ -29,6 +29,11 @@ app.controller("navCtrl", ["$scope", "FacLogin", 'FacParametros', "$location", '
         "hide": false
     }
     var cat = false;
+
+    var rol = $rootScope.globals.currentUser.rolUsuario;
+    $scope.admin = rol == "admin" ? true : false;
+
+    console.log($scope.admin)
 
     document.body.onscroll = function () {
         var posicion = 0;
@@ -141,7 +146,7 @@ app.controller("navCtrl", ["$scope", "FacLogin", 'FacParametros', "$location", '
         if (cat) {
             $scope.clCategoriasCel.abrirCategoriasCel = false;
             $scope.clCategoriasCel.cerrarCategoriasCel = true;
-          
+
             cat = false;
         } else {
             $scope.clCategoriasCel.abrirCategoriasCel = true;

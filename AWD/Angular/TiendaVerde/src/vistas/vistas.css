@@ -1,0 +1,33 @@
+.vistas .container {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    color: gray;
+    font-family: 'Nunito', sans-serif;
+}
+
+.vistas .carita {
+    position: absolute;
+    font-size: 130px;
+}
+
+.vistas .codigo {
+    position: absolute;
+    margin-left: 123px;
+    margin-top: 23px;
+    font-size: 60px;
+}
+
+.vistas .titulo {
+    position: absolute;
+    margin-left: 123px;
+    margin-top: 94px;
+}
+
+
+.vistas .texto {
+    position: absolute;
+    margin-left: 123px;
+    margin-top: 122px;
+    font-weight: 800;
+}

@@ -43,6 +43,12 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'src/parametros/parametros.html',
             controller: 'parametrosCtrl'
         })
+        .when('/403', {
+            templateUrl: 'src/vistas/403.html',
+        })
+        .when('/404', {
+            templateUrl: 'src/vistas/404.html',
+        })
 
         .otherwise({ redirectTo: "/home" });
 });
@@ -58,7 +64,6 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
 
     // mantenerse logueado luego de resfrescar la pagina
     $rootScope.globals = $cookies.getObject('globals') || false;//Obtengo los valore de las cookies si hay
-    // console.log($rootScope.globals);
 
     // $rootScope.globals = $rootScope.globals ? $rootScope.globals.currentUser : false;
 
@@ -78,7 +83,6 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
             $rootScope.alerta.titulo = titulo;
             $rootScope.alerta.texto = texto;
             $rootScope.alerta.mostrar = true;
-            console.log($rootScope.alerta)
         }
     };
 
@@ -87,13 +91,12 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
 
     //Verifica cada vez que cambia la url (queda escuchando)
     $rootScope.$on('$locationChangeStart', function (event, next, current) {
-
         var loggedIn = $rootScope.globals ? $rootScope.globals.currentUser : false;
         if (loggedIn) {
             var rolUsuario = loggedIn.rolUsuario;
 
             //Páginas en las cuales NO puede entrar el rol
-            var paginasPublic = ['/nuevaTarea', '/parametros'];
+            var paginasPublic = ['/nuevaTarea', '/parametros', '/nuevoProducto', '/listaProductos', '/listaUsuarios', '/configuracion'];
             var paginasAdmins = [];
             var paginas = [""];
 
@@ -106,15 +109,24 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
             var pag = $location.path();
             var restrictedPage = paginas.indexOf(pag) == -1 ? true : false;
 
+
+
+            if ($location.path().indexOf("usuario") != -1) {
+                var miId = loggedIn.id;
+                var idUrl = $location.path().split("/")[2];
+                if (miId != idUrl)
+                    restrictedPage = false;
+            }
+
             if (!restrictedPage) {
-                $location.path('/home');
+                $location.path('/403');
             }
 
         } else {
 
 
             //Páginas que puede entrar un usuario sin estar logueado
-            var paginas = ['/login', '/home', '/productos'];
+            var paginas = ['/login', '/home', '/productos', '/404'];
             // var restrictedPage = $.inArray($location.path(), ) === -1;
 
             var restrictedPage = false;
@@ -126,7 +138,7 @@ app.run(['$rootScope', '$location', '$cookies', '$http', function ($rootScope, $
 
 
             if (!restrictedPage) {
-                $location.path('/home');
+                $location.path('/403');
             }
         }
 

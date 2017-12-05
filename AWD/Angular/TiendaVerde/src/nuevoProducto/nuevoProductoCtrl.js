@@ -6,8 +6,6 @@ app.controller("nuevoProductoCtrl", ["$scope", "$location", 'FactProductos', 'Fa
         producto.categoria = $scope.categoria;
         producto.imagen = $scope.nuevaImagen;
 
-        console.log(producto);
-
         FactProductos.agregarProducto(producto).then(function () {
             var categoria = producto.categoria;
             var item = producto.item;
