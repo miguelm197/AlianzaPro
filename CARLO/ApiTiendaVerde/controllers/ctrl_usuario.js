@@ -44,10 +44,7 @@ exports.agregarUsuario = function (req, res) {
 
             res.status(200).jsonp(usuario);
         });
-
     })
-
-
 };
 
 //PUT - Actualizar un usuario por id en la Base de Datos

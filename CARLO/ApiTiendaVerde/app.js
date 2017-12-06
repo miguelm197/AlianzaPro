@@ -1,9 +1,11 @@
 var express = require("express");
 var app = express();
-var bodyParser = require("body-parser");    
+var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
+var authCtrl = require('./auth');
+var middleware = require('./middleware');
 
 var connectionString = "mongodb://root:toor@ds117336.mlab.com:17336/tiendaverde";
 mongoose.connect(connectionString, function (err, res) {
@@ -60,35 +62,35 @@ router.route('/productos/:id')
     .delete(CtrlProducto.eliminarProductoPorId)
 
 router.route('/usuarios')
-    .get(CtrlUsuario.consultaUsuarios)
-    .post(CtrlUsuario.agregarUsuario)
+    .get(middleware.ensureAuthenticated, CtrlUsuario.consultaUsuarios)
+    .post(middleware.ensureAuthenticated, CtrlUsuario.agregarUsuario)
 
 
 router.route('/usuarios/:id')
-    .get(CtrlUsuario.consultaUsuarioPorId)
-    .put(CtrlUsuario.actualizarUsuarioPorId)
-    .delete(CtrlUsuario.eliminarUsuarioPorId)
+    .get(middleware.ensureAuthenticated, CtrlUsuario.consultaUsuarioPorId)
+    .put(middleware.ensureAuthenticated, CtrlUsuario.actualizarUsuarioPorId)
+    .delete(middleware.ensureAuthenticated, CtrlUsuario.eliminarUsuarioPorId)
 
 
 router.route('/productosPorNombre/:nombre')
     .get(CtrlProducto.consultaProductoPorNombre)
 
-
-
-
-
 router.route('/productosPorRango')
     .get(CtrlProducto.consultaProductoPorRango)
-
-
-
-
 
 router.route('/productosPorCaducar')
     .post(CtrlProducto.actualizarProductoPorCaducar)
 
-// router.route('/a/:id/:a')
-// .get(CtrlCasas.consultaRangos)
+
+// Rutas de autenticación y login
+router.post('/signup', authCtrl.registroUsuario);
+router.post('/login', authCtrl.emailLogin);
+
+// Ruta solo accesible si estás autenticado
+router.get('/private', middleware.ensureAuthenticated, function (req, res) {
+    res.send("Tenes permisos!");
+});
+
 
 
 app.use(router);

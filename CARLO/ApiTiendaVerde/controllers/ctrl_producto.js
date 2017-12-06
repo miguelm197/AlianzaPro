@@ -40,7 +40,7 @@ exports.consultaProductoPorRango = function (req, res) {
         if (err) res.send(500, err.message);
         console.log('GET /productosPorRango/' + min + "-" + max);
         res.status(200).jsonp(productos);
-    });
+    }).sort({"precio":-1});
 };
 
 //POST - Agrega un nuevo producto a la Base de Datos
