@@ -42,6 +42,10 @@ app.controller("loginCtrl", ["$scope", "FacLogin", "$location", "md5", "$rootSco
                     var id = datos.id;
                     FacLogin.setCredentials(correo, clave, rolUsuario, nombre, apellido, id);
                     $location.path('/home');
+                    
+
+
+                    
                 } else {
                     $rootScope.alerta.mensaje("alerta", "Inicio sesión", "Correo o contraseña incorrecta");
                 }

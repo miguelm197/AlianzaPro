@@ -1,4 +1,4 @@
-app.controller("listaProductosCtrl", ["$scope", "FacListaProductos", function ($scope, FacListaProductos) {
+app.controller("listaProductosCtrl", ["$scope", "FacListaProductos","$rootScope", function ($scope, FacListaProductos,$rootScope) {
     $scope.listaProductos = [];
 
     $scope.datos = {
@@ -25,7 +25,7 @@ app.controller("listaProductosCtrl", ["$scope", "FacListaProductos", function ($
     $scope.eliminarProducto = function (id) {
         FacListaProductos.eliminarProducto(id).then(function () {
             $scope.cargarTabla();
-            alert("Se eliminó correctamente")
+            $rootScope.alerta.mensaje("alerta", "Productos", "Se eliminó correctamente");
         });
     }
 

@@ -84,7 +84,8 @@
                                 <div ng-show="editar">
                                     <div class="form-group">
                                         <div class="dropdown combo">
-                                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-show="admin">
+                                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                                                ng-show="admin">
                                                 {{rolSelected}}
                                                 <span class="caret"></span>
                                             </button>
@@ -162,10 +163,12 @@
                             <button class="col col-xs-12 col-lg-4 btn btn-default" ng-click="editarU()" ng-hide="editar || reesClave">Editar</button>
                             <button class="col col-xs-12 col-lg-4 btn btn-default" ng-click="editarU()" ng-show="editar">Cancelar</button>
                             <button class="col col-xs-12 col-lg-4 btn btn-default" ng-click="reestablecerClaveU()" ng-show="reesClave">Cancelar</button>
-                            <button class="col col-xs-12 col-lg-4 btn btn-default" ng-click="bloquearU()" ng-hide="usuario.bloqueado">Bloquear</button>
+                            <button class="col col-xs-12 col-lg-4 btn btn-default" ng-click="bloquearU()" ng-hide="usuario.bloqueado || soyYo">Bloquear</button>
                             <button class="col col-xs-12 col-lg-4 btn btn-default" ng-click="bloquearU()" ng-show="usuario.bloqueado">Desbloquear</button>
-                            <button class="col col-xs-12 col-lg-4 btn btn-default" ng-click="eliminarU()" ng-hide="usuario.activo">Eliminar</button>
-                            <button class="col col-xs-12 col-lg-4 btn btn-default" ng-click="eliminarU()" ng-show="usuario.activo">Reactivar</button>
+                            <button class="col col-xs-12 col-lg-4 btn btn-default" ng-click="eliminarU()" ng-hide="usuario.activo || soyYo">Eliminar</button>
+                            <button class="col col-xs-12 col-lg-4 btn btn-default" ng-click="eliminarU()" ng-show="usuario.activo && !soyYo">Reactivar</button>
+                            <button class="col col-xs-12 col-lg-8 btn btn-default" ng-click="eliminarU()" ng-show="soyYo && !admin">Desuscribirme</button>
+
                         </div>
                     </div>
 

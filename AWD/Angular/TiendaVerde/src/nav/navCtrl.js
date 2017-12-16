@@ -12,7 +12,7 @@ app.controller("navCtrl", ["$scope", "FacLogin", 'FacParametros', "$location", '
     $scope.visible = {
         "invisible": false
     }
-    
+
     $scope.clCategorias = {
         "abrirCategorias": false,
         "cerrarCategorias": true
@@ -34,14 +34,28 @@ app.controller("navCtrl", ["$scope", "FacLogin", 'FacParametros', "$location", '
     }
     var cat = false;
 
-    var rol = $rootScope.globals.currentUser.rolUsuario;
-    $scope.admin = rol == "admin" ? true : false;
+
+
+    $scope.admin = false;
+    
+
 
     // MUESTRA O NO EL BUSCADOR
     $scope.$watch(
         function () { return $rootScope.buscador }, function () {
             $scope.busca.invisible = $rootScope.buscador.visible;
             $scope.visible.invisible = $rootScope.buscador.visible;
+        });
+
+
+    $scope.$watch(
+        function () { return $rootScope.globals }, function () {
+           
+            if ($rootScope.globals) {
+                var rol = $rootScope.globals.currentUser.rolUsuario;
+                $scope.admin = rol == "admin" ? true : false;
+            }
+
         });
 
 

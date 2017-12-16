@@ -14,8 +14,20 @@ app.controller("productoCtrl", ["$scope", "$location", 'FacProducto', '$rootScop
 
     }
 
-    var rol = $rootScope.globals.currentUser.rolUsuario;
-    $scope.admin = rol == "admin" ? true : false;
+
+    $scope.admin = false;
+    
+    $scope.$watch(
+        function () { return $rootScope.globals }, function () {
+
+            if ($rootScope.globals) {
+                var rol = $rootScope.globals.currentUser.rolUsuario;
+                $scope.admin = rol == "admin" ? true : false;
+            }
+
+        });
+
+
 
     var url = $location.$$url;
     var id = url.split("/")[2];

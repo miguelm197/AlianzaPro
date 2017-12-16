@@ -58,7 +58,6 @@ app.directive('galeria', ["FacProductos", "$location", function (FacProductos, $
             scope.$watch("categoria", function () {
 
                 if (scope.local) {
-                    alert("local tambien")
                     categoria = scope.categoria;
                     FacProductos.consultaProductoPorCategoria(categoria).then(function (res) {
                         scope.titulo = "Producto por categoría: " + categoria;

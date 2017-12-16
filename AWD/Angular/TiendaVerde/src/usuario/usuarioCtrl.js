@@ -7,10 +7,9 @@ app.controller("usuarioCtrl", ["$rootScope", "$scope", "$location", 'FacUsuario'
     $scope.admin;
 
 
-
     var rol = $rootScope.globals.currentUser.rolUsuario;
     $scope.admin = rol == "admin" ? true : false;
-
+    $scope.miId = $rootScope.globals.currentUser.id;
 
     var url = $location.$$url;
     var id = url.split("/")[2].split("?")[0];
@@ -18,6 +17,8 @@ app.controller("usuarioCtrl", ["$rootScope", "$scope", "$location", 'FacUsuario'
         var usr = res.data;
         $scope.usuario = usr;
     });
+ 
+    $scope.soyYo = id == $scope.miId ? true : false;
 
     $scope.editarU = function () {
         if ($scope.editar) {
@@ -117,8 +118,7 @@ app.controller("usuarioCtrl", ["$rootScope", "$scope", "$location", 'FacUsuario'
     }
 
     $scope.eliminarU = function () {
-        $scope.miId = $rootScope.globals.currentUser.id;
-        console.log(id)
+
         if (id != $scope.miId) {
             FacUsuario.consultaUsuarioPorId(id).then(function (res) {
                 var usuario = res.data;
