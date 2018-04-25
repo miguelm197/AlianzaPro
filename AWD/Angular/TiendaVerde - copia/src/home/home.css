@@ -1,0 +1,32 @@
+.panel-home {
+    margin: 0px;
+    padding: 0px;
+    /* background-color: greenyellow; */
+}
+
+.imagenes {
+    height: 500px;
+    z-index: 8;
+}
+
+.imagenes img {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .imagenes {
+        height: 200px;
+    }
+}
+
+@media (min-width:601px) and (max-width:920px) {
+    .imagenes {
+        height: 300px;
+    }
+}
+
+@media (min-width:921px) and (max-width:1160px) {
+    .imagenes {
+        height: 300px;
+    }
+}

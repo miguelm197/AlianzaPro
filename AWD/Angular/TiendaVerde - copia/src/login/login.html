@@ -1,0 +1,170 @@
+<div class="panel-login">
+    <div class="container-fluid">
+        <div class="caja-login">
+
+            <div class="row cinta">
+                <div class="col col-sm-12">
+                    <div class="menu">
+                        <div class="texto">
+                            <span class="bt" ng-click="IngresoRegistro('login')" ng-style="BoldIngresar">Ingresar</span>
+                            <span>|</span>
+                            <span class="bt" ng-click="IngresoRegistro('registro')" ng-style="BoldRegistrar">Registro</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row caja">
+
+                <div class="puntero-ingreso" ng-show="loginUs">
+                    <div class="punteros"> </div>
+                </div>
+
+                <div class="puntero-registro" ng-show="registerUs">
+                    <div class="punteros"> </div>
+                </div>
+
+
+                <div class="jumbotron col col-md-8 col-md-offset-2 col-lg-4 col-lg-offset-4">
+
+
+
+                    <div class="container">
+                        <!-- 
+                        ################################ 
+                            LOGIN
+                        ################################ -->
+                        <div ng-show="loginUs">
+
+                            <form class="form" name="formLogin">
+
+                                <!-- CORREO -->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="email" autocomplete="off" class="form-control" id="cor" placeholder="Correo" name="correo" ng-model="usuario.correo" required>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- CONTRASEÑA -->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="password" autocomplete="off" class="form-control" id="clU" placeholder="Clave" name="clave" ng-model="usuario.clave" required>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                                <br>
+                                <br>
+                                <!-- INGRESO -->
+                                <div class="form-group">
+
+                                    <button type="submit" ng-disabled="formLogin.nombre.$error.required || formLogin.clave.$error.required" class=" btn btn-default form-control"
+                                        ng-click="login(formLogin.correo, formLogin.clave)">Ingresar</button>
+
+                                    <div class="recordar">
+                                        <span>¿No estás registrado/a? </span>
+                                        <a ng-click="IngresoRegistro('registro')">Registrarse</a>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- 
+                        ################################ 
+                            REGISTRO
+                        ################################ -->
+                        <div ng-show="registerUs">
+
+                            <form class="formRegistro" name="form">
+
+
+                                <!-- NOMBRE -->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="clU" placeholder="Nombre" name="clave" ng-model="usuario.nombre" required>
+                                        <span class="input-group-addon">
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- APELLIDO -->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="clU" placeholder="Apellido" name="clave" ng-model="usuario.apellido" required>
+                                        <span class="input-group-addon">
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- DIRECCION -->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="clU" placeholder="Dirección" name="clave" ng-model="usuario.direccion">
+                                        <span class="input-group-addon">
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <br>
+
+                                <!-- CORREO -->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" id="cor" placeholder="Correo" name="correo" ng-model="usuario.correo" required>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- CONTRASEÑA -->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="clU" placeholder="Clave" name="clave" ng-model="usuario.clave" required>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- CONFIRMACIÓN CONTRASEÑA -->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="clU" placeholder="Confirmar clave" name="clave" ng-model="usuario.claveConf"
+                                            required>
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+
+                                <br>
+                                <br>
+                                <!-- REGISTRARSE -->
+                                <div class="form-group">
+
+                                    <button type="submit" ng-disabled=" formRegistro.nombre.$error.required
+                                    || formRegistro.apellido.$error.required || formRegistro.correo.$error.required || formRegistro.clave.$error.required
+                                    || formRegistro.claveConf.$error.required" class=" btn btn-default form-control" ng-click="registrarse() ">Registrarse</button>
+
+                                    <div class="recordar">
+                                        <span>¿Ya estás registrado/a? </span>
+                                        <a ng-click="IngresoRegistro('login')">Inicia sesión</a>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

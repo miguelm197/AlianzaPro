@@ -1,0 +1,83 @@
+body {
+    margin: 0px;
+    padding: 5px;
+    background-color: rgb(32, 32, 32);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+button {
+    border: none;
+    height: 30px;
+    width: 30px;
+    margin: 0px;
+    cursor: pointer;
+    transition: all .2s;
+    border-radius: 40px;
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+
+button:hover {
+    transition: all .2s;
+    border-radius: 2px;
+    background-color: rgb(56, 56, 56);
+}
+
+.contenedor {
+    position: absolute;
+    height: calc(100% - 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 700px;
+    width: 100%;
+}
+
+.contenedor .historial {
+    height: calc(100% - 110px);
+    width: 100%;
+    background-color: rgb(49, 49, 49);
+    padding: 10px;
+    overflow: auto;
+}
+
+.contenedor .historial .mensajes {
+    background-color: rgb(93, 93, 93);
+    padding: 10px 20px;
+    position: relative;
+    margin-top: 5px;
+    border-radius: 4px;
+    color: white;
+}
+
+.contenedor .historial .yo {
+    background-color: rgb(66, 66, 66);
+}
+
+.contenedor .mensaje {
+    height: 90px;
+    width: 100%;
+}
+
+.contenedor .mensaje .arriba .campo {
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+}
+
+.contenedor .mensaje .arriba .campo input {
+    width: calc(100% - 60px);
+    height: 40px;
+    padding-left: 10px;
+    border: none;
+    background-color: rgb(56, 56, 56);
+    color: white;
+}
+
+.contenedor .mensaje .arriba .campo button {
+    width: 40px;
+    height: 40px;
+}
+
+.contenedor .mensaje .abajo {
+    padding-left: 10px;
+}

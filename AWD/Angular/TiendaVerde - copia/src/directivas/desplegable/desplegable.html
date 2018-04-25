@@ -1,0 +1,24 @@
+
+<div class="container-fluid clDesplegable">
+  <div class="row">
+    <div class="col col-lg-12">
+      
+      <div class="row" ng-repeat="ej in categorias">
+          <hr>
+        <div class="col col-lg12 titulo" ng-click="clAbrirCerrar(ej); cate(ej.titulo)">
+          {{ej.titulo}}
+        </div>
+        <hr>
+        <div class="col col-lg12 item" ng-repeat="a in ej.menu" ng-hide="local">
+          <a href="/#!/productos?categoria={{ej.titulo}}&item={{a}}" >
+           <div ng-class="ej.colapse">{{a}}</div>
+          </a>
+          <hr>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

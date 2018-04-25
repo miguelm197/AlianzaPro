@@ -1,0 +1,354 @@
+<div class="panel-parametros">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-lg-10 col-lg-offset-1">
+                <div class="row">
+                    <div class="col col-lg-6">
+                        <h2>Parámetros</h2>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <form class="form" name="form">
+
+                        <!-- ARRIBA -->
+                        <div class="row">
+
+                            <!-- IZQUIERDA -->
+                            <div class="col col-lg-6 izquierda">
+                                <div class="row">
+                                    <hr>
+                                    <!-- NOMBRE -->
+                                    <div class="col col-lg-12">
+                                        <label class="control-label">Nombre</label>
+                                        <span ng-hide="editar.nombre" class="control-label"> : {{parametros.nombre}}</span>
+
+                                        <div class="input-group" ng-show="editar.nombre">
+                                            <input type="text" class="form-control" name="nom" placeholder="Nombre" ng-model="sistema.nombre">
+                                            <div class="input-group-btn">
+                                                <button ng-show="editar.nombre" type="button" class="btn btn-default" ng-click="guardarnombre()">
+                                                    <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+
+                                                </button>
+                                                <button ng-show="editar.nombre" type="button" class="btn btn-default" ng-click="editar.nombre=false">
+                                                    <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <span ng-hide="editar.nombre" class="glyphicon glyphicon-pencil peditar" aria-hidden="true" ng-click="editar.nombre=true;sistema.nombre = parametros.nombre"></span>
+                                    </div>
+                                    <br>
+                                    <hr>
+
+
+
+                                    <!-- DIRECCION -->
+                                    <div class="col col-lg-12">
+                                        <label class="control-label">Dirección</label>
+                                        <span ng-hide="editar.direccion" class="control-label"> : {{parametros.direccion}}</span>
+
+                                        <div class="input-group" ng-show="editar.direccion">
+                                            <input type="text" class="form-control" name="nom" placeholder="Dirección" ng-model="sistema.direccion">
+                                            <div class="input-group-btn">
+                                                <button ng-show="editar.direccion" type="button" class="btn btn-default" ng-click="guardarDireccion()">
+                                                    <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+                                                </button>
+                                                <button ng-show="editar.direccion" type="button" class="btn btn-default" ng-click="editar.direccion=false">
+                                                    <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <span ng-hide="editar.direccion" class="glyphicon glyphicon-pencil peditar" aria-hidden="true" ng-click="editar.direccion=true;sistema.direccion = parametros.direccion"></span>
+                                    </div>
+                                    <br>
+                                    <hr>
+
+
+                                    <!-- TELEFONO -->
+                                    <div class="col col-lg-12">
+                                        <label class="control-label">Teléfono</label>
+                                        <span ng-hide="editar.telefono" class="control-label"> : {{parametros.telefono}}</span>
+
+                                        <div class="input-group" ng-show="editar.telefono">
+                                            <input type="text" class="form-control" name="nom" placeholder="Teléfono" ng-model="sistema.telefono">
+                                            <div class="input-group-btn">
+                                                <button ng-show="editar.telefono" type="button" class="btn btn-default" ng-click="guardarTelefono()">
+                                                    <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+                                                </button>
+                                                <button ng-show="editar.telefono" type="button" class="btn btn-default" ng-click="editar.telefono=false">
+                                                    <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <span ng-hide="editar.telefono" class="glyphicon glyphicon-pencil peditar" aria-hidden="true" ng-click="editar.telefono=true;sistema.telefono = parametros.telefono"></span>
+                                    </div>
+                                    <br>
+                                    <hr>
+
+
+                                    <!-- TITULO PESTAÑA -->
+                                    <div class="col col-lg-12">
+                                        <label class="control-label">Título pestaña</label>
+                                        <span ng-hide="editar.titulo" class="control-label"> : {{parametros.titulo}}</span>
+
+                                        <div class="input-group" ng-show="editar.titulo">
+                                            <input type="text" class="form-control" name="nom" placeholder="Título pestaña" ng-model="sistema.titulo">
+                                            <div class="input-group-btn">
+                                                <button ng-show="editar.titulo" type="button" class="btn btn-default" ng-click="guardarTitulo()">
+                                                    <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+                                                </button>
+                                                <button ng-show="editar.titulo" type="button" class="btn btn-default" ng-click="editar.titulo=false">
+                                                    <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <span ng-hide="editar.titulo" class="glyphicon glyphicon-pencil peditar" aria-hidden="true" ng-click="editar.titulo=true;sistema.titulo = parametros.titulo"></span>
+                                    </div>
+                                    <br>
+                                    <hr>
+
+
+
+
+
+
+                                </div>
+                            </div>
+
+
+                            <!-- DERECHA -->
+                            <div class="col col-lg-6 derecha">
+
+                                <!-- LOGO -->
+                                <hr>
+                                <div class="row">
+                                    <div class="col col-lg-12 ">
+                                        <div class="row">
+
+                                            <div class="ngf-imagen col col-lg-2">
+                                                <label class="control-label">Logo</label>
+                                            </div>
+                                            <div class="col col-lg-2 col-lg-offset-8">
+                                                <span ng-hide="editar.logo" class="glyphicon glyphicon-pencil peditar" aria-hidden="true" ng-click="editar.logo=true"></span>
+                                                <span ng-show="editar.logo" class="glyphicon glyphicon-floppy-disk peditar" aria-hidden="true" ng-click="guardarLogo()"></span>
+                                                <span ng-show="editar.logo" class="glyphicon glyphicon-ban-circle peditar" aria-hidden="true" ng-click="editar.logo=false"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div ng-hide="editar.logo" class="ngf-imagen col col-lg-6">
+                                                <img ngf-src="!parametros.logo.$error && parametros.logo">
+                                            </div>
+
+                                            <div ng-show="editar.logo" class="col col-lg-6">
+                                                <div class="ngf-campo">
+                                                    <div ngf-drop ngf-select ng-model="sistema.logo" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+                                                        accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">
+                                                        <span class="txtIcono glyphicon glyphicon-picture" aria-hidden="true"></span>
+                                                        <div class="txtTexto">Presiona o arrasta la imágen</div>
+                                                    </div>
+                                                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                                                </div>
+                                            </div>
+                                            <div ng-show="editar.logo" class="col col-lg-6">
+                                                <div class="ngf-imagen logo">
+                                                    <img ngf-src="!sistema.logo[0].$error && sistema.logo[0]">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <!-- ICONO -->
+                                <hr>
+                                <div class="row">
+                                    <div class="col col-lg-12 ">
+                                        <div class="row">
+
+                                            <div class="ngf-imagen col col-lg-2">
+                                                <label class="control-label">Ícono</label>
+                                            </div>
+                                            <div class="col col-lg-2 col-lg-offset-8">
+                                                <span ng-hide="editar.icono" class="glyphicon glyphicon-pencil peditar" aria-hidden="true" ng-click="editar.icono=true"></span>
+                                                <span ng-show="editar.icono" class="glyphicon glyphicon-floppy-disk peditar" aria-hidden="true" ng-click="guardarIcono()"></span>
+                                                <span ng-show="editar.icono" class="glyphicon glyphicon-ban-circle peditar" aria-hidden="true" ng-click="editar.icono=false"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div ng-hide="editar.icono" class="ngf-imagen col col-lg-2">
+                                                <img ngf-src="!parametros.icono.$error && parametros.icono">
+                                            </div>
+
+                                            <div ng-show="editar.icono" class="col col-lg-6">
+                                                <div class="ngf-campo">
+                                                    <div ngf-drop ngf-select ng-model="sistema.icono" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+                                                        accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">
+                                                        <span class="txtIcono glyphicon glyphicon-picture" aria-hidden="true"></span>
+                                                        <div class="txtTexto">Presiona o arrasta la imágen</div>
+                                                    </div>
+                                                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                                                </div>
+                                            </div>
+                                            <div ng-show="editar.icono" class="col col-lg-6">
+                                                <div class="ngf-imagen icono">
+                                                    <img ngf-src="!sistema.icono[0].$error && sistema.icono[0]">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <hr>
+
+                            </div>
+
+                        </div>
+
+                        <!-- ABAJO -->
+                        <div class="row">
+
+                            <!-- SLIDE 1 -->
+                            <div class="col col-lg-4">
+                                <div class="slides">
+                                    <div class="row">
+                                        <div class="ngf-imagen col col-lg-2">
+                                            <label class="control-label">Slide 1</label>
+                                        </div>
+                                        <div class="col col-lg-3 col-lg-offset-7">
+                                            <button ng-show="editar.slide1" class="btn-ico" ng-click="guardarSlide1()" ng-disabled="imgProcesadas.slide1">
+                                                <span ng-class="slides.slide1" class="glyphicon glyphicon-floppy-disk peditar" aria-hidden="true"></span>
+                                            </button>
+                                            <button ng-show="editar.slide1" class="btn-ico" ng-click="editar.slide1=false">
+                                                <span class="glyphicon glyphicon-ban-circle peditar" aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="cajaSlide">
+                                            <div ng-hide="editar.slide1" class="editarSlide">
+                                                <div class="edit">
+                                                    <div ng-click="editar.slide1 = true">Editar</div>
+                                                    <span ng-click="editar.slide1 = true" ng-hide="editar.icono" class="glyphicon glyphicon-picture peditar" aria-hidden="true"
+                                                        ng-click="editar.slide1=true"></span>
+                                                </div>
+                                            </div>
+                                            <img ng-hide="editar.slide1" class="slide" ngf-src="!parametros.slide1.$error && parametros.slide1">
+                                            <div ng-show="editar.slide1">
+                                                <div class="ngf-campo">
+                                                    <div ngf-drop ngf-select ng-model="sistema.slide1" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true"
+                                                        ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">
+                                                        <span class="txtIcono glyphicon glyphicon-picture" aria-hidden="true"></span>
+                                                        <div class="txtTexto">Presiona o arrasta la imágen</div>
+                                                    </div>
+                                                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                                                </div>
+                                                <div class="ngf-imagen slide">
+                                                    <img ngf-src="!sistema.slide1[0].$error && sistema.slide1[0]">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SLIDE 2 -->
+                            <div class="col col-lg-4">
+                                <div class="slides">
+                                    <div class="row">
+                                        <div class="ngf-imagen col col-lg-2">
+                                            <label class="control-label">Slide 2</label>
+                                        </div>
+                                        <div class="col col-lg-3 col-lg-offset-7">
+                                            <button ng-show="editar.slide2" class="btn-ico" ng-click="guardarSlide2()" ng-disabled="imgProcesadas.slide2">
+                                                <span ng-class="slides.slide2" class="glyphicon glyphicon-floppy-disk peditar" aria-hidden="true"></span>
+                                            </button>
+                                            <button ng-show="editar.slide2" class="btn-ico" ng-click="editar.slide2=false">
+                                                <span class="glyphicon glyphicon-ban-circle peditar" aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="cajaSlide">
+                                            <div ng-hide="editar.slide2" class="editarSlide">
+                                                <div class="edit">
+                                                    <div ng-click="editar.slide2 = true">Editar</div>
+                                                    <span ng-click="editar.slide2 = true" ng-hide="editar.icono" class="glyphicon glyphicon-picture peditar" aria-hidden="true"
+                                                        ng-click="editar.slide2=true"></span>
+                                                </div>
+                                            </div>
+                                            <img ng-hide="editar.slide2" class="slide" ngf-src="!parametros.slide2.$error && parametros.slide2">
+                                            <div ng-show="editar.slide2">
+                                                <div class="ngf-campo">
+                                                    <div ngf-drop ngf-select ng-model="sistema.slide2" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true"
+                                                        ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">
+                                                        <span class="txtIcono glyphicon glyphicon-picture" aria-hidden="true"></span>
+                                                        <div class="txtTexto">Presiona o arrasta la imágen</div>
+                                                    </div>
+                                                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                                                </div>
+                                                <div class="ngf-imagen slide">
+                                                    <img ngf-src="!sistema.slide2[0].$error && sistema.slide2[0]">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!-- SLIDE 3 -->
+                            <div class="col col-lg-4">
+                                <div class="slides">
+                                    <div class="row">
+                                        <div class="ngf-imagen col col-lg-2">
+                                            <label class="control-label">Slide 3</label>
+                                        </div>
+                                        <div class="col col-lg-3 col-lg-offset-7">
+                                            <button ng-show="editar.slide3" class="btn-ico" ng-click="guardarSlide3()" ng-disabled="imgProcesadas.slide3">
+                                                <span ng-class="slides.slide3" class="glyphicon glyphicon-floppy-disk peditar" aria-hidden="true"></span>
+                                            </button>
+                                            <button ng-show="editar.slide3" class="btn-ico" ng-click="editar.slide3=false">
+                                                <span class="glyphicon glyphicon-ban-circle peditar" aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="cajaSlide">
+                                            <div ng-hide="editar.slide3" class="editarSlide">
+                                                <div class="edit">
+                                                    <div ng-click="editar.slide3 = true">Editar</div>
+                                                    <span ng-click="editar.slide3 = true" ng-hide="editar.icono" class="glyphicon glyphicon-picture peditar" aria-hidden="true"
+                                                        ng-click="editar.slide3=true"></span>
+                                                </div>
+                                            </div>
+                                            <img ng-hide="editar.slide3" class="slide" ngf-src="!parametros.slide3.$error && parametros.slide3">
+                                            <div ng-show="editar.slide3">
+                                                <div class="ngf-campo">
+                                                    <div ngf-drop ngf-select ng-model="sistema.slide3" class="drop-box" ngf-drag-over-class="'dragover'" ngf-multiple="true"
+                                                        ngf-allow-dir="true" accept="image/*,application/pdf" ngf-pattern="'image/*,application/pdf'">
+                                                        <span class="txtIcono glyphicon glyphicon-picture" aria-hidden="true"></span>
+                                                        <div class="txtTexto">Presiona o arrasta la imágen</div>
+                                                    </div>
+                                                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                                                </div>
+                                                <div class="ngf-imagen slide">
+                                                    <img ngf-src="!sistema.slide3[0].$error && sistema.slide3[0]">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

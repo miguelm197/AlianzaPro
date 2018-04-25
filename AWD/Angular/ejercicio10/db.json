@@ -23,6 +23,14 @@
       "usuario": "Miguelo Merelli",
       "tareaId": "13",
       "id": 3
+    },
+    {
+      "comentario": "cvncvn",
+      "fecha": "13/01/2018",
+      "hora": "03:32",
+      "usuario": "Miguelo Merelli",
+      "tareaId": "2",
+      "id": 4
     }
   ],
   "tareas": [
@@ -36,7 +44,7 @@
       "tipo": "Tarea"
     },
     {
-      "estado": "En progreso",
+      "estado": "Cerrada",
       "resumen": "Sapee",
       "descripcion": "asfasfasf",
       "usuarioEncargado": "dada dodo",

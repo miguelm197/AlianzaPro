@@ -1,0 +1,22 @@
+.panel-usuario {
+    /* width: 50%;    */
+}
+
+.panel-usuario .botonera button{
+    margin-top: 5px;
+}
+
+.panel-usuario span{
+    /* display: inline-block;
+    margin-top: 8px; */
+}
+.panel-usuario .lista .colT{
+   /* width: 100%; */
+   /* margin-bottom: 20px !important; */
+   padding-top: 5px;
+   
+}
+.panel-usuario .lista > .col{
+    margin-bottom: 5px;
+}
+    

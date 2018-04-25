@@ -1,0 +1,95 @@
+<div class="panel-listaUsuarios">
+
+    <div class="container-fluid">
+        <h2 class=" col col-lg-offset-1">Lista de Usuarios</h2>
+        <br>
+        <br>
+        <div class="row">
+
+            <div class="buscador  col col-lg-5 col-lg-offset-1">
+                <buscador buscar="filtro"></buscador>
+            </div>
+
+        </div>
+        <br>
+
+        <div class="row">
+            <table class="mf-table col col-lg-10 col-lg-offset-1">
+                <thead>
+                    <tr>
+                        <th class=" hidden-sm  hidden-xs">
+                            <span>Nombre</span>
+                        </th>
+                        <th class=" hidden-sm  hidden-xs">
+                            <span>Apellido</span>
+                        </th>
+                        <th>
+                            <span>Correo</span>
+                        </th>
+                        <th>
+                            <span>Rol</span>
+                        </th>
+                        <th class=" hidden-sm  hidden-xs">
+                            <span></span>
+                        </th>
+                        <th>
+                            <span></span>
+                        </th>
+                        <th  class=" hidden-sm  hidden-xs">
+                            <span></span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="usuario in datos.datos | filter:{nombre:filtro}">
+
+                        <td class="col20p hidden-sm  hidden-xs">
+                            <span>{{usuario.nombre}}</span>
+                        </td>
+                        <td class="col20p  hidden-sm hidden-xs">
+                            <span>{{usuario.apellido}}</span>
+                        </td>
+                        <td class="col90p">
+                            <a href="{{usuario.ver}}">
+                                <span>{{usuario.correo}}</span>
+                            </a>
+                        </td>
+                        <td class="col30p">
+                            <span>{{usuario.rol}}</span>
+                        </td>
+                        <td class="col1p  hidden-sm  hidden-xs">
+                            <span>
+                                <center>
+                                    <a href="{{usuario.ver}}">
+                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                                    </a>
+                                </center>
+                            </span>
+                        </td>
+                        <td class="col1p">
+                            <button type="button" class="btn btn-tabla" aria-label="Left Align" ng-click="bloquear(usuario.id)">
+                                <span ng-show="usuario.bloqueado" class="glyphicon glyphicon-remove-circle" title="Bloqueado"></span>
+                                <span ng-hide="usuario.bloqueado" class="glyphicon glyphicon-ok-circle" style="color:green" title="Desbloqueado"></span>
+                            </button>
+                        </td>
+                        <td class="col1p  hidden-sm  hidden-xs">
+                            <button type="button" class="btn btn-tabla" aria-label="Left Align" ng-click="eliminar(usuario.id)">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                </tbody>
+                <tfoot>
+                    <tr class="paginacion">
+                        <td>
+                            <span>1</span>
+                            <span> - </span>
+                            <span>{{datos.datos.length}}</span>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+    </div>
+
+</div>

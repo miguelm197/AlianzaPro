@@ -1,0 +1,138 @@
+.panel-login {
+    position: fixed;
+    overflow: auto;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(87, 193, 78);
+    z-index: 150;
+}
+.panel-login input{
+    border-radius: 0px !important;
+}
+.panel-login .caja-login {
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+}
+
+.panel-login .caja-login .cinta {
+    background-color: rgba(0, 0, 0, 0.22);
+    padding: 20px;
+}
+
+.panel-login .caja-login .cinta .menu {
+    width: auto;
+    display: flex;
+}
+
+.panel-login .caja-login .cinta .menu .texto {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.panel-login .caja-login .cinta .menu .texto span {
+    font-size: 20px; 
+    justify-content: center;
+    color: white;
+}
+
+.bt {
+    cursor: pointer;
+}
+
+.bt:hover {
+    opacity: .8;
+}
+
+.panel-login .caja-login .caja {}
+
+.panel-login .caja-login .caja .punteros {
+    margin-top: -15px;
+    width: 0;
+    height: 0;
+    border-right: 20px solid transparent;
+    border-top: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid #f7f7f7;
+}
+
+.panel-login .caja-login .caja .puntero-ingreso {
+    margin-left: calc(50% - 60px);
+}
+
+.panel-login .caja-login .caja .puntero-registro {
+    margin-left: calc(50% + 20px);
+}
+
+.panel-login .caja-login .caja .jumbotron {
+    border-radius: 0px;
+    background-color: #f7f7f7;
+    padding-top: 60px;
+    animation: all .5s;
+}
+
+.panel-login .caja-login .caja .jumbotron .input-group .form-control {
+    height: 52px;
+    border-radius: 0px;
+    border-right: 0px;
+    border: none;
+}
+
+.panel-login .caja-login .caja .jumbotron .input-group input {
+    background-color: #dadada;
+    box-shadow: none;
+    font-size: 14px;
+    color: gray;
+}
+
+.panel-login .caja-login .caja .jumbotron .form-group {
+    color: gray;
+}
+
+.panel-login .caja-login .caja .jumbotron .form-group .input-group-addon {
+    padding: 0px 15px;
+    border-radius: 0px;
+    background-color: #dadada;
+    border-left: 0px;
+    border: none;
+    font-size: 18px;
+    color: gray;
+}
+
+.panel-login .caja-login .caja .jumbotron .form-group button {
+    background-color: rgb(58, 189, 58);
+    height: 52px;
+    border: none;
+    border-radius: 0px;
+    font-size: 18px;
+    color: white;
+}
+
+.panel-login .caja-login .caja .jumbotron .form-group .recordar {
+    margin-top: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.panel-login .caja-login .caja .jumbotron .form-group .recordar a {
+    color: rgb(49, 186, 37);
+}
+
+
+
+@media only screen and (min-width: 1170px) {
+    .panel-login .caja-login .caja .formulario{
+        /* padding: 0px 70px; */
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .panel-login .caja-login .cinta .menu .texto span {
+        /* font-size: 15px; */
+    }
+}
+
+
+
+

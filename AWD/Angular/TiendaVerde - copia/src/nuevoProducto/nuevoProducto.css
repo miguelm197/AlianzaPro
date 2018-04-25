@@ -1,0 +1,12 @@
+.nuevoProducto-panel {
+    /* width: 50%;    */
+}
+.nuevoProducto-panel button[type="submit"]{
+    height: 50px;
+}
+.nuevoProducto-panel .btn-agregar {
+    background-color: #4a9a15;
+    color: white;
+}
+
+

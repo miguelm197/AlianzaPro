@@ -1,0 +1,25 @@
+<div class="contenedor">
+        <div class="historial">
+                <div ng-repeat="mensaje in mensajes">
+                        <div class="mensajes {{mensaje.pers}}">
+                                <span>{{mensaje.mensaje}}</span>
+                              
+                        </div>
+                </div>
+        </div>
+        <div class="mensaje">
+                <div class="arriba">
+                        <div class="campo">
+                                <input type="text" placeholder="Escribe un mensaje" ng-keypress="pulsar($event)" ng-model="msjUsuario">
+                                <button ng-click="enviarMensaje()">></button>
+                        </div>
+                </div>
+                <div class="abajo">
+                        <div class="opciones">
+                                <button> A </button>
+                                <button> B </button>
+                                <button> C </button>
+                        </div>
+                </div>
+        </div>
+</div>

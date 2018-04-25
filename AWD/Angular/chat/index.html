@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <base href="/">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Chat</title>
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./node_modules/angular-route/angular-route.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./src/style.css">
+
+
+    <script src="./src/app.js"></script>
+    <script src="./src/chat/chatCtrl.js"></script>
+    <script src="./src/chat/chatFact.js"></script>
+    <link rel="stylesheet" type="text/css" href="./src/chat/chat.css">
+
+</head>
+
+<body>
+
+
+    <div class="contenedor gral">
+
+        <!-- VISTAS PARCIALES-->
+        <div ng-view></div>
+    </div>
+</body>
+
+</html>

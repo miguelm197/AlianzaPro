@@ -1,0 +1,80 @@
+.dropdown-menu span {
+    padding: 20px;
+    color: gray;
+}
+
+
+input {
+    transition: all .5s;
+    box-shadow: none !important;
+    border-radius: 4px !important;
+}
+
+.dropdown-menu {
+    box-shadow: none !important;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.combo {
+    width: 100%;
+}
+
+.combo button {
+    width: 100%;
+    text-align: left;
+}
+
+.combo button span {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+
+.combo ul {
+    width: 100%;
+    text-align: left;
+}
+
+.combo ul li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.combo ul li:hover {
+    background-color: rgba(0, 0, 0, 0.082);
+}
+
+input[type="file"] {
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn {
+    box-shadow: none !important;
+}
+
+input:focus,
+button:focus {
+    outline: 0px !important;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(63, 63, 63);
+}
+
+footer .texto {
+    color: white;
+    font-size: 11px;
+    padding: 3px;
+    float: right;
+    margin-right: 50px;
+}

@@ -1,0 +1,82 @@
+.panel-listaProductos {}
+
+.panel-listaProductos a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+
+
+.panel-listaProductos .btn-tabla {
+    border: none;
+    background: none;
+}
+
+.panel-listaProductos .imagen-tabla {
+    width: 50px;
+    height: 50px;
+    background-size: cover !important;
+}
+
+.panel-listaProductos table thead {
+    border-bottom: 1px solid gray;
+}
+
+.panel-listaProductos table thead th {
+    padding: 10px 30px;
+    font-size: 14px;
+    color: #808080e6;
+}
+
+.panel-listaProductos table tbody td {
+    padding: 10px 30px;
+}
+
+.panel-listaProductos table tbody tr:hover {
+    transition: all .3s;
+}
+
+.panel-listaProductos table tbody tr:hover {
+    background-color: #8080801a;
+    transition: all .3s;
+}
+
+.panel-listaProductos table tfoot {
+    border-top: 1px solid gray;
+}
+
+.panel-listaProductos table tfoot td {
+    padding: 10px 30px;
+}
+
+.panel-listaProductos .col1p {
+    width: 1%
+}
+
+.panel-listaProductos .col5p {
+    width: 5%
+}
+
+.panel-listaProductos .col10p {
+    width: 10%
+}
+
+.panel-listaProductos .col15p {
+    width: 15%
+}
+
+.panel-listaProductos .col20+ {
+    width: 20%
+}
+
+.panel-listaProductos .col25p {
+    width: 25%
+}
+
+.panel-listaProductos .col30p {
+    width: 30%
+}
+
+.panel-listaProductos .col35p {
+    width: 35%
+}

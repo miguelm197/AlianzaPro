@@ -1,0 +1,15 @@
+
+.dbuscador .input-group-addon {
+    background-color: white !important;
+    border-left: none !important;
+}
+
+ .dbuscador input {
+    border-right: none !important;
+    border-radius: 0px !important;
+}
+ .dbuscador input:focus {
+    outline: 0px;
+    border: 1px solid rgb(209, 209, 209);
+    border-right: 0px;
+}

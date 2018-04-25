@@ -1,0 +1,157 @@
+.ngf-campo>div {
+    border: 1px solid gray;
+    padding: 30px;
+    border-style: dashed;
+    cursor: pointer;
+    color: rgb(85, 85, 85);
+}
+
+.ngf-campo .txtIcono,
+.ngf-campo .txtTexto {
+    display: inline;
+}
+
+.ngf-campo .txtIcono {
+    font-size: 30px;
+}
+
+.ngf-campo .txtTexto {
+    position: relative;
+    padding-left: 10px;
+    top: -7px;
+}
+
+.dragover {
+    background-color: gray;
+    transition: all .3s;
+}
+
+.ngf-imagen>img {
+    padding-top: 20px;
+    width: 100%;
+}
+
+.panel-parametros .row {
+    transition: all .5s;
+}
+
+.panel-parametros .icono {
+    height: 120px;
+    width: 120px;
+}
+
+.panel-parametros .slide {
+    /* height: 120px; */
+    width: 100%;
+}
+
+.panel-parametros .btn-verde {
+    background-color: #6eb121;
+    color: white;
+}
+
+.panel-parametros .cursor {
+    cursor: pointer;
+}
+
+.panel-parametros .peditar {
+    margin-left: 20px;
+    cursor: pointer;
+    display: inline;
+}
+
+.panel-parametros .derecha {
+    padding-left: 40px;
+}
+
+.panel-parametros .izquierda {
+    padding-right: 20px;
+}
+
+.panel-parametros .editarSlide {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-shadow: inset 0px 0px 188px -139px rgba(0, 0, 0, 0.84);
+    width: 100%;
+    height: 300px;
+    z-index: 10;
+    transition: all .3s;
+    opacity: 0;
+}
+
+.panel-parametros .editarSlide:hover {
+    box-shadow: inset 0px 263px 188px -139px rgba(0, 0, 0, 0.94);
+    transition: all .3s;
+    opacity: 1;
+}
+
+.panel-parametros .cajaSlide {
+    position: relative;
+    height: auto;
+}
+
+.panel-parametros .editarSlide {
+    color: #dadada;
+    position: absolute;
+}
+
+.panel-parametros .editarSlide .edit>div {
+    font-size: 13px;
+    padding-bottom: 10px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding-top: 31px;
+    padding-right: 36px;
+    opacity: 0;
+    cursor: pointer;
+    transition: all .3s;
+    z-index: 31;
+}
+
+.panel-parametros .editarSlide .edit>div:hover {
+    opacity: 1;
+    padding-right: 66px;
+}
+
+.panel-parametros .editarSlide .edit span {
+    position: absolute;
+    font-size: 27px;
+    right: 25px;
+    top: 25px;
+    z-index: 30;
+}
+
+.panel-parametros .editarSlide .edit {
+    position: absolute;
+    width: 72px;
+    height: 80px;
+    top: 0px;
+    right: 0px;
+}
+
+.panel-parametros .slides {
+    padding: 10px;
+}
+
+.btn-ico {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    background: inherit;
+}
+
+.btn-ico:focus {
+    border: none;
+}
+
+.btndisabled {
+    opacity: .3 !important;
+    cursor: wait !important;
+}
+
+.btnenabled {
+    opacity: 1;
+    cursor: pointer;
+}

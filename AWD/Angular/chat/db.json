@@ -1,0 +1,90 @@
+{
+  "mensajes": [],
+  "palabras": [
+    {
+      "palabra": "hola",
+      "opciones": [],
+      "tipo": [
+        "saludo"
+      ],
+      "etiquetas": [
+        "formal",
+        "semiformal",
+        "informal"
+      ]
+    },
+    {
+      "palabra": "como",
+      "opciones": [
+        "cómo"
+      ],
+      "tipo": [
+        "pregunta",
+        "comparativo"
+      ],
+      "etiquetas": [
+        "formal",
+        "semiformal",
+        "informal"
+      ]
+    },
+    {
+      "palabra": "estas",
+      "opciones": [
+        "éstas",
+        "estás"
+      ],
+      "tipo": [
+        "pregunta"
+      ],
+      "etiquetas": [
+        "formal",
+        "semiformal",
+        "informal"
+      ]
+    }
+  ],
+  "frases": [
+    {
+      "tipo": "saludo",
+      "frase": "Hola.",
+      "opciones": [
+        "hola",
+        "Hola!",
+        "hola!!",
+        "hola!!!"
+      ],
+      "etiquetas": [
+        "formal",
+        "semiformal",
+        "informal"
+      ],
+      "respuestas": [
+        "Hola",
+        "Hola!",
+        "Hola, cómo estás?",
+        "Hola, qué te trae por aquí?",
+        "Hola, en qué te puedo ayudar?"
+      ]
+    },
+    {
+      "tipo": "saludo",
+      "frase": "Hola, cómo estás?",
+      "opciones": [
+        "hola como estas",
+        "hola como estas?",
+        "hola cómo estás?",
+        "hola, como estas?"
+      ],
+      "etiquetas": [
+        "formal",
+        "semiformal",
+        "informal"
+      ],
+      "respuestas": [
+        "Hola, bien y tú?",
+        "Hola, muy bien, y tú?"
+      ]
+    }
+  ]
+}

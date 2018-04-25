@@ -1,0 +1,96 @@
+<div class="panel-listaProductos">
+
+    <div class="container-fluid">
+        <br class="visible-md">
+        <br class="visible-md">
+        <br class="visible-md">
+        <br class="visible-md">
+        <h2 class=" col col-lg-offset-1">Lista de Productos</h2>
+        <br>
+        <br>
+        <div class="row">
+
+            <div class="buscador  col col-lg-5 col-lg-offset-1    col-xs-10">
+                <buscador buscar="filtro"></buscador>
+
+            </div>
+            <div class="col col-xs-2">
+                <button type="button" class="btn btn-tabla" aria-label="Left Align" ng-click="cargarTabla()">
+                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <table class="mf-table col col-lg-10 col-lg-offset-1">
+                <thead>
+                    <tr>
+                        <th>
+                            <span></span>
+                        </th>
+                        <th>
+                            <span>Nombre</span>
+                        </th>
+                        <th class="hidden-xs hidden-sm">
+                            <span>Descripción</span>
+                        </th>
+                        <th>
+                            <span>Precio</span>
+                        </th>
+                        <th>
+                            <span>Stock</span>
+                        </th>
+                        <th class="hidden-xs hidden-sm">
+                            <span></span>
+                        </th>
+                        <th class="hidden-xs hidden-sm">
+                            <span></span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="producto in datos.datos | filter:{nombre:filtro}">
+                        <td class="col5p">
+                            <div class="imagen-tabla" style="background:url('{{producto.imagen}}')">
+                            </div>
+                        </td>
+                        <td class="colp20">
+                            <a href="{{producto.ver}}">{{producto.nombre}}</a>
+                        </td>
+                        <td class="col58p hidden-xs hidden-sm">
+                            <a href="{{producto.ver}}">{{producto.subtitulo}}</a>
+                        </td>
+                        <td class="col10p">
+                            <span>{{producto.precio}}</span>
+                        </td>
+                        <td class="col10p">
+                            <span>{{producto.stock}}</span>
+                        </td>
+                        <td class="col1p hidden-xs hidden-sm">
+                            <a href="{{producto.ver}}">
+                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                            </a>
+                        </td>
+                        <td class="col1p hidden-xs hidden-sm">
+                            <button type="button" class="btn btn-tabla" aria-label="Left Align" ng-click="eliminarProducto(producto.id)">
+                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                </tbody>
+                <tfoot>
+                    <tr class="paginacion">
+                        <td>
+                            <span>1</span>
+                            <span> - </span>
+                            <span>{{datos.datos.length}}</span>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <br>
+        <br>
+    </div>
+
+</div>
